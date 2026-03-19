@@ -1,0 +1,18 @@
+{
+  "name": "@model-picker/catalog",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "build": "bunx tsc --noEmit",
+    "typecheck": "bunx tsc --noEmit",
+    "lint": "bunx tsc --noEmit",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "@model-picker/domain": "workspace:*"
+  }
+}

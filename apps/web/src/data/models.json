@@ -1,0 +1,556 @@
+{
+  "generatedAt": "2026-03-17T22:58:29.786Z",
+  "count": 15,
+  "models": [
+    {
+      "id": "x-ai/grok-4.20-multi-agent-beta",
+      "name": "xAI: Grok 4.20 Multi-Agent Beta",
+      "description": "Grok 4.20 Multi-Agent Beta is a variant of xAI’s Grok 4.20 designed for collaborative, agent-based workflows. Multiple agents operate in parallel to conduct deep research, coordinate tool use, and synthesize information across complex tasks.\n\nReasoning effort behavior:\n- low / medium: 4 agents\n- high / xhigh: 16 agents",
+      "contextLength": 2000000,
+      "pricing": {
+        "inputPerMillion": 2,
+        "outputPerMillion": 6
+      },
+      "topProvider": {
+        "contextLength": 2000000,
+        "maxCompletionTokens": null,
+        "isModerated": false
+      },
+      "architecture": {
+        "modality": "text+image->text",
+        "inputModalities": [
+          "text",
+          "image"
+        ],
+        "outputModalities": [
+          "text"
+        ]
+      },
+      "speed": {
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
+      },
+      "rank": {
+        "bySpeed": 1,
+        "byPrice": 9,
+        "byContext": 1
+      }
+    },
+    {
+      "id": "x-ai/grok-4.20-beta",
+      "name": "xAI: Grok 4.20 Beta",
+      "description": "Grok 4.20 Beta is xAI's newest flagship model with industry-leading speed and agentic tool calling capabilities. It combines the lowest hallucination rate on the market with strict prompt adherance, delivering consistently precise and truthful responses.\n\nReasoning can be enabled/disabled using the `reasoning` `enabled` parameter in the API. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#controlling-reasoning-tokens)",
+      "contextLength": 2000000,
+      "pricing": {
+        "inputPerMillion": 2,
+        "outputPerMillion": 6
+      },
+      "topProvider": {
+        "contextLength": 2000000,
+        "maxCompletionTokens": null,
+        "isModerated": false
+      },
+      "architecture": {
+        "modality": "text+image->text",
+        "inputModalities": [
+          "text",
+          "image"
+        ],
+        "outputModalities": [
+          "text"
+        ]
+      },
+      "speed": {
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
+      },
+      "rank": {
+        "bySpeed": 2,
+        "byPrice": 10,
+        "byContext": 2
+      }
+    },
+    {
+      "id": "x-ai/grok-4.1-fast",
+      "name": "xAI: Grok 4.1 Fast",
+      "description": "Grok 4.1 Fast is xAI's best agentic tool calling model that shines in real-world use cases like customer support and deep research. 2M context window.\n\nReasoning can be enabled/disabled using the `reasoning` `enabled` parameter in the API. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#controlling-reasoning-tokens)",
+      "contextLength": 2000000,
+      "pricing": {
+        "inputPerMillion": 0.19999999999999998,
+        "outputPerMillion": 0.5
+      },
+      "topProvider": {
+        "contextLength": 2000000,
+        "maxCompletionTokens": 30000,
+        "isModerated": false
+      },
+      "architecture": {
+        "modality": "text+image->text",
+        "inputModalities": [
+          "text",
+          "image"
+        ],
+        "outputModalities": [
+          "text"
+        ]
+      },
+      "speed": {
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
+      },
+      "rank": {
+        "bySpeed": 3,
+        "byPrice": 5,
+        "byContext": 3
+      }
+    },
+    {
+      "id": "x-ai/grok-4-fast",
+      "name": "xAI: Grok 4 Fast",
+      "description": "Grok 4 Fast is xAI's latest multimodal model with SOTA cost-efficiency and a 2M token context window. It comes in two flavors: non-reasoning and reasoning. Read more about the model on xAI's [news post](http://x.ai/news/grok-4-fast).\n\nReasoning can be enabled/disabled using the `reasoning` `enabled` parameter in the API. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#controlling-reasoning-tokens)",
+      "contextLength": 2000000,
+      "pricing": {
+        "inputPerMillion": 0.19999999999999998,
+        "outputPerMillion": 0.5
+      },
+      "topProvider": {
+        "contextLength": 2000000,
+        "maxCompletionTokens": 30000,
+        "isModerated": false
+      },
+      "architecture": {
+        "modality": "text+image->text",
+        "inputModalities": [
+          "text",
+          "image"
+        ],
+        "outputModalities": [
+          "text"
+        ]
+      },
+      "speed": {
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
+      },
+      "rank": {
+        "bySpeed": 4,
+        "byPrice": 6,
+        "byContext": 4
+      }
+    },
+    {
+      "id": "openai/gpt-5.4-pro",
+      "name": "OpenAI: GPT-5.4 Pro",
+      "description": "GPT-5.4 Pro is OpenAI's most advanced model, building on GPT-5.4's unified architecture with enhanced reasoning capabilities for complex, high-stakes tasks. It features a 1M+ token context window (922K input, 128K output) with support for text and image inputs. Optimized for step-by-step reasoning, instruction following, and accuracy, GPT-5.4 Pro excels at agentic coding, long-context workflows, and multi-step problem solving.",
+      "contextLength": 1050000,
+      "pricing": {
+        "inputPerMillion": 30,
+        "outputPerMillion": 180
+      },
+      "topProvider": {
+        "contextLength": 1050000,
+        "maxCompletionTokens": 128000,
+        "isModerated": true
+      },
+      "architecture": {
+        "modality": "text+image+file->text",
+        "inputModalities": [
+          "text",
+          "image",
+          "file"
+        ],
+        "outputModalities": [
+          "text"
+        ]
+      },
+      "speed": {
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
+      },
+      "rank": {
+        "bySpeed": 5,
+        "byPrice": 15,
+        "byContext": 5
+      }
+    },
+    {
+      "id": "openai/gpt-5.4",
+      "name": "OpenAI: GPT-5.4",
+      "description": "GPT-5.4 is OpenAI’s latest frontier model, unifying the Codex and GPT lines into a single system. It features a 1M+ token context window (922K input, 128K output) with support for text and image inputs, enabling high-context reasoning, coding, and multimodal analysis within the same workflow.\n\nThe model delivers improved performance in coding, document understanding, tool use, and instruction following. It is designed as a strong default for both general-purpose tasks and software engineering, capable of generating production-quality code, synthesizing information across multiple sources, and executing complex multi-step workflows with fewer iterations and greater token efficiency.",
+      "contextLength": 1050000,
+      "pricing": {
+        "inputPerMillion": 2.5,
+        "outputPerMillion": 15
+      },
+      "topProvider": {
+        "contextLength": 1050000,
+        "maxCompletionTokens": 128000,
+        "isModerated": true
+      },
+      "architecture": {
+        "modality": "text+image+file->text",
+        "inputModalities": [
+          "text",
+          "image",
+          "file"
+        ],
+        "outputModalities": [
+          "text"
+        ]
+      },
+      "speed": {
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
+      },
+      "rank": {
+        "bySpeed": 6,
+        "byPrice": 14,
+        "byContext": 6
+      }
+    },
+    {
+      "id": "google/gemini-2.5-pro",
+      "name": "Google: Gemini 2.5 Pro",
+      "description": "Gemini 2.5 Pro is Google’s state-of-the-art AI model designed for advanced reasoning, coding, mathematics, and scientific tasks. It employs “thinking” capabilities, enabling it to reason through responses with enhanced accuracy and nuanced context handling. Gemini 2.5 Pro achieves top-tier performance on multiple benchmarks, including first-place positioning on the LMArena leaderboard, reflecting superior human-preference alignment and complex problem-solving abilities.",
+      "contextLength": 1048576,
+      "pricing": {
+        "inputPerMillion": 1.25,
+        "outputPerMillion": 10
+      },
+      "topProvider": {
+        "contextLength": 1048576,
+        "maxCompletionTokens": 65536,
+        "isModerated": false
+      },
+      "architecture": {
+        "modality": "text+image+file+audio+video->text",
+        "inputModalities": [
+          "text",
+          "image",
+          "file",
+          "audio",
+          "video"
+        ],
+        "outputModalities": [
+          "text"
+        ]
+      },
+      "speed": {
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
+      },
+      "rank": {
+        "bySpeed": 7,
+        "byPrice": 11,
+        "byContext": 7
+      }
+    },
+    {
+      "id": "google/gemini-2.5-pro-preview",
+      "name": "Google: Gemini 2.5 Pro Preview 06-05",
+      "description": "Gemini 2.5 Pro is Google’s state-of-the-art AI model designed for advanced reasoning, coding, mathematics, and scientific tasks. It employs “thinking” capabilities, enabling it to reason through responses with enhanced accuracy and nuanced context handling. Gemini 2.5 Pro achieves top-tier performance on multiple benchmarks, including first-place positioning on the LMArena leaderboard, reflecting superior human-preference alignment and complex problem-solving abilities.\n",
+      "contextLength": 1048576,
+      "pricing": {
+        "inputPerMillion": 1.25,
+        "outputPerMillion": 10
+      },
+      "topProvider": {
+        "contextLength": 1048576,
+        "maxCompletionTokens": 65536,
+        "isModerated": false
+      },
+      "architecture": {
+        "modality": "text+image+file+audio->text",
+        "inputModalities": [
+          "file",
+          "image",
+          "text",
+          "audio"
+        ],
+        "outputModalities": [
+          "text"
+        ]
+      },
+      "speed": {
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
+      },
+      "rank": {
+        "bySpeed": 8,
+        "byPrice": 12,
+        "byContext": 8
+      }
+    },
+    {
+      "id": "google/gemini-2.5-pro-preview-05-06",
+      "name": "Google: Gemini 2.5 Pro Preview 05-06",
+      "description": "Gemini 2.5 Pro is Google’s state-of-the-art AI model designed for advanced reasoning, coding, mathematics, and scientific tasks. It employs “thinking” capabilities, enabling it to reason through responses with enhanced accuracy and nuanced context handling. Gemini 2.5 Pro achieves top-tier performance on multiple benchmarks, including first-place positioning on the LMArena leaderboard, reflecting superior human-preference alignment and complex problem-solving abilities.",
+      "contextLength": 1048576,
+      "pricing": {
+        "inputPerMillion": 1.25,
+        "outputPerMillion": 10
+      },
+      "topProvider": {
+        "contextLength": 1048576,
+        "maxCompletionTokens": 65535,
+        "isModerated": false
+      },
+      "architecture": {
+        "modality": "text+image+file+audio+video->text",
+        "inputModalities": [
+          "text",
+          "image",
+          "file",
+          "audio",
+          "video"
+        ],
+        "outputModalities": [
+          "text"
+        ]
+      },
+      "speed": {
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
+      },
+      "rank": {
+        "bySpeed": 9,
+        "byPrice": 13,
+        "byContext": 9
+      }
+    },
+    {
+      "id": "google/gemini-2.5-flash",
+      "name": "Google: Gemini 2.5 Flash",
+      "description": "Gemini 2.5 Flash is Google's state-of-the-art workhorse model, specifically designed for advanced reasoning, coding, mathematics, and scientific tasks. It includes built-in \"thinking\" capabilities, enabling it to provide responses with greater accuracy and nuanced context handling. \n\nAdditionally, Gemini 2.5 Flash is configurable through the \"max tokens for reasoning\" parameter, as described in the documentation (https://openrouter.ai/docs/use-cases/reasoning-tokens#max-tokens-for-reasoning).",
+      "contextLength": 1048576,
+      "pricing": {
+        "inputPerMillion": 0.3,
+        "outputPerMillion": 2.5
+      },
+      "topProvider": {
+        "contextLength": 1048576,
+        "maxCompletionTokens": 65535,
+        "isModerated": false
+      },
+      "architecture": {
+        "modality": "text+image+file+audio+video->text",
+        "inputModalities": [
+          "file",
+          "image",
+          "text",
+          "audio",
+          "video"
+        ],
+        "outputModalities": [
+          "text"
+        ]
+      },
+      "speed": {
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
+      },
+      "rank": {
+        "bySpeed": 10,
+        "byPrice": 8,
+        "byContext": 10
+      }
+    },
+    {
+      "id": "meta-llama/llama-4-maverick",
+      "name": "Meta: Llama 4 Maverick",
+      "description": "Llama 4 Maverick 17B Instruct (128E) is a high-capacity multimodal language model from Meta, built on a mixture-of-experts (MoE) architecture with 128 experts and 17 billion active parameters per forward pass (400B total). It supports multilingual text and image input, and produces multilingual text and code output across 12 supported languages. Optimized for vision-language tasks, Maverick is instruction-tuned for assistant-like behavior, image reasoning, and general-purpose multimodal interaction.\n\nMaverick features early fusion for native multimodality and a 1 million token context window. It was trained on a curated mixture of public, licensed, and Meta-platform data, covering ~22 trillion tokens, with a knowledge cutoff in August 2024. Released on April 5, 2025 under the Llama 4 Community License, Maverick is suited for research and commercial applications requiring advanced multimodal understanding and high model throughput.",
+      "contextLength": 1048576,
+      "pricing": {
+        "inputPerMillion": 0.15,
+        "outputPerMillion": 0.6
+      },
+      "topProvider": {
+        "contextLength": 1048576,
+        "maxCompletionTokens": 16384,
+        "isModerated": false
+      },
+      "architecture": {
+        "modality": "text+image->text",
+        "inputModalities": [
+          "text",
+          "image"
+        ],
+        "outputModalities": [
+          "text"
+        ]
+      },
+      "speed": {
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
+      },
+      "rank": {
+        "bySpeed": 11,
+        "byPrice": 7,
+        "byContext": 11
+      }
+    },
+    {
+      "id": "google/gemini-2.5-flash-lite-preview-09-2025",
+      "name": "Google: Gemini 2.5 Flash Lite Preview 09-2025",
+      "description": "Gemini 2.5 Flash-Lite is a lightweight reasoning model in the Gemini 2.5 family, optimized for ultra-low latency and cost efficiency. It offers improved throughput, faster token generation, and better performance across common benchmarks compared to earlier Flash models. By default, \"thinking\" (i.e. multi-pass reasoning) is disabled to prioritize speed, but developers can enable it via the [Reasoning API parameter](https://openrouter.ai/docs/use-cases/reasoning-tokens) to selectively trade off cost for intelligence. ",
+      "contextLength": 1048576,
+      "pricing": {
+        "inputPerMillion": 0.09999999999999999,
+        "outputPerMillion": 0.39999999999999997
+      },
+      "topProvider": {
+        "contextLength": 1048576,
+        "maxCompletionTokens": 65536,
+        "isModerated": false
+      },
+      "architecture": {
+        "modality": "text+image+file+audio+video->text",
+        "inputModalities": [
+          "text",
+          "image",
+          "file",
+          "audio",
+          "video"
+        ],
+        "outputModalities": [
+          "text"
+        ]
+      },
+      "speed": {
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
+      },
+      "rank": {
+        "bySpeed": 12,
+        "byPrice": 2,
+        "byContext": 12
+      }
+    },
+    {
+      "id": "google/gemini-2.5-flash-lite",
+      "name": "Google: Gemini 2.5 Flash Lite",
+      "description": "Gemini 2.5 Flash-Lite is a lightweight reasoning model in the Gemini 2.5 family, optimized for ultra-low latency and cost efficiency. It offers improved throughput, faster token generation, and better performance across common benchmarks compared to earlier Flash models. By default, \"thinking\" (i.e. multi-pass reasoning) is disabled to prioritize speed, but developers can enable it via the [Reasoning API parameter](https://openrouter.ai/docs/use-cases/reasoning-tokens) to selectively trade off cost for intelligence. ",
+      "contextLength": 1048576,
+      "pricing": {
+        "inputPerMillion": 0.09999999999999999,
+        "outputPerMillion": 0.39999999999999997
+      },
+      "topProvider": {
+        "contextLength": 1048576,
+        "maxCompletionTokens": 65535,
+        "isModerated": false
+      },
+      "architecture": {
+        "modality": "text+image+file+audio+video->text",
+        "inputModalities": [
+          "text",
+          "image",
+          "file",
+          "audio",
+          "video"
+        ],
+        "outputModalities": [
+          "text"
+        ]
+      },
+      "speed": {
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
+      },
+      "rank": {
+        "bySpeed": 13,
+        "byPrice": 3,
+        "byContext": 13
+      }
+    },
+    {
+      "id": "google/gemini-2.0-flash-001",
+      "name": "Google: Gemini 2.0 Flash",
+      "description": "Gemini Flash 2.0 offers a significantly faster time to first token (TTFT) compared to [Gemini Flash 1.5](/google/gemini-flash-1.5), while maintaining quality on par with larger models like [Gemini Pro 1.5](/google/gemini-pro-1.5). It introduces notable enhancements in multimodal understanding, coding capabilities, complex instruction following, and function calling. These advancements come together to deliver more seamless and robust agentic experiences.",
+      "contextLength": 1048576,
+      "pricing": {
+        "inputPerMillion": 0.09999999999999999,
+        "outputPerMillion": 0.39999999999999997
+      },
+      "topProvider": {
+        "contextLength": 1048576,
+        "maxCompletionTokens": 8192,
+        "isModerated": false
+      },
+      "architecture": {
+        "modality": "text+image+file+audio+video->text",
+        "inputModalities": [
+          "text",
+          "image",
+          "file",
+          "audio",
+          "video"
+        ],
+        "outputModalities": [
+          "text"
+        ]
+      },
+      "speed": {
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
+      },
+      "rank": {
+        "bySpeed": 14,
+        "byPrice": 4,
+        "byContext": 14
+      }
+    },
+    {
+      "id": "google/gemini-2.0-flash-lite-001",
+      "name": "Google: Gemini 2.0 Flash Lite",
+      "description": "Gemini 2.0 Flash Lite offers a significantly faster time to first token (TTFT) compared to [Gemini Flash 1.5](/google/gemini-flash-1.5), while maintaining quality on par with larger models like [Gemini Pro 1.5](/google/gemini-pro-1.5), all at extremely economical token prices.",
+      "contextLength": 1048576,
+      "pricing": {
+        "inputPerMillion": 0.075,
+        "outputPerMillion": 0.3
+      },
+      "topProvider": {
+        "contextLength": 1048576,
+        "maxCompletionTokens": 8192,
+        "isModerated": false
+      },
+      "architecture": {
+        "modality": "text+image+file+audio+video->text",
+        "inputModalities": [
+          "text",
+          "image",
+          "file",
+          "audio",
+          "video"
+        ],
+        "outputModalities": [
+          "text"
+        ]
+      },
+      "speed": {
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
+      },
+      "rank": {
+        "bySpeed": 15,
+        "byPrice": 1,
+        "byContext": 15
+      }
+    }
+  ]
+}

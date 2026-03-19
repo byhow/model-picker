@@ -1,0 +1,19 @@
+{
+  "name": "@model-picker/ingest",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "bunx tsc --noEmit",
+    "typecheck": "bunx tsc --noEmit",
+    "lint": "bunx tsc --noEmit",
+    "test": "bun test",
+    "fetch:models": "bun run src/fetch-models.ts",
+    "scrape:speed": "bun run src/scrape-speed.ts",
+    "consolidate": "bun run src/consolidate.ts",
+    "refresh": "bun run src/refresh.ts"
+  },
+  "dependencies": {
+    "@model-picker/domain": "workspace:*"
+  }
+}
