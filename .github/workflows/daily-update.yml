@@ -1,0 +1,101 @@
+name: Daily Model Data Update
+
+on:
+  schedule:
+    # Run daily at 00:00 UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  update-models:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Bun
+      uses: oven-sh/setup-bun@v2
+      with:
+        bun-version: latest
+        
+    - name: Install dependencies
+      run: bun install
+      
+    - name: Refresh model snapshots
+      run: bun run refresh
+      
+    - name: Commit and push if changed
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add apps/web/src/data/models.json
+        git diff --staged --quiet || git commit -m "Update model snapshots [$(date +%Y-%m-%d)]"
+        git push
+      continue-on-error: true
+
+  # Note: Scraping with Firecrawl requires API key
+  # Uncomment and configure if you have Firecrawl credits to spare
+  # scrape-speeds:
+  #   runs-on: ubuntu-latest
+  #   needs: update-models
+  #   
+  #   steps:
+  #   - name: Checkout repository
+  #     uses: actions/checkout@v4
+  #     
+  #   - name: Setup Bun
+  #     uses: oven-sh/setup-bun@v2
+  #     with:
+  #       bun-version: latest
+  #       
+  #   - name: Install dependencies
+  #     run: bun install
+  #     
+  #   - name: Setup Firecrawl
+  #     run: |
+  #       # Install firecrawl CLI
+  #       npm install -g @mendable/firecrawl
+  #       
+  #   - name: Scrape model speeds
+  #     env:
+  #       FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+  #     run: bun run scripts/scrape-speed.ts
+  #     
+  #   - name: Commit and push if changed
+  #     run: |
+  #       git config --local user.email "action@github.com"
+  #       git config --local user.name "GitHub Action"
+  #       git add src/data/
+  #       git diff --staged --quiet || git commit -m "Update model speeds [$(date +%Y-%m-%d)]"
+  #       git push
+  #     continue-on-error: true
+
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    needs: update-models
+    # needs: [update-models, scrape-speeds] # if scrape-speeds is enabled
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Bun
+      uses: oven-sh/setup-bun@v2
+      with:
+        bun-version: latest
+        
+    - name: Install dependencies
+      run: bun install
+      
+    - name: Build site
+      run: bun run build
+      
+    - name: Deploy to Cloudflare Pages
+      uses: cloudflare/pages-action@v1
+      with:
+        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        projectName: model-picker
+        directory: apps/web/dist
+        gitHubToken: ${{ secrets.GITHUB_TOKEN }}
