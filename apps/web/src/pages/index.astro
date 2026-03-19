@@ -1,0 +1,91 @@
+---
+// Model Picker Dashboard
+// Displays top LLM models with pricing, speed, and context metrics.
+
+import ModelExplorer from '../components/ModelExplorer';
+import type { ModelRecord } from '@model-picker/domain';
+
+// Load consolidated model data
+import modelsData from '../data/models.json';
+const models: ModelRecord[] = modelsData.models || [];
+
+const lastUpdated = models.length > 0 
+  ? new Date(modelsData.generatedAt || Date.now()).toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'short', 
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    })
+  : 'Not yet fetched';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Model Picker - LLM Comparison Dashboard</title>
+  <meta name="description" content="Compare top LLM models by price, speed, and context length">
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Header -->
+    <header class="mb-8">
+      <div class="flex items-center justify-between">
+        <div>
+          <h1 class="text-3xl font-bold text-gray-900">Model Picker</h1>
+          <p class="mt-2 text-gray-600">
+            Compare flagship LLM models by speed, pricing, and capabilities
+          </p>
+        </div>
+        <div class="text-right text-sm text-gray-500">
+          <p>Last updated: {lastUpdated}</p>
+          <p class="mt-1">Data from OpenRouter</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Stats Overview -->
+    {models.length > 0 && (
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        <div class="bg-white rounded-lg shadow p-6">
+          <h3 class="text-sm font-medium text-gray-500">Models Tracked</h3>
+          <p class="mt-2 text-3xl font-bold text-primary">{models.length}</p>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6">
+          <h3 class="text-sm font-medium text-gray-500">Fastest Model</h3>
+          <p class="mt-2 text-3xl font-bold text-green-600">
+            {Math.max(...models.map((m: ModelRecord) => m.speed.bestThroughput || 0)).toFixed(0)}
+            <span class="text-lg font-normal text-gray-600">tok/s</span>
+          </p>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6">
+          <h3 class="text-sm font-medium text-gray-500">Cheapest Output</h3>
+          <p class="mt-2 text-3xl font-bold text-blue-600">
+            ${Math.min(...models.map((m: ModelRecord) => m.pricing.outputPerMillion)).toFixed(2)}
+            <span class="text-lg font-normal text-gray-600">/M</span>
+          </p>
+        </div>
+      </div>
+    )}
+
+    <!-- Model Table -->
+    {models.length > 0 ? (
+      <ModelExplorer client:load models={models} />
+    ) : (
+      <div class="bg-white rounded-lg shadow p-12 text-center">
+        <p class="text-gray-600 mb-4">No model data available yet.</p>
+        <p class="text-sm text-gray-500">
+          Run <code class="bg-gray-100 px-2 py-1 rounded">bun run refresh</code> to fetch model data.
+        </p>
+      </div>
+    )}
+
+    <!-- Footer -->
+    <footer class="mt-12 pt-8 border-t border-gray-200 text-center text-sm text-gray-500">
+      <p>Data sourced from OpenRouter API • Updates daily via automated workflow</p>
+    </footer>
+  </div>
+</body>
+</html>
