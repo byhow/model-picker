@@ -47,5 +47,20 @@ apps/web/src/data/models-api.json
 # skills
 .agents
 .cursor
+.factory
 /data
 skills-lock.json
+
+# generated CLI packaging artifacts
+apps/cli/data/
+apps/cli/README.md
+apps/cli/LICENSE
+apps/cli/*.bun-build
+
+# local-only planning / agent context
+AGENT.md
+CLAUDE.md
+PROGRESS.md
+ORIGINAL-REARCHITECTURE-PLAN.md
+RATIONALE.md
+LAUNCH_CALENDAR_2025.md

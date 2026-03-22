@@ -1,0 +1,65 @@
+name: Release CLI
+
+on:
+  release:
+    types:
+      - published
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.10
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Verify workspace
+        run: |
+          bun run typecheck
+          bun run test
+          bun run build
+          bun run verify:cli-install
+
+      - name: Prepare package artifacts
+        run: |
+          bun run prepare:cli-package
+          bun run build:cli-bin
+
+      - name: Publish model-picker to npm
+        working-directory: apps/cli
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --provenance
+
+      - name: Smoke test published package
+        run: |
+          npx model-picker doctor
+          bunx model-picker doctor
+
+      - name: Generate binary checksum
+        run: shasum -a 256 apps/cli/dist/model-picker > apps/cli/dist/model-picker.sha256
+
+      - name: Attach binary assets to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            apps/cli/dist/model-picker
+            apps/cli/dist/model-picker.sha256
