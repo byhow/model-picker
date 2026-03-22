@@ -1,6 +1,7 @@
 import { resolve } from 'node:path';
+import { resolveWorkspaceRoot } from '@model-picker/domain';
 
-const ROOT = resolve(import.meta.dir, '../../../');
+const ROOT = await resolveWorkspaceRoot(import.meta.url, 3);
 
 export const DATA_RAW_DIR = resolve(ROOT, 'data/raw');
 export const DATA_SNAPSHOTS_DIR = resolve(ROOT, 'data/snapshots');

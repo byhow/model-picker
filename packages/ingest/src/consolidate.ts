@@ -10,10 +10,12 @@ import {
 } from './paths';
 import type { OpenRouterModel } from '@model-picker/domain';
 import { buildSnapshots, type SpeedData } from './consolidate-lib';
+import type { CoverageSummary } from './coverage';
 
 interface ApiData {
   fetchedAt: string;
   count: number;
+  coverage?: CoverageSummary;
   models: OpenRouterModel[];
 }
 
@@ -50,6 +52,11 @@ async function consolidate(): Promise<void> {
     JSON.stringify(
       {
         generatedAt: fullSnapshot.generatedAt,
+        source: {
+          fetchedAt: apiData.fetchedAt,
+          scrapedAt: speedData.scrapedAt,
+          coverage: apiData.coverage ?? null,
+        },
         files: {
           full: FULL_SNAPSHOT_FILE,
           compact: COMPACT_SNAPSHOT_FILE,

@@ -11,6 +11,7 @@
     "fetch:models": "bun run src/fetch-models.ts",
     "scrape:speed": "bun run src/scrape-speed.ts",
     "consolidate": "bun run src/consolidate.ts",
+    "sync": "bun run src/sync.ts",
     "refresh": "bun run src/refresh.ts"
   },
   "dependencies": {

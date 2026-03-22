@@ -37,6 +37,7 @@ export function toModelRecord(
   model: OpenRouterModel,
   speedInfo?: SpeedData,
 ): ModelRecord {
+  const topProviderContextLength = model.top_provider.context_length ?? model.context_length;
   const providers = speedInfo?.providers ?? [];
   const throughputs = providers
     .map((provider) => normalizeThroughput(provider.throughput))
@@ -58,7 +59,7 @@ export function toModelRecord(
       outputPerMillion: formatPrice(model.pricing.completion),
     },
     topProvider: {
-      contextLength: model.top_provider.context_length,
+      contextLength: topProviderContextLength,
       maxCompletionTokens: model.top_provider.max_completion_tokens,
       isModerated: model.top_provider.is_moderated,
     },
