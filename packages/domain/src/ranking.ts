@@ -1,5 +1,10 @@
 import type { ModelRecord } from './model';
 
+function priceSortValue(model: ModelRecord): number {
+  const price = model.pricing.outputPerMillion;
+  return Number.isFinite(price) && price >= 0 ? price : Number.POSITIVE_INFINITY;
+}
+
 export function rankModels(models: ModelRecord[]): ModelRecord[] {
   const ranked = [...models];
 
@@ -12,7 +17,7 @@ export function rankModels(models: ModelRecord[]): ModelRecord[] {
   });
 
   const byPrice = [...ranked].sort(
-    (a, b) => a.pricing.outputPerMillion - b.pricing.outputPerMillion,
+    (a, b) => priceSortValue(a) - priceSortValue(b),
   );
   byPrice.forEach((model, index) => {
     const target = ranked.find((item) => item.id === model.id);

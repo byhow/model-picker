@@ -8,11 +8,15 @@ export interface ModelRow {
   context: string;
 }
 
+function formatOutputPrice(value: number): string {
+  return Number.isFinite(value) && value >= 0 ? `$${value.toFixed(2)}/M` : 'N/A';
+}
+
 export function toModelRow(model: ModelRecord): ModelRow {
   return {
     id: model.id,
     name: model.name,
-    outputPrice: `$${model.pricing.outputPerMillion.toFixed(2)}/M`,
+    outputPrice: formatOutputPrice(model.pricing.outputPerMillion),
     speed: model.speed.bestThroughput
       ? `${model.speed.bestThroughput.toFixed(0)} tok/s`
       : 'N/A',
@@ -27,7 +31,7 @@ export function formatModelSummary(model: ModelRecord): string {
   return [
     `${model.name} (${model.id})`,
     `Speed: ${model.speed.bestThroughput ? `${model.speed.bestThroughput.toFixed(1)} tok/s` : 'N/A'}`,
-    `Output: $${model.pricing.outputPerMillion.toFixed(2)}/M`,
+    `Output: ${formatOutputPrice(model.pricing.outputPerMillion)}`,
     `Context: ${model.contextLength.toLocaleString()} tokens`,
   ].join('\n');
 }

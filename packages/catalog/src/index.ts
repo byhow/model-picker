@@ -1,22 +1,55 @@
-import { resolve } from 'node:path';
-import type { ModelRecord, ModelSnapshot } from '@model-picker/domain';
+import { access, readFile } from 'node:fs/promises';
+import { dirname, resolve } from 'node:path';
+import {
+  resolvePackageRoot,
+  resolveWorkspaceRoot,
+  type ModelRecord,
+  type ModelSnapshot,
+} from '@model-picker/domain';
 
-const FULL_SNAPSHOT_PATH = resolve(
-  import.meta.dir,
-  '../../../data/snapshots/latest.full.json',
-);
-const FALLBACK_SNAPSHOT_PATH = resolve(
-  import.meta.dir,
-  '../../../apps/web/src/data/models.json',
-);
+const PACKAGE_ROOT = resolvePackageRoot(import.meta.url);
+const SNAPSHOT_FIXTURE = process.env.MODEL_PICKER_SNAPSHOT_FIXTURE?.trim();
+const WEB_SNAPSHOT_FIXTURE = process.env.MODEL_PICKER_WEB_SNAPSHOT_FIXTURE?.trim();
+
+async function snapshotCandidates(): Promise<string[]> {
+  const packagedSnapshot = resolve(PACKAGE_ROOT, '../data/latest.full.json');
+  const packagedFallback = resolve(PACKAGE_ROOT, '../data/models.json');
+  const execDir = dirname(process.execPath);
+  const argvDir = process.argv[1] ? dirname(resolve(process.argv[1])) : null;
+  const binarySnapshot = resolve(execDir, '../data/latest.full.json');
+  const binaryFallback = resolve(execDir, '../data/models.json');
+  const argvSnapshot = argvDir ? resolve(argvDir, '../data/latest.full.json') : null;
+  const argvFallback = argvDir ? resolve(argvDir, '../data/models.json') : null;
+  const workspaceRoot = await resolveWorkspaceRoot(import.meta.url, 3);
+  const workspaceSnapshot = resolve(workspaceRoot, 'data/snapshots/latest.full.json');
+  const workspaceFallback = resolve(workspaceRoot, 'apps/web/src/data/models.json');
+  const sourceSnapshot = resolve(PACKAGE_ROOT, '../../../data/snapshots/latest.full.json');
+  const sourceFallback = resolve(PACKAGE_ROOT, '../../../apps/web/src/data/models.json');
+
+  return [
+    ...(SNAPSHOT_FIXTURE ? [SNAPSHOT_FIXTURE] : []),
+    ...(WEB_SNAPSHOT_FIXTURE ? [WEB_SNAPSHOT_FIXTURE] : []),
+    workspaceSnapshot,
+    workspaceFallback,
+    sourceSnapshot,
+    sourceFallback,
+    binarySnapshot,
+    binaryFallback,
+    ...(argvSnapshot ? [argvSnapshot] : []),
+    ...(argvFallback ? [argvFallback] : []),
+    packagedSnapshot,
+    packagedFallback,
+  ];
+}
 
 async function readSnapshotFile(path: string): Promise<ModelSnapshot | null> {
-  const file = Bun.file(path);
-  if (!(await file.exists())) {
+  try {
+    await access(path);
+  } catch {
     return null;
   }
 
-  const data = (await file.json()) as ModelSnapshot;
+  const data = JSON.parse(await readFile(path, 'utf8')) as ModelSnapshot;
   if (!Array.isArray(data.models)) {
     return null;
   }
@@ -53,6 +86,16 @@ const DEFAULT_LIMIT = 10;
 const FAST_THRESHOLD = 50;
 const BUDGET_THRESHOLD = 2;
 const LONG_CONTEXT_THRESHOLD = 100_000;
+
+function isKnownPrice(value: number): boolean {
+  return Number.isFinite(value) && value >= 0;
+}
+
+function priceSortValue(model: ModelRecord): number {
+  return isKnownPrice(model.pricing.outputPerMillion)
+    ? model.pricing.outputPerMillion
+    : Number.POSITIVE_INFINITY;
+}
 
 export const DEFAULT_WEIGHTS: ScoreWeights = {
   speed: 0.4,
@@ -131,7 +174,7 @@ function modelMatchesToken(model: ModelRecord, token: string): boolean {
       return (model.speed.bestThroughput ?? 0) >= FAST_THRESHOLD;
     case 'budget':
     case 'cheap':
-      return model.pricing.outputPerMillion <= BUDGET_THRESHOLD;
+      return isKnownPrice(model.pricing.outputPerMillion) && model.pricing.outputPerMillion <= BUDGET_THRESHOLD;
     case 'long-context':
       return model.contextLength >= LONG_CONTEXT_THRESHOLD;
     case 'vision':
@@ -182,9 +225,7 @@ export function sortModels(models: ModelRecord[], sortBy: SortBy = 'speed'): Mod
 
   switch (sortBy) {
     case 'price':
-      sorted.sort(
-        (a, b) => a.pricing.outputPerMillion - b.pricing.outputPerMillion,
-      );
+      sorted.sort((a, b) => priceSortValue(a) - priceSortValue(b));
       break;
     case 'context':
       sorted.sort((a, b) => b.contextLength - a.contextLength);
@@ -239,7 +280,7 @@ function taskBonus(model: ModelRecord, task?: string): { bonus: number; reasons:
     .map((modality) => modality.toLowerCase())
     .includes('image');
   const isFast = (model.speed.bestThroughput ?? 0) >= FAST_THRESHOLD;
-  const isBudget = model.pricing.outputPerMillion <= BUDGET_THRESHOLD;
+  const isBudget = isKnownPrice(model.pricing.outputPerMillion) && model.pricing.outputPerMillion <= BUDGET_THRESHOLD;
   const hasLongContext = model.contextLength >= LONG_CONTEXT_THRESHOLD;
 
   if (normalizedTask === 'coding' || normalizedTask === 'code') {
@@ -284,45 +325,59 @@ export function pickModelsFromRecords(
     return [];
   }
 
-  const weights = normalizeWeights(withDefaultWeights(options.weights));
+  const weights = withDefaultWeights(options.weights);
   const candidates = filterModels(models, options.filter);
   if (candidates.length === 0) {
     return [];
   }
 
-  const prices = candidates.map((model) => model.pricing.outputPerMillion);
+  const knownPrices = candidates
+    .map((model) => model.pricing.outputPerMillion)
+    .filter((price) => isKnownPrice(price));
   const speeds = candidates.map((model) => model.speed.bestThroughput ?? 0);
   const contexts = candidates.map((model) => model.contextLength);
 
-  const minPrice = Math.min(...prices);
-  const maxPrice = Math.max(...prices);
+  const minPrice = knownPrices.length > 0 ? Math.min(...knownPrices) : 0;
+  const maxPrice = knownPrices.length > 0 ? Math.max(...knownPrices) : 0;
   const minSpeed = Math.min(...speeds);
   const maxSpeed = Math.max(...speeds);
   const minContext = Math.min(...contexts);
   const maxContext = Math.max(...contexts);
+  const hasSpeedData = speeds.some((speed) => speed > 0);
+  const hasPriceData = knownPrices.length > 0;
+  const normalizedWeights = normalizeWeights({
+    ...weights,
+    speed: hasSpeedData ? weights.speed : 0,
+    price: hasPriceData ? weights.price : 0,
+  });
 
   const scored = candidates.map((model) => {
-    const speedScore = normalizeValue(
-      model.speed.bestThroughput ?? 0,
-      minSpeed,
-      maxSpeed,
-    );
-    const priceScore = normalizeInverseValue(
-      model.pricing.outputPerMillion,
-      minPrice,
-      maxPrice,
-    );
+    const speedScore = hasSpeedData
+      ? normalizeValue(model.speed.bestThroughput ?? 0, minSpeed, maxSpeed)
+      : 0;
+    const priceScore =
+      hasPriceData && isKnownPrice(model.pricing.outputPerMillion)
+        ? normalizeInverseValue(
+            model.pricing.outputPerMillion,
+            minPrice,
+            maxPrice,
+          )
+        : 0;
     const contextScore = normalizeValue(model.contextLength, minContext, maxContext);
 
     const weighted =
-      speedScore * weights.speed +
-      priceScore * weights.price +
-      contextScore * weights.context;
+      speedScore * normalizedWeights.speed +
+      priceScore * normalizedWeights.price +
+      contextScore * normalizedWeights.context;
 
     const task = taskBonus(model, options.task);
     const reasons = [
-      `speed ${(speedScore * 100).toFixed(0)}%`,
-      `price ${(priceScore * 100).toFixed(0)}%`,
+      hasSpeedData
+        ? `speed ${(speedScore * 100).toFixed(0)}%`
+        : 'speed unavailable',
+      hasPriceData && isKnownPrice(model.pricing.outputPerMillion)
+        ? `price ${(priceScore * 100).toFixed(0)}%`
+        : 'price unavailable',
       `context ${(contextScore * 100).toFixed(0)}%`,
       ...task.reasons,
     ];
@@ -340,14 +395,11 @@ export function pickModelsFromRecords(
 }
 
 export async function loadSnapshot(): Promise<ModelSnapshot> {
-  const primary = await readSnapshotFile(FULL_SNAPSHOT_PATH);
-  if (primary) {
-    return primary;
-  }
-
-  const fallback = await readSnapshotFile(FALLBACK_SNAPSHOT_PATH);
-  if (fallback) {
-    return fallback;
+  for (const path of await snapshotCandidates()) {
+    const snapshot = await readSnapshotFile(path);
+    if (snapshot) {
+      return snapshot;
+    }
   }
 
   return {

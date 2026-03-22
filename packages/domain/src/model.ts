@@ -10,7 +10,7 @@ export interface OpenRouterModel {
     request?: string;
   };
   top_provider: {
-    context_length: number;
+    context_length: number | null;
     max_completion_tokens: number | null;
     is_moderated: boolean;
   };

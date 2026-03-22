@@ -128,4 +128,52 @@ describe('pickModelsFromRecords', () => {
       true,
     );
   });
+
+  test('does not fabricate speed scores when speed data is unavailable', () => {
+    const noSpeedModels = models.map((model) => ({
+      ...model,
+      speed: {
+        providers: [],
+        bestThroughput: null,
+        avgThroughput: null,
+      },
+    }));
+
+    const picks = pickModelsFromRecords(noSpeedModels, {
+      task: 'coding',
+      limit: 2,
+    });
+
+    expect(picks).toHaveLength(2);
+    expect(picks[0]?.reasons).toContain('speed unavailable');
+    expect(picks[0]?.reasons.some((reason) => reason.includes('speed 100%'))).toBe(
+      false,
+    );
+  });
+
+  test('treats unknown negative prices as unavailable instead of cheapest', () => {
+    const withUnknownPrice = [
+      ...models,
+      createModel({
+        id: 'openrouter/auto',
+        name: 'Auto',
+        pricing: { inputPerMillion: -1_000_000, outputPerMillion: -1_000_000 },
+        speed: { providers: [], bestThroughput: 10, avgThroughput: 10 },
+      }),
+    ];
+
+    const picks = pickModelsFromRecords(withUnknownPrice, {
+      task: 'budget',
+      weights: {
+        speed: 0,
+        price: 1,
+        context: 0,
+      },
+      limit: 4,
+    });
+
+    expect(picks[0]?.model.id).not.toBe('openrouter/auto');
+    const autoPick = picks.find((entry) => entry.model.id === 'openrouter/auto');
+    expect(autoPick?.reasons).toContain('price unavailable');
+  });
 });
