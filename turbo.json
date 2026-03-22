@@ -4,6 +4,10 @@
     "build": {
       "dependsOn": [
         "^build"
+      ],
+      "outputs": [
+        "dist/**",
+        "apps/cli/data/**"
       ]
     },
     "dev": {
@@ -24,11 +28,31 @@
         "^test"
       ]
     },
+    "sync": {
+      "cache": false
+    },
     "refresh": {
       "cache": false
     },
     "fetch:models": {
       "cache": false
+    },
+    "build:bin": {
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "dist/model-picker"
+      ]
+    },
+    "prepare:package": {
+      "dependsOn": [
+        "build"
+      ],
+      "outputs": [
+        "apps/cli/data/**",
+        "dist/model-picker"
+      ]
     },
     "scrape:speed": {
       "cache": false

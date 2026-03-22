@@ -1,23 +1,54 @@
 {
-  "name": "@model-picker/cli",
+  "name": "model-picker",
   "type": "module",
   "version": "0.1.0",
-  "private": true,
-  "bin": {
-    "mp": "./dist/index.js",
-    "model-picker": "./dist/index.js"
+  "description": "Compare frontier AI models across price, speed, and context from the terminal.",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/byhow/model-picker#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/byhow/model-picker.git",
+    "directory": "apps/cli"
   },
+  "bugs": {
+    "url": "https://github.com/byhow/model-picker/issues"
+  },
+  "keywords": [
+    "ai",
+    "llm",
+    "models",
+    "cli",
+    "comparison",
+    "openrouter"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "model-picker": "./dist/index.js",
+    "mp": "./dist/index.js"
+  },
+  "files": [
+    "dist/index.js",
+    "data",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "dev": "bun run src/index.ts",
-    "build": "bun build src/index.ts --outdir dist --target bun",
+    "build": "bun build src/index.ts --outdir dist --target node",
+    "build:bin": "bun build src/index.ts --compile --outfile dist/model-picker",
+    "prepare:package": "bun run ../../scripts/prepare-cli-package.ts",
     "typecheck": "bunx tsc --noEmit",
-    "lint": "bunx tsc --noEmit"
+    "lint": "bunx tsc --noEmit",
+    "test": "bun test",
+    "prepack": "bun run build && bun run prepare:package"
   },
   "dependencies": {
     "@clack/prompts": "^0.8.2",
-    "@model-picker/catalog": "workspace:*",
-    "@model-picker/domain": "workspace:*",
-    "@model-picker/presenters": "workspace:*",
-    "cac": "^6.7.14"
+    "@mendable/firecrawl-js": "^4.16.0",
+    "cac": "^6.7.14",
+    "cli-table3": "^0.6.5",
+    "picocolors": "^1.1.1"
   }
 }
