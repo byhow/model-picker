@@ -21,7 +21,7 @@ export async function runCli(
     ...options.env,
   };
 
-  const bunPath = Bun.which('bun') ?? process.execPath;
+  const bunPath = process.execPath;
 
   const proc = Bun.spawn({
     cmd: [bunPath, CLI_ENTRY, ...args],
