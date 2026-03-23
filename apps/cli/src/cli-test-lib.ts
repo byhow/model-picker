@@ -40,13 +40,23 @@ export async function runCli(
     
     for (const path of possiblePaths) {
       const exists = existsSync(path);
-      console.error(`[runCli] ${path}: ${exists ? 'EXISTS' : 'NOT FOUND'}`);
+      const stats = exists ? await import('node:fs').then(m => m.statSync(path)) : null;
+      console.error(`[runCli] ${path}: ${exists ? 'EXISTS' : 'NOT FOUND'}${stats ? ` (isFile: ${stats.isFile()}, isSymbolicLink: ${stats.isSymbolicLink()}, mode: ${stats.mode})` : ''}`);
       if (exists) {
         bunPath = path;
         break;
       }
     }
     console.error(`[runCli] Selected bun path: ${bunPath}`);
+    
+    // Try to read the file to ensure it's really there
+    try {
+      const { readFileSync } = await import('node:fs');
+      const content = readFileSync(bunPath);
+      console.error(`[runCli] Successfully read ${content.length} bytes from ${bunPath}`);
+    } catch (e) {
+      console.error(`[runCli] Failed to read ${bunPath}:`, e);
+    }
   }
 
   const proc = Bun.spawn({
