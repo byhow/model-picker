@@ -21,8 +21,13 @@ export async function runCli(
     ...options.env,
   };
 
+  // Use explicit bun path - in CI use ~/.bun/bin/bun, otherwise use 'bun'
+  const bunPath = process.env.CI === 'true' || process.env.GITHUB_ACTIONS === 'true' 
+    ? `${process.env.HOME}/.bun/bin/bun` 
+    : 'bun';
+
   const proc = Bun.spawn({
-    cmd: ['bun', CLI_ENTRY, ...args],
+    cmd: [bunPath, CLI_ENTRY, ...args],
     cwd: options.cwd,
     env,
     stdout: 'pipe',
