@@ -4,6 +4,7 @@ import {
   pickModelsFromRecords,
   sortModels,
   type PickModelsOptions,
+  DEFAULT_WEIGHTS,
 } from './index';
 import type { ModelRecord } from '@model-picker/domain';
 
@@ -212,5 +213,196 @@ describe('pickModelsFromRecords', () => {
     expect(picks[0]?.model.id).not.toBe('openrouter/auto');
     const autoPick = picks.find((entry) => entry.model.id === 'openrouter/auto');
     expect(autoPick?.reasons).toContain('price unavailable');
+  });
+
+  test('returns empty array for empty models input', () => {
+    expect(pickModelsFromRecords([])).toEqual([]);
+  });
+
+  test('returns empty array when filter excludes all models', () => {
+    const picks = pickModelsFromRecords(models, { filter: 'nonexistent-model-xyz' });
+    expect(picks).toEqual([]);
+  });
+
+  test('task=vision boosts models with image input', () => {
+    const picks = pickModelsFromRecords(models, {
+      task: 'vision',
+      limit: 3,
+    });
+
+    const visionPick = picks.find((entry) => entry.model.id === 'google/vision-budget');
+    expect(visionPick?.reasons).toContain('vision input support');
+  });
+
+  test('task=fast boosts high-throughput models', () => {
+    const picks = pickModelsFromRecords(models, {
+      task: 'fast',
+      limit: 3,
+    });
+
+    const fastPick = picks.find((entry) => entry.model.id === 'openai/code-fast');
+    expect(fastPick?.reasons).toContain('high token throughput');
+  });
+
+  test('task=long-context boosts models with high context window', () => {
+    const picks = pickModelsFromRecords(models, {
+      task: 'long-context',
+      limit: 3,
+    });
+
+    const longContextPick = picks.find((entry) => entry.model.id === 'anthropic/long-context');
+    expect(longContextPick?.reasons).toContain('high context window');
+  });
+
+  test('normalizes weights when total is zero', () => {
+    const picks = pickModelsFromRecords(models, {
+      weights: { speed: 0, price: 0, context: 0 },
+      limit: 1,
+    });
+
+    expect(picks.length).toBeGreaterThan(0);
+  });
+
+  test('handles models with null throughput', () => {
+    const modelsWithNullSpeed = [
+      createModel({
+        id: 'test/model',
+        speed: { providers: [], bestThroughput: null, avgThroughput: null },
+      }),
+      createModel({
+        id: 'test/model-2',
+        speed: { providers: [], bestThroughput: null, avgThroughput: null },
+      }),
+    ];
+
+    const picks = pickModelsFromRecords(modelsWithNullSpeed, { limit: 1 });
+    expect(picks).toHaveLength(1);
+    expect(picks[0]).toBeDefined();
+  });
+});
+
+describe('catalog filtering advanced', () => {
+  test('filters by id= prefix', () => {
+    expect(filterModels(models, 'id=code').map((model) => model.id)).toEqual([
+      'openai/code-fast',
+    ]);
+  });
+
+  test('filters by provider= prefix', () => {
+    expect(filterModels(models, 'provider=google').map((model) => model.id)).toEqual([
+      'google/vision-budget',
+    ]);
+  });
+
+  test('filters by unmoderated quick filter', () => {
+    expect(filterModels(models, 'unmoderated').map((model) => model.id)).toEqual([
+      'openai/code-fast',
+      'google/vision-budget',
+    ]);
+  });
+
+  test('filters by code quick filter', () => {
+    const codeModels = filterModels(models, 'code');
+    expect(codeModels.map((model) => model.id)).toContain('openai/code-fast');
+  });
+
+  test('filters by cheap alias', () => {
+    expect(filterModels(models, 'cheap').map((model) => model.id)).toEqual([
+      'google/vision-budget',
+    ]);
+  });
+
+  test('filters by numeric price comparison', () => {
+    expect(filterModels(models, 'price>5').map((model) => model.id)).toEqual([
+      'anthropic/long-context',
+    ]);
+    expect(filterModels(models, 'price<=3').map((model) => model.id)).toEqual([
+      'openai/code-fast',
+      'google/vision-budget',
+    ]);
+    expect(filterModels(models, 'price=0.9').map((model) => model.id)).toEqual([
+      'google/vision-budget',
+    ]);
+  });
+
+  test('filters by numeric speed comparison', () => {
+    expect(filterModels(models, 'speed>=90').map((model) => model.id)).toEqual([
+      'openai/code-fast',
+    ]);
+    expect(filterModels(models, 'speed<20').map((model) => model.id)).toEqual([
+      'anthropic/long-context',
+    ]);
+  });
+
+  test('filters by numeric context comparison', () => {
+    expect(filterModels(models, 'context>=1000000').map((model) => model.id)).toEqual([
+      'google/vision-budget',
+      'anthropic/long-context',
+    ]);
+    expect(filterModels(models, 'context<100000').length).toBe(0);
+  });
+
+  test('returns all models for empty filter', () => {
+    expect(filterModels(models, '').length).toBe(3);
+    expect(filterModels(models, '   ').length).toBe(3);
+    expect(filterModels(models, undefined).length).toBe(3);
+  });
+
+  test('combines multiple filters with AND logic', () => {
+    expect(filterModels(models, 'vision,price<1,fast').length).toBe(0);
+    expect(filterModels(models, 'vision,price<5').map((model) => model.id)).toEqual([
+      'google/vision-budget',
+    ]);
+  });
+
+  test('handles whitespace in filter tokens', () => {
+    expect(filterModels(models, '  vision  ,  budget  ').map((model) => model.id)).toEqual([
+      'google/vision-budget',
+    ]);
+  });
+
+  test('filters by text search in description', () => {
+    expect(filterModels(models, 'assistant').map((model) => model.id)).toEqual([
+      'anthropic/long-context',
+    ]);
+  });
+
+  test('filters by text search in name', () => {
+    expect(filterModels(models, 'Context').map((model) => model.id)).toEqual([
+      'anthropic/long-context',
+    ]);
+  });
+});
+
+describe('catalog sorting advanced', () => {
+  test('sorts by context length descending', () => {
+    const byContext = sortModels(models, 'context').map((model) => model.id);
+    expect(byContext).toEqual([
+      'anthropic/long-context',
+      'google/vision-budget',
+      'openai/code-fast',
+    ]);
+  });
+
+  test('sorts by name alphabetically', () => {
+    const byName = sortModels(models, 'name').map((model) => model.id);
+    expect(byName).toEqual([
+      'openai/code-fast',
+      'anthropic/long-context',
+      'google/vision-budget',
+    ]);
+  });
+
+  test('handles models with infinite price (unknown)', () => {
+    const modelsWithInfinitePrice = [
+      ...models,
+      createModel({
+        id: 'unknown/pricing',
+        pricing: { inputPerMillion: Number.POSITIVE_INFINITY, outputPerMillion: Number.POSITIVE_INFINITY },
+      }),
+    ];
+
+    const byPrice = sortModels(modelsWithInfinitePrice, 'price');
+    expect(byPrice[byPrice.length - 1]?.id).toBe('unknown/pricing');
   });
 });

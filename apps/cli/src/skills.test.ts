@@ -388,4 +388,359 @@ description: Invalid skill naming.
       expect(result.stderr).toContain('Provide at least one skill via --skill (or use --all).');
     });
   });
+
+  test('supports --all to remove all installed skills', async () => {
+    await withLocalSkillsFixture(async ({ dir, source, env }) => {
+      const install = await runCli(
+        [
+          'skills',
+          'add',
+          source,
+          '--all',
+          '--agent',
+          'codex',
+          '--copy',
+        ],
+        {
+          env,
+          cwd: dir,
+        },
+      );
+      expect(install.exitCode).toBe(0);
+
+      const remove = await runCli(['skills', 'remove', '--all'], {
+        env,
+        cwd: dir,
+      });
+
+      expect(remove.exitCode).toBe(0);
+      expect(remove.stdout).toContain('Removed 2 skill(s)');
+
+      const skillList = await runCli(['skills', 'list', '--json'], {
+        env,
+        cwd: dir,
+      });
+      expect(skillList.exitCode).toBe(0);
+      const payload = JSON.parse(skillList.stdout) as {
+        items: Array<{ record: { skill: string } }>;
+      };
+      expect(payload.items.length).toBe(0);
+    });
+  });
+
+  test('rejects ambiguous selection when both --all and --skill provided on remove', async () => {
+    await withLocalSkillsFixture(async ({ source, env, dir }) => {
+      const install = await runCli(
+        ['skills', 'add', source, '--skill', 'react-best-practices', '--agent', 'codex'],
+        { env, cwd: dir },
+      );
+      expect(install.exitCode).toBe(0);
+
+      const result = await runCli(
+        ['skills', 'remove', '--all', '--skill', 'react-best-practices'],
+        { env, cwd: dir },
+      );
+
+      expect(result.exitCode).toBe(1);
+      expect(result.stderr).toContain('Use either --all or --skill, not both.');
+    });
+  });
+
+  test('supports global remove with --global flag', async () => {
+    await withLocalSkillsFixture(async ({ dir, source, env }) => {
+      const install = await runCli(
+        [
+          'skills',
+          'add',
+          source,
+          '--skill',
+          'react-best-practices',
+          '--agent',
+          'codex',
+          '--global',
+          '--copy',
+        ],
+        {
+          env,
+          cwd: dir,
+        },
+      );
+      expect(install.exitCode).toBe(0);
+
+      const globalList = await runCli(['skills', 'list', '--global', '--json'], {
+        env,
+        cwd: dir,
+      });
+      expect(globalList.exitCode).toBe(0);
+      const beforePayload = JSON.parse(globalList.stdout) as {
+        items: Array<{ record: { skill: string } }>;
+      };
+      expect(beforePayload.items.length).toBe(1);
+
+      const remove = await runCli(
+        ['skills', 'remove', '--skill', 'react-best-practices', '--global'],
+        {
+          env,
+          cwd: dir,
+        },
+      );
+
+      expect(remove.exitCode).toBe(0);
+      expect(remove.stdout).toContain('global scope');
+
+      const afterList = await runCli(['skills', 'list', '--global', '--json'], {
+        env,
+        cwd: dir,
+      });
+      expect(afterList.exitCode).toBe(0);
+      const afterPayload = JSON.parse(afterList.stdout) as {
+        items: Array<{ record: { skill: string } }>;
+      };
+      expect(afterPayload.items.length).toBe(0);
+    });
+  });
+
+  test('allows remote install with --yes flag in non-interactive mode', async () => {
+    await withTempDir(async (tempDir) => {
+      const result = await runCli(
+        [
+          'skills',
+          'add',
+          'vercel-labs/agent-skills',
+          '--skill',
+          'react-best-practices',
+          '--agent',
+          'amp',
+          '--yes',
+          '--list',
+        ],
+        {
+          env: {
+            MODEL_PICKER_CONFIG_DIR: join(tempDir, 'config'),
+            HOME: tempDir,
+          },
+          cwd: tempDir,
+        },
+      );
+
+      // Should either succeed (if remote source available) or fail with a different error
+      // But it should NOT fail with "Refusing remote install"
+      expect(result.stderr).not.toContain('Refusing remote install');
+    });
+  });
+
+  test('stores sourceCommit and sourceRef in manifest for local git sources', async () => {
+    await withTempDir(async (tempDir) => {
+      const skillsDir = join(tempDir, 'skills-repo', 'my-skill');
+      await mkdir(skillsDir, { recursive: true });
+      await Bun.write(
+        join(skillsDir, 'SKILL.md'),
+        `---
+name: my-skill
+description: A test skill with commit tracking.
+---
+
+# My Skill
+`,
+      );
+
+      // Initialize git repo
+      const initResult = await new Promise<{ code: number; stdout: string; stderr: string }>(
+        (resolve) => {
+          const proc = Bun.spawn({
+            cmd: ['git', 'init'],
+            cwd: join(tempDir, 'skills-repo'),
+            stdout: 'pipe',
+            stderr: 'pipe',
+          });
+          Promise.all([
+            new Response(proc.stdout).text(),
+            new Response(proc.stderr).text(),
+          ]).then(([stdout, stderr]) => {
+            proc.exited.then((code) => resolve({ code, stdout, stderr }));
+          });
+        },
+      );
+      expect(initResult.code).toBe(0);
+
+      // Configure git user
+      await new Promise<void>((resolve) => {
+        Bun.spawn({
+          cmd: ['git', 'config', 'user.email', 'test@test.com'],
+          cwd: join(tempDir, 'skills-repo'),
+        }).exited.then(() => resolve());
+      });
+      await new Promise<void>((resolve) => {
+        Bun.spawn({
+          cmd: ['git', 'config', 'user.name', 'Test'],
+          cwd: join(tempDir, 'skills-repo'),
+        }).exited.then(() => resolve());
+      });
+
+      // Add and commit
+      await new Promise<void>((resolve) => {
+        Bun.spawn({
+          cmd: ['git', 'add', '.'],
+          cwd: join(tempDir, 'skills-repo'),
+        }).exited.then(() => resolve());
+      });
+      await new Promise<void>((resolve) => {
+        Bun.spawn({
+          cmd: ['git', 'commit', '-m', 'Initial commit'],
+          cwd: join(tempDir, 'skills-repo'),
+        }).exited.then(() => resolve());
+      });
+
+      const install = await runCli(
+        [
+          'skills',
+          'add',
+          join(tempDir, 'skills-repo'),
+          '--skill',
+          'my-skill',
+          '--agent',
+          'codex',
+          '--copy',
+        ],
+        {
+          env: {
+            MODEL_PICKER_CONFIG_DIR: join(tempDir, 'config'),
+            HOME: tempDir,
+          },
+          cwd: tempDir,
+        },
+      );
+
+      expect(install.exitCode).toBe(0);
+
+      const manifestPath = join(tempDir, '.model-picker', 'skills', 'manifest.json');
+      const raw = await readFile(manifestPath, 'utf8');
+      const manifest = JSON.parse(raw) as {
+        installs: Array<{
+          skill: string;
+          sourceType?: string;
+          sourceCommit?: string;
+          sourceRef?: string;
+        }>;
+      };
+
+      const entry = manifest.installs.find((e) => e.skill === 'my-skill');
+      expect(entry).toBeDefined();
+      expect(entry?.sourceType).toBe('local');
+      expect(entry?.sourceCommit).toBeDefined();
+      expect(entry?.sourceCommit?.length).toBeGreaterThan(0);
+    });
+  });
+
+  test('supports multiple comma-separated skills in --skill flag', async () => {
+    await withLocalSkillsFixture(async ({ dir, source, env }) => {
+      const result = await runCli(
+        [
+          'skills',
+          'add',
+          source,
+          '--skill',
+          'react-best-practices,web-design-guidelines',
+          '--agent',
+          'codex',
+        ],
+        {
+          env,
+          cwd: dir,
+        },
+      );
+
+      expect(result.exitCode).toBe(0);
+      expect(result.stdout).toContain('Installed 2 skill(s)');
+
+      const skillList = await runCli(['skills', 'list', '--json'], {
+        env,
+        cwd: dir,
+      });
+      expect(skillList.exitCode).toBe(0);
+      const payload = JSON.parse(skillList.stdout) as {
+        items: Array<{ record: { skill: string } }>;
+      };
+      expect(payload.items.some((entry) => entry.record.skill === 'react-best-practices')).toBe(true);
+      expect(payload.items.some((entry) => entry.record.skill === 'web-design-guidelines')).toBe(true);
+    });
+  });
+
+  test('supports multiple comma-separated agents in --agent flag', async () => {
+    await withLocalSkillsFixture(async ({ dir, source, env }) => {
+      const result = await runCli(
+        [
+          'skills',
+          'add',
+          source,
+          '--skill',
+          'react-best-practices',
+          '--agent',
+          'amp,opencode,codex',
+        ],
+        {
+          env,
+          cwd: dir,
+        },
+      );
+
+      expect(result.exitCode).toBe(0);
+
+      const skillList = await runCli(['skills', 'list', '--json'], {
+        env,
+        cwd: dir,
+      });
+      expect(skillList.exitCode).toBe(0);
+      const payload = JSON.parse(skillList.stdout) as {
+        items: Array<{ record: { skill: string; agents: string[] } }>;
+      };
+      const entry = payload.items.find((e) => e.record.skill === 'react-best-practices');
+      expect(entry).toBeDefined();
+      expect(entry?.record.agents).toContain('amp');
+      expect(entry?.record.agents).toContain('opencode');
+      expect(entry?.record.agents).toContain('codex');
+    });
+  });
+
+  test('removes non-existent skill returns appropriate error', async () => {
+    await withLocalSkillsFixture(async ({ env, dir }) => {
+      const result = await runCli(['skills', 'remove', '--skill', 'non-existent-skill'], {
+        env,
+        cwd: dir,
+      });
+
+      expect(result.exitCode).toBe(1);
+      expect(result.stderr).toContain('No installed skills matched: non-existent-skill');
+    });
+  });
+
+  test('lists both project and global scoped skills by default', async () => {
+    await withLocalSkillsFixture(async ({ dir, source, env }) => {
+      // Install a project-scoped skill
+      await runCli(
+        ['skills', 'add', source, '--skill', 'react-best-practices', '--agent', 'amp'],
+        { env, cwd: dir },
+      );
+
+      // Install a global-scoped skill
+      await runCli(
+        ['skills', 'add', source, '--skill', 'web-design-guidelines', '--agent', 'amp', '--global'],
+        { env, cwd: dir },
+      );
+
+      const list = await runCli(['skills', 'list', '--json'], {
+        env,
+        cwd: dir,
+      });
+
+      expect(list.exitCode).toBe(0);
+      const payload = JSON.parse(list.stdout) as {
+        items: Array<{ scope: string; record: { skill: string } }>;
+      };
+
+      expect(payload.items.length).toBe(2);
+      expect(payload.items.some((e) => e.scope === 'project' && e.record.skill === 'react-best-practices')).toBe(true);
+      expect(payload.items.some((e) => e.scope === 'global' && e.record.skill === 'web-design-guidelines')).toBe(true);
+    });
+  });
 });
