@@ -1,9 +1,31 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { homedir } from 'node:os';
 import { join } from 'node:path';
+import type {
+  SkillInstallMethod,
+  SkillInstallScope,
+  SupportedAgent,
+} from './skills';
 
 export interface ModelPickerConfig {
   firecrawlApiKey?: string;
+  defaults?: {
+    agent?: SupportedAgent;
+    pickTask?:
+      | 'agent'
+      | 'coding'
+      | 'review'
+      | 'budget'
+      | 'fast'
+      | 'long-context'
+      | 'vision';
+    installScope?: SkillInstallScope;
+    installMethod?: SkillInstallMethod;
+  };
+  skills?: {
+    preferredAgents?: SupportedAgent[];
+    lastUsedSource?: string;
+  };
 }
 
 export type FirecrawlCredentialSource = 'env' | 'config' | 'missing';

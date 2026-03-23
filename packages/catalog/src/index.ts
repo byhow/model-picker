@@ -5,6 +5,7 @@ import {
   resolveWorkspaceRoot,
   type ModelRecord,
   type ModelSnapshot,
+  type SupportedAgent,
 } from '@model-picker/domain';
 
 const PACKAGE_ROOT = resolvePackageRoot(import.meta.url);
@@ -73,6 +74,7 @@ export interface ScoreWeights {
 
 export interface PickModelsOptions extends ListModelsOptions {
   task?: string;
+  agent?: SupportedAgent;
   weights?: Partial<ScoreWeights>;
 }
 
@@ -276,21 +278,79 @@ function taskBonus(model: ModelRecord, task?: string): { bonus: number; reasons:
   let bonus = 0;
 
   const description = `${model.description} ${model.architecture.modality} ${model.id}`.toLowerCase();
+  const outputModalities = model.architecture.outputModalities.map((modality) =>
+    modality.toLowerCase(),
+  );
   const supportsVision = model.architecture.inputModalities
     .map((modality) => modality.toLowerCase())
     .includes('image');
+  const supportsTextOutput = outputModalities.includes('text');
+  const codingSignals = ['code', 'coding', 'program', 'developer', 'agent'];
+  const hasCodingSignal = codingSignals.some((signal) => description.includes(signal));
   const isFast = (model.speed.bestThroughput ?? 0) >= FAST_THRESHOLD;
   const isBudget = isKnownPrice(model.pricing.outputPerMillion) && model.pricing.outputPerMillion <= BUDGET_THRESHOLD;
   const hasLongContext = model.contextLength >= LONG_CONTEXT_THRESHOLD;
+  const hasVeryLongContext = model.contextLength >= 128_000;
+  const hasLargeCompletionWindow = (model.topProvider.maxCompletionTokens ?? 0) >= 16_000;
 
   if (normalizedTask === 'coding' || normalizedTask === 'code') {
-    if (description.includes('code') || description.includes('program')) {
+    if (hasCodingSignal) {
       bonus += 0.15;
       reasons.push('coding-oriented metadata');
+    }
+    if (supportsTextOutput) {
+      bonus += 0.05;
+      reasons.push('text output support');
     }
     if (isFast) {
       bonus += 0.05;
       reasons.push('fast throughput');
+    }
+  }
+
+  if (normalizedTask === 'agent') {
+    if (hasCodingSignal) {
+      bonus += 0.12;
+      reasons.push('good fit for coding agents');
+    }
+    if (supportsTextOutput) {
+      bonus += 0.05;
+      reasons.push('text output support');
+    }
+    if (hasVeryLongContext) {
+      bonus += 0.08;
+      reasons.push('long context window');
+    }
+    if (hasLargeCompletionWindow) {
+      bonus += 0.08;
+      reasons.push('large max completion window');
+    }
+    if (isFast) {
+      bonus += 0.05;
+      reasons.push('fast throughput');
+    }
+    if (model.topProvider.isModerated) {
+      bonus += 0.02;
+      reasons.push('moderated provider');
+    }
+  }
+
+  if (normalizedTask === 'review') {
+    if (hasVeryLongContext) {
+      bonus += 0.1;
+      reasons.push('long context window');
+    }
+    if (supportsTextOutput) {
+      bonus += 0.05;
+      reasons.push('text output support');
+    }
+    if (model.topProvider.isModerated) {
+      bonus += 0.05;
+      reasons.push('moderated provider');
+    }
+    if (hasLargeCompletionWindow) {
+      bonus += 0.05;
+      reasons.push('large max completion window');
     }
   }
 

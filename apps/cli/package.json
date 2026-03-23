@@ -49,6 +49,12 @@
     "@mendable/firecrawl-js": "^4.16.0",
     "cac": "^6.7.14",
     "cli-table3": "^0.6.5",
-    "picocolors": "^1.1.1"
+    "picocolors": "^1.1.1",
+    "yaml": "^2.8.2"
+  },
+  "devDependencies": {
+    "@model-picker/catalog": "workspace:*",
+    "@model-picker/domain": "workspace:*",
+    "@model-picker/presenters": "workspace:*"
   }
 }

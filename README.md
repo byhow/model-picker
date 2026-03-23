@@ -104,8 +104,64 @@ model-picker top --input-modalities text,image --output-modalities image --max-p
 model-picker search claude --categories programming --order most-popular --zdr
 model-picker get openai/gpt-5.4
 model-picker compare anthropic/claude-opus-4.6 openai/gpt-5.4
+model-picker pick --task agent --agent opencode --limit 3
+model-picker pick --agent amp --json
+model-picker skills add vercel-labs/agent-skills --list
+model-picker skills add vercel-labs/agent-skills --skill react-best-practices --agent opencode --agent amp
+model-picker skills remove --skill react-best-practices --agent amp
+model-picker skills list
 model-picker export --format markdown --limit 10 --output ./models.md
 ```
+
+## Agent-First Picks
+
+`pick` now supports agent-oriented recommendations and machine-readable output.
+
+```bash
+model-picker pick --task agent --agent opencode --limit 5
+model-picker pick --task review --agent claude-code --limit 5
+model-picker pick --agent amp --json
+```
+
+Notes:
+
+- `--agent` accepts: `amp`, `opencode`, `claude-code`, `codex`, `cursor`.
+- When `--agent` is set and `--task` is omitted, `pick` defaults to `--task agent`.
+- Use `--json` to pipe picks into scripts and tooling.
+
+## Skill Installation
+
+`model-picker` can install Agent Skills for supported coding-agent CLIs.
+
+```bash
+model-picker skills add vercel-labs/agent-skills --list
+model-picker skills add vercel-labs/agent-skills --skill react-best-practices --agent opencode --agent amp
+model-picker skills add vercel-labs/agent-skills --all --agent opencode --yes
+model-picker skills add ./my-local-skills --agent claude-code --copy
+model-picker skills remove --skill react-best-practices --agent amp
+model-picker skills remove --all
+model-picker skills list
+model-picker skills list --global
+```
+
+Supported source formats:
+
+- GitHub shorthand: `owner/repo`
+- GitHub URL: `https://github.com/owner/repo`
+- GitHub tree URL: `https://github.com/owner/repo/tree/main/skills/some-skill`
+- Generic git URL: `git@github.com:owner/repo.git`
+- Local directory path
+
+Remote install safety:
+
+- In non-interactive sessions, remote installs require `--yes`.
+- Use `--all` to install all discovered skills when you trust the source.
+
+Supported install targets:
+
+- `amp`, `opencode`, `codex`, and `cursor` project installs map to `.agents/skills`.
+- `claude-code` project installs map to `.claude/skills`.
+- `--global` installs use each agent's global skills directory.
 
 ## Live OpenRouter CLI filters
 

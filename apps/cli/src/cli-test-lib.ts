@@ -1,4 +1,4 @@
-import { mkdtemp, rm, writeFile } from 'node:fs/promises';
+import { mkdir, mkdtemp, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { basename, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -484,6 +484,75 @@ export async function withOpenRouterFixtures<T>(
         MODEL_PICKER_OPENROUTER_SEARCH_FIXTURE: searchFixture,
         MODEL_PICKER_OPENROUTER_MODEL_FIXTURE: modelFixture,
         MODEL_PICKER_SNAPSHOT_FIXTURE: snapshotFixture,
+      },
+    });
+  });
+}
+
+export interface SkillsFixtureSet {
+  dir: string;
+  source: string;
+  env: Record<string, string>;
+}
+
+const REACT_BEST_PRACTICES_SKILL = `---
+name: react-best-practices
+description: React and Next.js performance optimization guidelines. Use for React code reviews and implementation.
+---
+
+# React Best Practices
+
+Use this skill when working on React performance and architecture.
+`;
+
+const WEB_DESIGN_SKILL = `---
+name: web-design-guidelines
+description: Review UI code for accessibility, performance, and UX concerns. Use for frontend audits.
+---
+
+# Web Design Guidelines
+
+Use this skill when reviewing user interface quality.
+`;
+
+const INTERNAL_SKILL = `---
+name: internal-only-skill
+description: Internal-only checks for unpublished workflows.
+metadata:
+  internal: true
+---
+
+# Internal Skill
+
+This skill should be hidden unless INSTALL_INTERNAL_SKILLS is enabled.
+`;
+
+export async function withLocalSkillsFixture<T>(
+  fn: (fixtures: SkillsFixtureSet) => Promise<T>,
+): Promise<T> {
+  return withTempDir(async (tempDir) => {
+    const sourceDir = join(tempDir, 'skills-source');
+    const skillsDir = join(sourceDir, 'skills');
+    const reactDir = join(skillsDir, 'react-best-practices');
+    const webDir = join(skillsDir, 'web-design-guidelines');
+    const internalDir = join(skillsDir, 'internal-only-skill');
+    const configDir = join(tempDir, 'config');
+
+    await mkdir(reactDir, { recursive: true });
+    await mkdir(webDir, { recursive: true });
+    await mkdir(internalDir, { recursive: true });
+    await mkdir(configDir, { recursive: true });
+
+    await Bun.write(join(reactDir, 'SKILL.md'), REACT_BEST_PRACTICES_SKILL);
+    await Bun.write(join(webDir, 'SKILL.md'), WEB_DESIGN_SKILL);
+    await Bun.write(join(internalDir, 'SKILL.md'), INTERNAL_SKILL);
+
+    return fn({
+      dir: tempDir,
+      source: sourceDir,
+      env: {
+        MODEL_PICKER_CONFIG_DIR: configDir,
+        HOME: tempDir,
       },
     });
   });

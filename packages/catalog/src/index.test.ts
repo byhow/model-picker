@@ -129,6 +129,43 @@ describe('pickModelsFromRecords', () => {
     );
   });
 
+  test('task=agent prefers coding-agent-friendly metadata', () => {
+    const picks = pickModelsFromRecords(models, {
+      task: 'agent',
+      weights: {
+        speed: 0.5,
+        price: 0.2,
+        context: 0.3,
+      },
+      limit: 2,
+    });
+
+    expect(picks).toHaveLength(2);
+    expect(picks[0]?.model.id).toBe('openai/code-fast');
+    expect(
+      picks[0]?.reasons.some(
+        (reason) => reason.includes('coding agents') || reason.includes('text output support'),
+      ),
+    ).toBe(true);
+  });
+
+  test('task=review boosts moderated long-context models', () => {
+    const picks = pickModelsFromRecords(models, {
+      task: 'review',
+      weights: {
+        speed: 0.1,
+        price: 0.1,
+        context: 0.8,
+      },
+      limit: 3,
+    });
+
+    expect(picks).toHaveLength(3);
+    expect(picks[0]?.model.id).toBe('anthropic/long-context');
+    expect(picks[0]?.reasons).toContain('moderated provider');
+    expect(picks[0]?.reasons).toContain('long context window');
+  });
+
   test('does not fabricate speed scores when speed data is unavailable', () => {
     const noSpeedModels = models.map((model) => ({
       ...model,

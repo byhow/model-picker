@@ -32,7 +32,21 @@ import {
   runOnboarding,
 } from './onboarding';
 import { renderTable } from './table-output';
-import { resolveModelPickerConfigPath } from './user-config';
+import {
+  loadModelPickerConfig,
+  resolveAgentSkillsDir,
+  resolveModelPickerConfigPath,
+  SUPPORTED_AGENTS,
+  type SupportedAgent,
+} from './user-config';
+import {
+  addSkillsFromSource,
+  formatSkillInstallMethod,
+  formatSkillInstallScope,
+  listInstalledSkills,
+  removeInstalledSkills,
+  type SkillsAddOptions,
+} from './skills';
 
 const cli = cac('model-picker');
 cli.version(packageJson.version);
@@ -62,6 +76,7 @@ const PUBLIC_COMMANDS = [
   'get',
   'compare',
   'pick',
+  'skills',
   'export',
   'sync',
   'tui',
@@ -683,6 +698,148 @@ function parseWeights(input?: string): Partial<ScoreWeights> {
   }
 
   return parsed;
+}
+
+function parseAgent(value: unknown): SupportedAgent | undefined {
+  if (typeof value !== 'string' || !value.trim()) {
+    return undefined;
+  }
+
+  const normalized = value.trim().toLowerCase();
+  if (SUPPORTED_AGENTS.includes(normalized as SupportedAgent)) {
+    return normalized as SupportedAgent;
+  }
+
+  throw new CliUsageError(
+    `Unsupported --agent value: ${value}. Use one of ${SUPPORTED_AGENTS.join(', ')}.`,
+    'command',
+  );
+}
+
+function parseBooleanFlag(value: unknown): boolean {
+  return Boolean(value);
+}
+
+function parseSkillsAddOptions(options: Record<string, unknown>): SkillsAddOptions {
+  return {
+    agents: options.agent as string | string[] | undefined,
+    skills: options.skill as string | string[] | undefined,
+    all: parseBooleanFlag(options.all),
+    global: parseBooleanFlag(options.global),
+    copy: parseBooleanFlag(options.copy),
+    list: parseBooleanFlag(options.list),
+    yes: parseBooleanFlag(options.yes),
+  };
+}
+
+function parseSkillsRemoveOptions(
+  options: Record<string, unknown>,
+  positionalSkill?: string,
+): {
+  skills?: string | string[];
+  agents?: string | string[];
+  global?: boolean;
+  all?: boolean;
+} {
+  const explicitSkills = options.skill as string | string[] | undefined;
+  const fallbackSkill = positionalSkill?.trim();
+  const skills = explicitSkills ?? (fallbackSkill ? fallbackSkill : undefined);
+
+  return {
+    skills,
+    agents: options.agent as string | string[] | undefined,
+    global: parseBooleanFlag(options.global),
+    all: parseBooleanFlag(options.all),
+  };
+}
+
+function printSkillsListResult(result: Awaited<ReturnType<typeof listInstalledSkills>>): void {
+  if (result.items.length === 0) {
+    console.log('No installed skills found.');
+    return;
+  }
+
+  console.log(
+    renderTable(result.items, [
+      {
+        header: 'SCOPE',
+        getValue: (entry) => formatSkillInstallScope(entry.scope),
+        minWidth: 7,
+        maxWidth: 7,
+      },
+      {
+        header: 'SKILL',
+        getValue: (entry) => entry.record.skill,
+        minWidth: 18,
+        maxWidth: 32,
+        shrinkPriority: 4,
+      },
+      {
+        header: 'AGENTS',
+        getValue: (entry) => entry.record.agents.join(', '),
+        minWidth: 12,
+        maxWidth: 24,
+      },
+      {
+        header: 'METHOD',
+        getValue: (entry) => formatSkillInstallMethod(entry.record.method),
+        minWidth: 7,
+        maxWidth: 7,
+      },
+      {
+        header: 'SOURCE',
+        getValue: (entry) => entry.record.source,
+        minWidth: 22,
+        maxWidth: 48,
+        shrinkPriority: 5,
+      },
+    ]),
+  );
+}
+
+function printSkillsAddResult(result: Awaited<ReturnType<typeof addSkillsFromSource>>): void {
+  if (result.installedRecords.length === 0) {
+    console.log(`Source: ${result.source}`);
+    console.log(`Discovered ${result.discoveredSkills.length} skill(s):`);
+    for (const skill of result.discoveredSkills) {
+      console.log(`- ${skill.name}: ${skill.description}`);
+    }
+    return;
+  }
+
+  console.log(`Source: ${result.source}`);
+  console.log(
+    `Installed ${result.selectedSkills.length} skill(s) for ${result.selectedAgents.join(', ')} (${formatSkillInstallScope(result.scope)} scope).`,
+  );
+  for (const record of result.installedRecords) {
+    console.log(`- ${record.skill} (${formatSkillInstallMethod(record.method)})`);
+  }
+  console.log(`Manifest: ${result.manifestPath}`);
+}
+
+function printSkillsRemoveResult(
+  result: Awaited<ReturnType<typeof removeInstalledSkills>>,
+): void {
+  if (result.removedRecords.length === 0) {
+    console.log('No skills were removed.');
+    return;
+  }
+
+  console.log(
+    `Removed ${result.removedRecords.length} skill(s) from ${formatSkillInstallScope(result.scope)} scope.`,
+  );
+  for (const record of result.removedRecords) {
+    const removedAgents = record.removedAgents.join(', ');
+    if (record.remainingAgents.length === 0) {
+      console.log(`- ${record.skill} (agents: ${removedAgents})`);
+      continue;
+    }
+
+    console.log(
+      `- ${record.skill} (removed: ${removedAgents}; remaining: ${record.remainingAgents.join(', ')})`,
+    );
+  }
+  console.log(`Manifest: ${result.manifestPath}`);
 }
 
 function normalizeCliText(value: string): string {
@@ -1404,18 +1561,23 @@ cli
 
 cli
   .command('pick', 'Recommend best-fit models by weighted score')
-  .option('--task <task>', 'coding|vision|budget|long-context|fast')
+  .option('--task <task>', 'agent|coding|review|vision|budget|long-context|fast')
+  .option('--agent <agent>', `Agent profile: ${SUPPORTED_AGENTS.join('|')}`)
   .option('--weights <weights>', 'speed=0.5,price=0.3,context=0.2')
   .option('--filter <filter>', 'Filter expression before scoring')
+  .option('--json', 'Return machine-readable JSON')
   .option('--limit <limit>', 'Limit recommendations', {
     default: '5',
   })
-  .example('model-picker pick --task coding --limit 5')
+  .example('model-picker pick --task agent --agent opencode --limit 5')
   .example('model-picker pick --weights speed=0.5,price=0.3,context=0.2')
   .action(async (options) => {
     try {
+      const agent = parseAgent(options.agent);
+      const effectiveTask = options.task ?? (agent ? 'agent' : undefined);
       const picks = await pickModels({
-        task: options.task,
+        task: effectiveTask,
+        agent,
         filter: options.filter,
         limit: parsePositiveInt(options.limit, 5),
         weights: parseWeights(options.weights),
@@ -1426,7 +1588,99 @@ cli
         return;
       }
 
+      if (options.json) {
+        emitJson({
+          mode: 'pick',
+          source: 'snapshot',
+          task: effectiveTask ?? null,
+          agent: agent ?? null,
+          count: picks.length,
+          models: picks,
+        });
+        return;
+      }
+
       printPickRows(picks);
+    } catch (error) {
+      handleCliActionError(error);
+    }
+  });
+
+cli
+  .command('skills <action> [source]', 'Manage agent skills')
+  .option('-a, --agent <agent>', `Target agent (${SUPPORTED_AGENTS.join('|')}); repeat or comma-separate`)
+  .option('-s, --skill <skill>', 'Target skill(s); repeat or comma-separate')
+  .option('--all', 'Target all matching skills (for add/remove)')
+  .option('-g, --global', 'Install to global scope (or only list global installs)')
+  .option('-l, --list', 'List discovered skills without installing (for add)')
+  .option('--copy', 'Copy files instead of symlinking')
+  .option('-y, --yes', 'Skip confirmation prompts')
+  .option('--json', 'Return machine-readable JSON')
+  .example('model-picker skills add vercel-labs/agent-skills --list')
+  .example('model-picker skills add vercel-labs/agent-skills --skill react-best-practices -a opencode -a amp')
+  .example('model-picker skills remove --skill react-best-practices --agent amp')
+  .example('model-picker skills list --global')
+  .action(async (action, source, options) => {
+    try {
+      const normalizedAction = String(action ?? '').trim().toLowerCase();
+
+      if (normalizedAction === 'add') {
+        const normalizedSource = typeof source === 'string' ? source.trim() : '';
+        if (!normalizedSource) {
+          throw new CliUsageError('Provide a skill source for `skills add`.', 'command', [
+            'model-picker skills add vercel-labs/agent-skills --list',
+            'model-picker skills add ./skills --all --agent opencode',
+          ]);
+        }
+
+        const result = await addSkillsFromSource(
+          normalizedSource,
+          parseSkillsAddOptions(options as Record<string, unknown>),
+        );
+
+        if (options.json) {
+          emitJson(result);
+          return;
+        }
+
+        printSkillsAddResult(result);
+        return;
+      }
+
+      if (normalizedAction === 'list') {
+        const result = await listInstalledSkills({
+          global: Boolean(options.global),
+        });
+
+        if (options.json) {
+          emitJson(result);
+          return;
+        }
+
+        printSkillsListResult(result);
+        return;
+      }
+
+      if (normalizedAction === 'remove') {
+        const positionalSkill = typeof source === 'string' ? source : undefined;
+        const result = await removeInstalledSkills(
+          parseSkillsRemoveOptions(options as Record<string, unknown>, positionalSkill),
+        );
+
+        if (options.json) {
+          emitJson(result);
+          return;
+        }
+
+        printSkillsRemoveResult(result);
+        return;
+      }
+
+      throw new CliUsageError(`Unknown skills action: ${action}. Use add, list, or remove.`, 'command', [
+        'model-picker skills add vercel-labs/agent-skills --list',
+        'model-picker skills list',
+        'model-picker skills remove --skill react-best-practices',
+      ]);
     } catch (error) {
       handleCliActionError(error);
     }
@@ -1522,32 +1776,65 @@ cli.command('tui', 'Repo-only: launch the source TUI').example('model-picker tui
   }
 });
 
-cli.command('doctor', 'Check local snapshot health').action(async () => {
-  const snapshot = await loadSnapshot();
-  const modelsWithSpeed = snapshot.models.filter(
-    (model) => (model.speed.bestThroughput ?? 0) > 0,
-  ).length;
-  const liveAccessMode = await describeOpenRouterAccessMode();
-  const firecrawlFallbackMode = await describeOpenRouterFirecrawlFallbackMode();
-  console.log(`Snapshot generated at: ${snapshot.generatedAt}`);
-  console.log(`Tracked models: ${snapshot.count}`);
-  console.log(
-    `Snapshot scope: ${snapshot.count >= 200 ? 'full catalog' : 'legacy frontier subset'}`,
-  );
-  console.log(`Models with speed data: ${modelsWithSpeed}`);
-  console.log(`Live OpenRouter access: ${liveAccessMode}`);
-  console.log(`Firecrawl fallback: ${firecrawlFallbackMode}`);
-  console.log(`Config path: ${resolveModelPickerConfigPath()}`);
-  if (modelsWithSpeed === 0) {
-    console.log('Warning: speed metrics are unavailable in the current snapshot.');
-  }
-  if (snapshot.count < 200) {
-    console.log('Tip: run `model-picker sync` from a source checkout to cache the full catalog locally.');
-  }
-  if (firecrawlFallbackMode === 'missing') {
-    console.log('Optional: run `model-picker onboard` to configure Firecrawl as a fallback source.');
-  }
-});
+cli
+  .command('doctor', 'Check local snapshot health')
+  .option('--json', 'Return machine-readable JSON')
+  .action(async (options) => {
+    const snapshot = await loadSnapshot();
+    const modelsWithSpeed = snapshot.models.filter(
+      (model) => (model.speed.bestThroughput ?? 0) > 0,
+    ).length;
+    const liveAccessMode = await describeOpenRouterAccessMode();
+    const firecrawlFallbackMode = await describeOpenRouterFirecrawlFallbackMode();
+    const config = await loadModelPickerConfig();
+    const preferredAgents = (config.skills?.preferredAgents ?? []).filter((agent): agent is SupportedAgent =>
+      SUPPORTED_AGENTS.includes(agent as SupportedAgent),
+    );
+    const projectSkillDirs = Object.fromEntries(
+      SUPPORTED_AGENTS.map((agent) => [agent, resolveAgentSkillsDir(agent, 'project')]),
+    );
+    const globalSkillDirs = Object.fromEntries(
+      SUPPORTED_AGENTS.map((agent) => [agent, resolveAgentSkillsDir(agent, 'global')]),
+    );
+
+    if (options.json) {
+      emitJson({
+        snapshotGeneratedAt: snapshot.generatedAt,
+        trackedModels: snapshot.count,
+        snapshotScope: snapshot.count >= 200 ? 'full catalog' : 'legacy frontier subset',
+        modelsWithSpeed,
+        liveAccessMode,
+        firecrawlFallbackMode,
+        configPath: resolveModelPickerConfigPath(),
+        preferredAgents,
+        projectSkillDirs,
+        globalSkillDirs,
+      });
+      return;
+    }
+
+    console.log(`Snapshot generated at: ${snapshot.generatedAt}`);
+    console.log(`Tracked models: ${snapshot.count}`);
+    console.log(
+      `Snapshot scope: ${snapshot.count >= 200 ? 'full catalog' : 'legacy frontier subset'}`,
+    );
+    console.log(`Models with speed data: ${modelsWithSpeed}`);
+    console.log(`Live OpenRouter access: ${liveAccessMode}`);
+    console.log(`Firecrawl fallback: ${firecrawlFallbackMode}`);
+    console.log(
+      `Preferred agents: ${preferredAgents.length > 0 ? preferredAgents.join(', ') : 'none configured'}`,
+    );
+    console.log(`Config path: ${resolveModelPickerConfigPath()}`);
+    if (modelsWithSpeed === 0) {
+      console.log('Warning: speed metrics are unavailable in the current snapshot.');
+    }
+    if (snapshot.count < 200) {
+      console.log('Tip: run `model-picker sync` from a source checkout to cache the full catalog locally.');
+    }
+    if (firecrawlFallbackMode === 'missing') {
+      console.log('Optional: run `model-picker onboard` to configure Firecrawl as a fallback source.');
+    }
+  });
 
 cli.help();
 await runCli();

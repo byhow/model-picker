@@ -48,7 +48,24 @@ describe('cli smoke tests', () => {
     expect(result.stdout).toContain('Snapshot scope:');
     expect(result.stdout).toContain('Live OpenRouter access:');
     expect(result.stdout).toContain('Firecrawl fallback:');
+    expect(result.stdout).toContain('Preferred agents:');
     expect(result.stdout).toContain('Config path:');
+  });
+
+  test('doctor supports machine-readable json output', async () => {
+    const result = await runCli(['doctor', '--json']);
+
+    expect(result.exitCode).toBe(0);
+    expect(JSON.parse(result.stdout)).toMatchObject({
+      snapshotGeneratedAt: expect.any(String),
+      trackedModels: expect.any(Number),
+      projectSkillDirs: expect.objectContaining({
+        amp: expect.any(String),
+      }),
+      globalSkillDirs: expect.objectContaining({
+        opencode: expect.any(String),
+      }),
+    });
   });
 
   test('onboard saves config and doctor detects config-based access', async () => {
@@ -162,6 +179,24 @@ describe('cli smoke tests', () => {
       expect(pick.exitCode).toBe(0);
       expect(pick.stdout).toMatch(PICK_HEADER);
       expect(pick.stdout).not.toContain('\t');
+    });
+  });
+
+  test('pick supports agent presets and json payloads', async () => {
+    await withOpenRouterFixtures(async ({ env }) => {
+      const result = await runCli(
+        ['pick', '--agent', 'opencode', '--limit', '2', '--json'],
+        { env },
+      );
+
+      expect(result.exitCode).toBe(0);
+      expect(JSON.parse(result.stdout)).toMatchObject({
+        mode: 'pick',
+        source: 'snapshot',
+        task: 'agent',
+        agent: 'opencode',
+        count: 2,
+      });
     });
   });
 
