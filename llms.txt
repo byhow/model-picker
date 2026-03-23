@@ -1,0 +1,200 @@
+# model-picker
+
+## Overview
+
+model-picker is a terminal-first model discovery and agent-skills tool for AI builders. Use it to compare models across price, speed, and context, pick the right model for coding agents, install skills across agent CLIs, and access docs through GitHub, a web docs UI, and llms.txt.
+
+For full documentation, see: https://model-picker.dev/docs
+For human-readable README, see: ./README.md
+
+## Install
+
+```bash
+# Run instantly — no install required
+npx model-picker <command>
+bunx model-picker <command>
+
+# Install globally
+npm i -g model-picker
+bun install -g model-picker
+
+# After install, CLI is available as `model-picker` or `mp`
+```
+
+## Data Modes
+
+model-picker has two data modes:
+
+### Live (requires FIRECRAWL_API_KEY)
+- top, search, get
+- Queries OpenRouter live via Firecrawl
+- Mirrors OpenRouter URL query parameters
+
+### Snapshot (offline, no API key required)
+- compare, pick, export, doctor
+- Uses local packaged model catalog
+- Works without network access
+
+## Commands
+
+### Discovery
+
+```bash
+# Live OpenRouter queries
+model-picker top --order most-popular --limit 10
+model-picker top --categories programming --order top-weekly --zdr
+model-picker top --input-modalities text,image --output-modalities image --max-price 0.5
+model-picker search claude --categories programming --zdr
+model-picker get openai/gpt-5.4
+
+# Local catalog queries
+model-picker compare anthropic/claude-opus-4.6 openai/gpt-5.4
+model-picker pick --task agent --agent opencode --limit 5
+model-picker pick --agent amp --json
+```
+
+### Skills
+
+```bash
+model-picker skills add owner/repo --list
+model-picker skills add owner/repo --skill my-skill --agent opencode --agent amp
+model-picker skills add owner/repo --all --agent opencode --yes
+model-picker skills add ./local/path --agent claude-code --copy
+model-picker skills remove --skill my-skill --agent opencode
+model-picker skills remove --all
+model-picker skills list
+model-picker skills list --global
+```
+
+Supported sources:
+- owner/repo (GitHub shorthand)
+- https://github.com/owner/repo
+- https://github.com/owner/repo/tree/main/skills/skill-name
+- git@github.com:owner/repo.git
+- Local directory path
+
+### Export
+
+```bash
+model-picker export --format markdown --limit 10 --output ./models.md
+model-picker export --format json --limit 20
+model-picker export --format csv
+model-picker export --format ndjson
+```
+
+### Setup and Config
+
+```bash
+model-picker onboard      # Interactive setup, saves FIRECRAWL_API_KEY to config
+model-picker configure     # Re-run configuration
+model-picker doctor        # Check config, env vars, and live access status
+```
+
+### Development
+
+```bash
+bun run dev:web    # Start web dashboard
+bun run dev:cli   # Start CLI in watch mode
+bun run dev:tui    # Start terminal UI
+bun run refresh    # Refresh local model snapshot
+bun run build     # Build all packages
+bun run test       # Run tests
+bun run typecheck  # Type check all packages
+```
+
+## Agent-Aware Picks
+
+The `pick` command recommends models tailored to specific coding agents.
+
+```bash
+model-picker pick --task agent --agent opencode --limit 5
+model-picker pick --task review --agent claude-code --limit 5
+model-picker pick --agent amp --json
+```
+
+Supported agents:
+- amp
+- opencode
+- claude-code
+- codex
+- cursor
+
+When --agent is set and --task is omitted, defaults to --task agent.
+
+## Skill Install Targets
+
+model-picker installs skills to the standard skills directory for each agent:
+
+| Agent         | Project install          | Global install              |
+|---------------|-------------------------|-----------------------------|
+| amp           | .agents/skills/         | (agent global dir)           |
+| opencode      | .agents/skills/         | (agent global dir)           |
+| codex         | .agents/skills/         | (agent global dir)           |
+| cursor        | .agents/skills/         | (agent global dir)           |
+| claude-code   | .claude/skills/         | ~/.claude/skills/           |
+
+Use --global to install to each agent's global skills directory.
+
+## OpenRouter Filter Flags
+
+These apply to live commands (top, search):
+
+- --order: most-popular | top-weekly | newest
+- --input-modalities: text, image, audio, video
+- --output-modalities: text, image, audio, embeddings
+- --categories: programming, reasoning, roleplay, image, video
+- --max-price: number (per 1M input tokens)
+- --zdr: top of DL, rate limited
+
+## Environment Variables
+
+FIRECRAWL_API_KEY    # Required for live commands (top, search, get)
+MODEL_PICKER_CONFIG_DIR  # Override config directory
+
+## Config File Location
+
+- macOS/Linux: ~/.config/model-picker/config.json
+- Windows: %APPDATA%\model-picker\config.json
+- Override: MODEL_PICKER_CONFIG_DIR env var
+
+## Architecture
+
+model-picker is a Bun + Turborepo monorepo:
+
+apps/cli/      # CAC + @clack/prompts command interface
+apps/web/     # Astro + Solid web dashboard
+apps/tui/     # OpenTUI + Solid terminal interface
+packages/catalog/     # Snapshot loading, filtering, sorting, pick
+packages/domain/     # Canonical model types and ranking
+packages/presenters/  # Cross-surface row/summary formatting
+packages/ui-core/     # Shared Solid view-model/state
+packages/ingest/      # OpenRouter fetch, speed scraping, consolidation
+
+See ./ARCHITECTURE.md for full system diagram.
+
+## Quick Reference
+
+# Discover models (live)
+npx model-picker top --order most-popular --limit 10
+npx model-picker search claude --categories programming --zdr
+
+# Compare two models (snapshot)
+npx model-picker compare anthropic/claude-opus-4.6 openai/gpt-5.4
+
+# Pick best model for an agent (snapshot)
+npx model-picker pick --agent opencode --limit 5
+
+# Install skills for an agent
+npx model-picker skills add owner/repo --agent opencode --agent amp
+
+# Export results
+npx model-picker export --format markdown --limit 10 --output ./models.md
+
+# Check setup
+npx model-picker doctor
+
+## Links
+
+Web docs: https://model-picker.dev/docs
+GitHub: https://github.com/flyingbeaver/model-picker
+npm: https://www.npmjs.com/package/model-picker
