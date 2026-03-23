@@ -21,10 +21,24 @@ export async function runCli(
     ...options.env,
   };
 
-  // Use explicit bun path - in CI use ~/.bun/bin/bun, otherwise use 'bun'
-  const bunPath = process.env.CI === 'true' || process.env.GITHUB_ACTIONS === 'true' 
-    ? `${process.env.HOME}/.bun/bin/bun` 
-    : 'bun';
+  // Find bun path - use Bun.which locally, but in CI check common locations
+  let bunPath = 'bun';
+  if (process.env.CI === 'true' || process.env.GITHUB_ACTIONS === 'true') {
+    const { existsSync } = await import('node:fs');
+    const { homedir } = await import('node:os');
+    const possiblePaths = [
+      `${homedir()}/.bun/bin/bun`,
+      '/home/runner/.bun/bin/bun',
+      '/usr/local/bin/bun',
+      '/usr/bin/bun',
+    ];
+    for (const path of possiblePaths) {
+      if (existsSync(path)) {
+        bunPath = path;
+        break;
+      }
+    }
+  }
 
   const proc = Bun.spawn({
     cmd: [bunPath, CLI_ENTRY, ...args],
