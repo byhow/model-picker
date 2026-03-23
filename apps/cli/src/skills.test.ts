@@ -3,13 +3,7 @@ import { access, lstat, mkdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { runCli, withLocalSkillsFixture, withTempDir } from './cli-test-lib';
 
-const isCI = process.env.CI === 'true' || process.env.GITHUB_ACTIONS === 'true';
-
-// Skip integration tests that spawn bun subprocess in CI
-// where bun path may not be available
-const describeCI = isCI ? describe.skip : describe;
-
-describeCI('skills command', () => {
+describe('skills command', () => {
   test('lists skills from a local source without installing', async () => {
     await withLocalSkillsFixture(async ({ source, env }) => {
       const result = await runCli(['skills', 'add', source, '--list'], { env });
