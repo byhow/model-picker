@@ -32,12 +32,21 @@ export async function runCli(
       '/usr/local/bin/bun',
       '/usr/bin/bun',
     ];
+    
+    // Debug: log paths we're checking
+    console.error('[runCli] Checking for bun in CI...');
+    console.error('[runCli] HOME:', homedir());
+    console.error('[runCli] PATH:', process.env.PATH);
+    
     for (const path of possiblePaths) {
-      if (existsSync(path)) {
+      const exists = existsSync(path);
+      console.error(`[runCli] ${path}: ${exists ? 'EXISTS' : 'NOT FOUND'}`);
+      if (exists) {
         bunPath = path;
         break;
       }
     }
+    console.error(`[runCli] Selected bun path: ${bunPath}`);
   }
 
   const proc = Bun.spawn({
