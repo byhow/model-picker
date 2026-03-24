@@ -1,3 +1,4 @@
+import { spawn } from 'node:child_process';
 import { realpathSync } from 'node:fs';
 import { mkdir, mkdtemp, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
@@ -37,8 +38,6 @@ export async function runCli(
   args: string[],
   options: { cwd?: string; env?: Record<string, string> } = {},
 ): Promise<CommandResult> {
-  // Preserve BUN_INSTALL so spawned bun processes can resolve their own
-  // module cache even when the test fixture overrides HOME.
   const env = {
     ...process.env,
     MODEL_PICKER_TERM_WIDTH: options.env?.MODEL_PICKER_TERM_WIDTH ?? '120',
@@ -48,21 +47,19 @@ export async function runCli(
     BUN_BE_BUN: '1',
   };
 
-  const proc = Bun.spawn({
-    cmd: [BUN_BIN, CLI_ENTRY, ...args],
-    cwd: options.cwd ?? process.cwd(),
-    env,
-    stdout: 'pipe',
-    stderr: 'pipe',
+  return new Promise<CommandResult>((resolve) => {
+    const proc = spawn(BUN_BIN, [CLI_ENTRY, ...args], {
+      cwd: options.cwd ?? process.cwd(),
+      env,
+      stdio: ['ignore', 'pipe', 'pipe'],
+    });
+
+    let stdout = '';
+    let stderr = '';
+    proc.stdout?.on('data', (chunk: Buffer) => { stdout += chunk.toString(); });
+    proc.stderr?.on('data', (chunk: Buffer) => { stderr += chunk.toString(); });
+    proc.on('close', (code) => resolve({ stdout, stderr, exitCode: code ?? 1 }));
   });
-
-  const [stdout, stderr, exitCode] = await Promise.all([
-    new Response(proc.stdout).text(),
-    new Response(proc.stderr).text(),
-    proc.exited,
-  ]);
-
-  return { stdout, stderr, exitCode };
 }
 
 export async function withTempDir<T>(

@@ -24,7 +24,9 @@ jobs:
         run: bun install
 
       - name: Test with coverage
-        run: bun test --coverage 2>&1 | tee /tmp/bun-coverage.txt
+        run: |
+          set -o pipefail
+          bun test --coverage 2>&1 | tee /tmp/bun-coverage.txt
 
       - name: Check coverage threshold
         run: |
