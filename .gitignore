@@ -58,9 +58,7 @@ apps/cli/LICENSE
 apps/cli/*.bun-build
 
 # local-only planning / agent context
-AGENT.md
-CLAUDE.md
-PROGRESS.md
-ORIGINAL-REARCHITECTURE-PLAN.md
-RATIONALE.md
-LAUNCH_CALENDAR_2025.md
+*.md
+!README.md
+!CLAUDE.md
+!AGENT.md
