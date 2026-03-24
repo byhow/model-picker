@@ -59,13 +59,24 @@ export async function runCli(
     }
   }
 
-  const proc = Bun.spawn({
-    cmd: [bunPath, CLI_ENTRY, ...args],
-    cwd: options.cwd,
-    env,
-    stdout: 'pipe',
-    stderr: 'pipe',
-  });
+  // In CI, use shell to spawn bun to work around posix_spawn ENOENT issue
+  const useShell = process.env.CI === 'true' || process.env.GITHUB_ACTIONS === 'true';
+  
+  const proc = useShell
+    ? Bun.spawn({
+        cmd: ['bash', '-c', `${bunPath} ${CLI_ENTRY} ${args.map(a => `"${a.replace(/"/g, '\\"')}"`).join(' ')}`],
+        cwd: options.cwd,
+        env,
+        stdout: 'pipe',
+        stderr: 'pipe',
+      })
+    : Bun.spawn({
+        cmd: [bunPath, CLI_ENTRY, ...args],
+        cwd: options.cwd,
+        env,
+        stdout: 'pipe',
+        stderr: 'pipe',
+      });
 
   const [stdout, stderr, exitCode] = await Promise.all([
     new Response(proc.stdout).text(),
