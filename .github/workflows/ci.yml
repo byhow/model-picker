@@ -30,6 +30,15 @@ jobs:
       - name: Typecheck
         run: bun run typecheck
 
+      - name: Debug bun paths
+        run: |
+          echo "which bun: $(which bun)"
+          echo "bun location: $(readlink -f $(which bun))"
+          echo "HOME: $HOME"
+          ls -la "$HOME/.bun/bin/bun" 2>&1 || echo "$HOME/.bun/bin/bun does not exist"
+          ls -la "$(which bun)" 2>&1
+          bun -e "console.log('process.execPath:', process.execPath); console.log('Bun.which:', Bun.which('bun')); const fs = require('fs'); try { console.log('realpath:', fs.realpathSync(process.execPath)); } catch(e) { console.log('realpath error:', e.message); }"
+
       - name: Test
         run: bun run test
 
