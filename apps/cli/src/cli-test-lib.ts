@@ -1,3 +1,4 @@
+import { realpathSync } from 'node:fs';
 import { mkdir, mkdtemp, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { basename, join, resolve } from 'node:path';
@@ -10,7 +11,27 @@ export interface CommandResult {
 }
 
 const CLI_ENTRY = resolve(fileURLToPath(new URL('./index.ts', import.meta.url)));
-const BUN_BIN = Bun.which('bun') ?? process.execPath;
+
+function resolveBunBin(): string {
+  const candidates = [
+    Bun.which('bun'),
+    process.execPath,
+    process.env.BUN_INSTALL ? join(process.env.BUN_INSTALL, 'bin', 'bun') : null,
+  ].filter((p): p is string => p !== null);
+
+  for (const candidate of candidates) {
+    try {
+      return realpathSync(candidate);
+    } catch {
+      // candidate doesn't exist or can't be resolved, try next
+    }
+  }
+
+  return candidates[0] ?? 'bun';
+}
+
+const BUN_BIN = resolveBunBin();
+const BUN_DIR = resolve(BUN_BIN, '..');
 
 export async function runCli(
   args: string[],
@@ -20,12 +41,16 @@ export async function runCli(
     ...process.env,
     MODEL_PICKER_TERM_WIDTH: options.env?.MODEL_PICKER_TERM_WIDTH ?? '120',
     ...options.env,
+    // Ensure the bun binary dir is always on PATH for child processes, even
+    // when options.env overrides HOME or other env vars.
+    PATH: `${BUN_DIR}:${process.env.PATH ?? ''}`,
+    BUN_BE_BUN: '1',
   };
 
   const proc = Bun.spawn({
     cmd: [BUN_BIN, CLI_ENTRY, ...args],
     cwd: options.cwd,
-    env: { ...env, BUN_BE_BUN: '1' },
+    env,
     stdout: 'pipe',
     stderr: 'pipe',
   });
