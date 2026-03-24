@@ -3,6 +3,13 @@ import {
   filterModels,
   pickModelsFromRecords,
   sortModels,
+  loadSnapshot,
+  searchModels,
+  topModels,
+  getModelById,
+  compareModels,
+  listModels,
+  pickModels,
   type PickModelsOptions,
   DEFAULT_WEIGHTS,
 } from './index';
@@ -404,5 +411,242 @@ describe('catalog sorting advanced', () => {
 
     const byPrice = sortModels(modelsWithInfinitePrice, 'price');
     expect(byPrice[byPrice.length - 1]?.id).toBe('unknown/pricing');
+  });
+
+  test('sorts by long-context quick filter', () => {
+    const byContext = sortModels(
+      filterModels(models, 'long-context'),
+      'context',
+    ).map((model) => model.id);
+    expect(byContext).toEqual([
+      'anthropic/long-context',
+      'google/vision-budget',
+      'openai/code-fast',
+    ]);
+  });
+});
+
+describe('catalog filtering context equality', () => {
+  test('filters by context= exact equality', () => {
+    expect(filterModels(models, 'context=128000').map((model) => model.id)).toEqual([
+      'openai/code-fast',
+    ]);
+  });
+});
+
+describe('pickModelsFromRecords review task', () => {
+  test('task=review boosts large max completion window', () => {
+    const reviewModels = [
+      createModel({
+        id: 'test/large-completion',
+        contextLength: 200_000,
+        topProvider: {
+          contextLength: 200_000,
+          maxCompletionTokens: 32_000,
+          isModerated: true,
+        },
+      }),
+      createModel({
+        id: 'test/small-completion',
+        contextLength: 200_000,
+        topProvider: {
+          contextLength: 200_000,
+          maxCompletionTokens: 4_000,
+          isModerated: false,
+        },
+      }),
+    ];
+
+    const picks = pickModelsFromRecords(reviewModels, {
+      task: 'review',
+      weights: { speed: 0, price: 0, context: 1 },
+      limit: 2,
+    });
+
+    const largeCompletionPick = picks.find((p) => p.model.id === 'test/large-completion');
+    expect(largeCompletionPick?.reasons).toContain('large max completion window');
+    expect(largeCompletionPick?.reasons).toContain('moderated provider');
+  });
+});
+
+describe('pickModelsFromRecords empty tokens', () => {
+  test('returns all models when filter has only whitespace tokens', () => {
+    const picks = pickModelsFromRecords(models, { filter: ' , , ' });
+    expect(picks.length).toBe(3);
+  });
+});
+
+// --- Async wrapper tests ---
+// These tests exercise loadSnapshot and the async functions that wrap it.
+// loadSnapshot discovers snapshot files from multiple candidate paths;
+// in this workspace it finds apps/web/src/data/models.json.
+
+describe('loadSnapshot', () => {
+  test('loads snapshot with models array', async () => {
+    const snapshot = await loadSnapshot();
+    expect(snapshot).toBeDefined();
+    expect(Array.isArray(snapshot.models)).toBe(true);
+    expect(snapshot.models.length).toBeGreaterThan(0);
+    expect(snapshot.generatedAt).toBeDefined();
+    expect(snapshot.count).toBeGreaterThanOrEqual(0);
+  });
+
+  test('every loaded model has required fields', async () => {
+    const snapshot = await loadSnapshot();
+    for (const model of snapshot.models.slice(0, 5)) {
+      expect(model.id).toBeDefined();
+      expect(model.name).toBeDefined();
+      expect(typeof model.contextLength).toBe('number');
+    }
+  });
+});
+
+describe('searchModels', () => {
+  test('searches by model ID substring', async () => {
+    const snapshot = await loadSnapshot();
+    const firstModel = snapshot.models[0]!;
+    const idFragment = firstModel.id.split('/')[1]!.slice(0, 5);
+
+    const results = await searchModels(idFragment);
+    expect(results.length).toBeGreaterThan(0);
+    expect(results.some((m) => m.id === firstModel.id)).toBe(true);
+  });
+
+  test('searches by name', async () => {
+    const snapshot = await loadSnapshot();
+    const firstModel = snapshot.models[0]!;
+
+    const results = await searchModels(firstModel.name);
+    expect(results.length).toBeGreaterThan(0);
+    expect(results.some((m) => m.id === firstModel.id)).toBe(true);
+  });
+
+  test('empty query returns all models', async () => {
+    const snapshot = await loadSnapshot();
+    const results = await searchModels('');
+    expect(results).toHaveLength(snapshot.models.length);
+  });
+
+  test('whitespace query returns all models', async () => {
+    const snapshot = await loadSnapshot();
+    const results = await searchModels('   ');
+    expect(results).toHaveLength(snapshot.models.length);
+  });
+
+  test('non-matching query returns empty', async () => {
+    const results = await searchModels('zzz_nonexistent_xyz_12345');
+    expect(results).toHaveLength(0);
+  });
+});
+
+describe('topModels', () => {
+  test('returns limited models sorted by speed', async () => {
+    const results = await topModels('speed', 3);
+    expect(results).toHaveLength(3);
+    // Verify descending speed order
+    for (let i = 0; i < results.length - 1; i++) {
+      expect(results[i]!.speed.bestThroughput ?? 0).toBeGreaterThanOrEqual(
+        results[i + 1]!.speed.bestThroughput ?? 0,
+      );
+    }
+  });
+
+  test('applies filter', async () => {
+    const results = await topModels('price', 5, 'vision');
+    expect(results.length).toBeGreaterThan(0);
+    for (const model of results) {
+      expect(
+        model.architecture.inputModalities.some((m) => m.toLowerCase() === 'image'),
+      ).toBe(true);
+    }
+  });
+});
+
+describe('getModelById', () => {
+  test('finds by exact id', async () => {
+    const snapshot = await loadSnapshot();
+    const firstModel = snapshot.models[0]!;
+
+    const model = await getModelById(firstModel.id);
+    expect(model?.id).toBe(firstModel.id);
+  });
+
+  test('finds by name (case-insensitive)', async () => {
+    const snapshot = await loadSnapshot();
+    const firstModel = snapshot.models[0]!;
+
+    const model = await getModelById(firstModel.name.toLowerCase());
+    expect(model?.id).toBe(firstModel.id);
+  });
+
+  test('returns null for non-existent model', async () => {
+    const model = await getModelById('nonexistent/model-xyz-99999');
+    expect(model).toBeNull();
+  });
+});
+
+describe('compareModels', () => {
+  test('returns matching models by ID', async () => {
+    const snapshot = await loadSnapshot();
+    const ids = snapshot.models.slice(0, 2).map((m) => m.id);
+
+    const results = await compareModels(ids);
+    expect(results).toHaveLength(2);
+    expect(results.map((m) => m.id).sort()).toEqual([...ids].sort());
+  });
+
+  test('returns empty for non-matching IDs', async () => {
+    const results = await compareModels(['nonexistent/model-xyz-99999']);
+    expect(results).toHaveLength(0);
+  });
+});
+
+describe('listModels', () => {
+  test('returns all models sorted by speed by default', async () => {
+    const results = await listModels();
+    expect(results.length).toBeGreaterThan(0);
+    // Verify descending speed order
+    for (let i = 0; i < Math.min(results.length - 1, 5); i++) {
+      expect(results[i]!.speed.bestThroughput ?? 0).toBeGreaterThanOrEqual(
+        results[i + 1]!.speed.bestThroughput ?? 0,
+      );
+    }
+  });
+
+  test('respects limit option', async () => {
+    const results = await listModels({ limit: 2 });
+    expect(results).toHaveLength(2);
+  });
+
+  test('applies filter option', async () => {
+    const results = await listModels({ filter: 'vision' });
+    expect(results.length).toBeGreaterThan(0);
+    for (const model of results) {
+      expect(
+        model.architecture.inputModalities.some((m) => m.toLowerCase() === 'image'),
+      ).toBe(true);
+    }
+  });
+
+  test('returns all when no limit specified', async () => {
+    const snapshot = await loadSnapshot();
+    const results = await listModels();
+    expect(results).toHaveLength(snapshot.models.length);
+  });
+});
+
+describe('pickModels', () => {
+  test('delegates to pickModelsFromRecords with snapshot data', async () => {
+    const picks = await pickModels({ limit: 2 });
+    expect(picks).toHaveLength(2);
+    expect(picks[0]?.model).toBeDefined();
+    expect(typeof picks[0]?.score).toBe('number');
+    expect(Array.isArray(picks[0]?.reasons)).toBe(true);
+  });
+
+  test('applies task option', async () => {
+    const picks = await pickModels({ task: 'coding', limit: 3 });
+    expect(picks).toHaveLength(3);
+    expect(picks[0]?.model).toBeDefined();
   });
 });

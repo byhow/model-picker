@@ -31,10 +31,7 @@ jobs:
         run: bun run typecheck
 
       - name: Test
-        run: |
-          # Ensure bun is in PATH for spawned subprocesses
-          export PATH="$HOME/.bun/bin:$PATH"
-          bun run test
+        run: bun run test
 
       - name: Build
         run: bun run build

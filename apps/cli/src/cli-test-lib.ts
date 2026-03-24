@@ -22,9 +22,9 @@ export async function runCli(
   };
 
   const proc = Bun.spawn({
-    cmd: ['bun', CLI_ENTRY, ...args],
+    cmd: [process.execPath, CLI_ENTRY, ...args],
     cwd: options.cwd,
-    env,
+    env: { ...env, BUN_BE_BUN: '1' },
     stdout: 'pipe',
     stderr: 'pipe',
   });

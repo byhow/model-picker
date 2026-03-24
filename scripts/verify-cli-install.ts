@@ -9,8 +9,10 @@ const cliDir = resolve(root, 'apps/cli');
 
 async function run(cmd: string[], cwd: string, env: Record<string, string> = {}) {
   const pathEnv = process.env.PATH ?? '';
+  const [command, ...args] = cmd;
+  const resolvedCommand = command === 'bun' ? process.execPath : command;
   const proc = Bun.spawn({
-    cmd,
+    cmd: [resolvedCommand, ...args],
     cwd,
     stdout: 'pipe',
     stderr: 'pipe',
@@ -18,6 +20,7 @@ async function run(cmd: string[], cwd: string, env: Record<string, string> = {})
       ...process.env,
       MODEL_PICKER_TERM_WIDTH: env.MODEL_PICKER_TERM_WIDTH ?? '120',
       ...env,
+      ...(command === 'bun' ? { BUN_BE_BUN: '1' } : {}),
       PATH: `${join(cwd, 'node_modules/.bin')}:${pathEnv}`,
     },
   });

@@ -3,10 +3,7 @@ import { access, lstat, mkdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { runCli, withLocalSkillsFixture, withTempDir } from './cli-test-lib';
 
-const isCI = process.env.CI === 'true' || process.env.GITHUB_ACTIONS === 'true';
-
-// Skip tests that spawn subprocesses in CI due to Bun.spawn ENOENT issues
-describe.skipIf(isCI)('skills command', () => {
+describe('skills command', () => {
   test('lists skills from a local source without installing', async () => {
     await withLocalSkillsFixture(async ({ source, env }) => {
       const result = await runCli(['skills', 'add', source, '--list'], { env });
@@ -548,51 +545,29 @@ description: A test skill with commit tracking.
       );
 
       // Initialize git repo
-      const initResult = await new Promise<{ code: number; stdout: string; stderr: string }>(
-        (resolve) => {
-          const proc = Bun.spawn({
-            cmd: ['git', 'init'],
-            cwd: join(tempDir, 'skills-repo'),
-            stdout: 'pipe',
-            stderr: 'pipe',
-          });
-          Promise.all([
-            new Response(proc.stdout).text(),
-            new Response(proc.stderr).text(),
-          ]).then(([stdout, stderr]) => {
-            proc.exited.then((code) => resolve({ code, stdout, stderr }));
-          });
-        },
-      );
-      expect(initResult.code).toBe(0);
+      const repoDir = join(tempDir, 'skills-repo');
+      const gitBin = Bun.which('git') ?? 'git';
 
-      // Configure git user
-      await new Promise<void>((resolve) => {
-        Bun.spawn({
-          cmd: ['git', 'config', 'user.email', 'test@test.com'],
-          cwd: join(tempDir, 'skills-repo'),
-        }).exited.then(() => resolve());
-      });
-      await new Promise<void>((resolve) => {
-        Bun.spawn({
-          cmd: ['git', 'config', 'user.name', 'Test'],
-          cwd: join(tempDir, 'skills-repo'),
-        }).exited.then(() => resolve());
-      });
+      async function runGit(args: string[], cwd: string) {
+        const proc = Bun.spawn({
+          cmd: [gitBin, ...args],
+          cwd,
+          stdout: 'pipe',
+          stderr: 'pipe',
+        });
+        const [stdout, stderr, exitCode] = await Promise.all([
+          new Response(proc.stdout).text(),
+          new Response(proc.stderr).text(),
+          proc.exited,
+        ]);
+        return { stdout, stderr, exitCode };
+      }
 
-      // Add and commit
-      await new Promise<void>((resolve) => {
-        Bun.spawn({
-          cmd: ['git', 'add', '.'],
-          cwd: join(tempDir, 'skills-repo'),
-        }).exited.then(() => resolve());
-      });
-      await new Promise<void>((resolve) => {
-        Bun.spawn({
-          cmd: ['git', 'commit', '-m', 'Initial commit'],
-          cwd: join(tempDir, 'skills-repo'),
-        }).exited.then(() => resolve());
-      });
+      expect((await runGit(['init'], repoDir)).exitCode).toBe(0);
+      expect((await runGit(['config', 'user.email', 'test@test.com'], repoDir)).exitCode).toBe(0);
+      expect((await runGit(['config', 'user.name', 'Test'], repoDir)).exitCode).toBe(0);
+      expect((await runGit(['add', '.'], repoDir)).exitCode).toBe(0);
+      expect((await runGit(['commit', '-m', 'Initial commit'], repoDir)).exitCode).toBe(0);
 
       const install = await runCli(
         [
