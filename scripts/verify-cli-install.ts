@@ -10,7 +10,7 @@ const cliDir = resolve(root, 'apps/cli');
 async function run(cmd: string[], cwd: string, env: Record<string, string> = {}) {
   const pathEnv = process.env.PATH ?? '';
   const [command, ...args] = cmd;
-  const resolvedCommand = command === 'bun' ? process.execPath : command;
+  const resolvedCommand = command === 'bun' ? (Bun.which('bun') ?? process.execPath) : command;
   const proc = Bun.spawn({
     cmd: [resolvedCommand, ...args],
     cwd,

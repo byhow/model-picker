@@ -10,6 +10,7 @@ export interface CommandResult {
 }
 
 const CLI_ENTRY = resolve(fileURLToPath(new URL('./index.ts', import.meta.url)));
+const BUN_BIN = Bun.which('bun') ?? process.execPath;
 
 export async function runCli(
   args: string[],
@@ -22,7 +23,7 @@ export async function runCli(
   };
 
   const proc = Bun.spawn({
-    cmd: [process.execPath, CLI_ENTRY, ...args],
+    cmd: [BUN_BIN, CLI_ENTRY, ...args],
     cwd: options.cwd,
     env: { ...env, BUN_BE_BUN: '1' },
     stdout: 'pipe',
