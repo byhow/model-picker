@@ -48,7 +48,8 @@ export async function runCli(
   };
 
   return new Promise<CommandResult>((resolve) => {
-    const proc = spawn(BUN_BIN, [CLI_ENTRY, ...args], {
+    const quotedArgs = [BUN_BIN, CLI_ENTRY, ...args].map((a) => `'${a.replace(/'/g, "'\\''")}'`).join(' ');
+    const proc = spawn('/bin/sh', ['-c', quotedArgs], {
       cwd: options.cwd ?? process.cwd(),
       env,
       stdio: ['ignore', 'pipe', 'pipe'],
