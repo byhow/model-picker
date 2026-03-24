@@ -37,19 +37,20 @@ export async function runCli(
   args: string[],
   options: { cwd?: string; env?: Record<string, string> } = {},
 ): Promise<CommandResult> {
+  // Preserve BUN_INSTALL so spawned bun processes can resolve their own
+  // module cache even when the test fixture overrides HOME.
   const env = {
     ...process.env,
     MODEL_PICKER_TERM_WIDTH: options.env?.MODEL_PICKER_TERM_WIDTH ?? '120',
     ...options.env,
-    // Ensure the bun binary dir is always on PATH for child processes, even
-    // when options.env overrides HOME or other env vars.
     PATH: `${BUN_DIR}:${process.env.PATH ?? ''}`,
+    BUN_INSTALL: process.env.BUN_INSTALL ?? join(process.env.HOME ?? '', '.bun'),
     BUN_BE_BUN: '1',
   };
 
   const proc = Bun.spawn({
     cmd: [BUN_BIN, CLI_ENTRY, ...args],
-    cwd: options.cwd,
+    cwd: options.cwd ?? process.cwd(),
     env,
     stdout: 'pipe',
     stderr: 'pipe',
