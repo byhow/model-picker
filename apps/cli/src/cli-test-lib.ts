@@ -21,62 +21,13 @@ export async function runCli(
     ...options.env,
   };
 
-  // Find bun path - use Bun.which locally, but in CI check common locations
-  let bunPath = 'bun';
-  if (process.env.CI === 'true' || process.env.GITHUB_ACTIONS === 'true') {
-    const { existsSync } = await import('node:fs');
-    const { homedir } = await import('node:os');
-    const possiblePaths = [
-      `${homedir()}/.bun/bin/bun`,
-      '/home/runner/.bun/bin/bun',
-      '/usr/local/bin/bun',
-      '/usr/bin/bun',
-    ];
-    
-    // Debug: log paths we're checking
-    console.error('[runCli] Checking for bun in CI...');
-    console.error('[runCli] HOME:', homedir());
-    console.error('[runCli] PATH:', process.env.PATH);
-    
-    for (const path of possiblePaths) {
-      const exists = existsSync(path);
-      const stats = exists ? await import('node:fs').then(m => m.statSync(path)) : null;
-      console.error(`[runCli] ${path}: ${exists ? 'EXISTS' : 'NOT FOUND'}${stats ? ` (isFile: ${stats.isFile()}, isSymbolicLink: ${stats.isSymbolicLink()}, mode: ${stats.mode})` : ''}`);
-      if (exists) {
-        bunPath = path;
-        break;
-      }
-    }
-    console.error(`[runCli] Selected bun path: ${bunPath}`);
-    
-    // Try to read the file to ensure it's really there
-    try {
-      const { readFileSync } = await import('node:fs');
-      const content = readFileSync(bunPath);
-      console.error(`[runCli] Successfully read ${content.length} bytes from ${bunPath}`);
-    } catch (e) {
-      console.error(`[runCli] Failed to read ${bunPath}:`, e);
-    }
-  }
-
-  // In CI, use shell to spawn bun to work around posix_spawn ENOENT issue
-  const useShell = process.env.CI === 'true' || process.env.GITHUB_ACTIONS === 'true';
-  
-  const proc = useShell
-    ? Bun.spawn({
-        cmd: ['bash', '-c', `${bunPath} ${CLI_ENTRY} ${args.map(a => `"${a.replace(/"/g, '\\"')}"`).join(' ')}`],
-        cwd: options.cwd,
-        env,
-        stdout: 'pipe',
-        stderr: 'pipe',
-      })
-    : Bun.spawn({
-        cmd: [bunPath, CLI_ENTRY, ...args],
-        cwd: options.cwd,
-        env,
-        stdout: 'pipe',
-        stderr: 'pipe',
-      });
+  const proc = Bun.spawn({
+    cmd: ['bun', CLI_ENTRY, ...args],
+    cwd: options.cwd,
+    env,
+    stdout: 'pipe',
+    stderr: 'pipe',
+  });
 
   const [stdout, stderr, exitCode] = await Promise.all([
     new Response(proc.stdout).text(),
