@@ -31,8 +31,8 @@
     "node": ">=20"
   },
   "bin": {
-    "model-picker": "./dist/index.js",
-    "mp": "./dist/index.js"
+    "model-picker": "dist/index.js",
+    "mp": "dist/index.js"
   },
   "files": [
     "dist/index.js",
