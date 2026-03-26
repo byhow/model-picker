@@ -5,5 +5,5 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   output: 'static',
   integrations: [tailwind(), solid()],
-  site: 'https://model-picker.byhow.pages.dev',
+  site: 'https://model-picker.pages.dev',
 });
