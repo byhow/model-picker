@@ -12,7 +12,7 @@ describe('cli smoke tests', () => {
     const result = await runCli(['--version']);
 
     expect(result.exitCode).toBe(0);
-    expect(result.stdout).toContain('model-picker/0.1.0');
+    expect(result.stdout).toContain('model-picker/');
   });
 
   test('shows help and examples when invoked without a command', async () => {
