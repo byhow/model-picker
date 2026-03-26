@@ -55,6 +55,11 @@ skills-lock.json
 apps/cli/data/
 apps/cli/README.md
 apps/cli/LICENSE
+apps/cli/SKILL.md
+apps/cli/llms.txt
+apps/cli/CHANGELOG.md
+apps/cli/docs/
+apps/cli/skills/
 apps/cli/*.bun-build
 
 # local-only planning / agent context
@@ -68,3 +73,5 @@ apps/cli/*.bun-build
 !CHANGELOG.md
 !ARCHITECTURE.md
 !PROGRESS.md
+!SKILL.md
+!/docs/SKILL.md

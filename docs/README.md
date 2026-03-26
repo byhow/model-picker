@@ -15,7 +15,7 @@ Welcome to the model-picker documentation.
 
 ### Commands
 - [CLI Reference](./commands.md) — Complete command reference with all flags
-- [Skills](./skills.md) — Install and manage Agent Skills across coding-agent CLIs
+- [SKILL.md](./SKILL.md) — Use model-picker as a skill in your coding agent
 
 ### Development
 - [Development](./development.md) — Run all surfaces from source, build, and test
@@ -25,6 +25,6 @@ Welcome to the model-picker documentation.
 | Resource | Description |
 |----------|-------------|
 | [README.md](../README.md) | GitHub landing page with quick install |
-| [llms.txt](../llms.txt) | Agent-readable documentation |
+| [llms.txt](./llms.txt) | Agent-readable documentation |
 | [ARCHITECTURE.md](../ARCHITECTURE.md) | System design and package breakdown |
 | [npm package](https://www.npmjs.com/package/model-picker) | Package registry entry |

@@ -39,14 +39,6 @@ import {
   SUPPORTED_AGENTS,
   type SupportedAgent,
 } from './user-config';
-import {
-  addSkillsFromSource,
-  formatSkillInstallMethod,
-  formatSkillInstallScope,
-  listInstalledSkills,
-  removeInstalledSkills,
-  type SkillsAddOptions,
-} from './skills';
 
 const cli = cac('model-picker');
 cli.version(packageJson.version);
@@ -76,7 +68,6 @@ const PUBLIC_COMMANDS = [
   'get',
   'compare',
   'pick',
-  'skills',
   'export',
   'sync',
   'tui',
@@ -506,8 +497,7 @@ async function runWorkspaceCommand(
         '  model-picker get        # model details',
         '  model-picker compare    # side-by-side comparison',
         '  model-picker pick       # agent-aware recommendations',
-        '  model-picker skills     # install/manage agent skills',
-        '  model-picker export     # export results',
+              '  model-picker export     # export results',
         '  model-picker doctor     # check setup',
         '',
         `To use "${label}", clone the repo and run from source:`,
@@ -734,128 +724,6 @@ function parseAgent(value: unknown): SupportedAgent | undefined {
 
 function parseBooleanFlag(value: unknown): boolean {
   return Boolean(value);
-}
-
-function parseSkillsAddOptions(options: Record<string, unknown>): SkillsAddOptions {
-  return {
-    agents: options.agent as string | string[] | undefined,
-    skills: options.skill as string | string[] | undefined,
-    all: parseBooleanFlag(options.all),
-    global: parseBooleanFlag(options.global),
-    copy: parseBooleanFlag(options.copy),
-    list: parseBooleanFlag(options.list),
-    yes: parseBooleanFlag(options.yes),
-  };
-}
-
-function parseSkillsRemoveOptions(
-  options: Record<string, unknown>,
-  positionalSkill?: string,
-): {
-  skills?: string | string[];
-  agents?: string | string[];
-  global?: boolean;
-  all?: boolean;
-} {
-  const explicitSkills = options.skill as string | string[] | undefined;
-  const fallbackSkill = positionalSkill?.trim();
-  const skills = explicitSkills ?? (fallbackSkill ? fallbackSkill : undefined);
-
-  return {
-    skills,
-    agents: options.agent as string | string[] | undefined,
-    global: parseBooleanFlag(options.global),
-    all: parseBooleanFlag(options.all),
-  };
-}
-
-function printSkillsListResult(result: Awaited<ReturnType<typeof listInstalledSkills>>): void {
-  if (result.items.length === 0) {
-    console.log('No installed skills found.');
-    return;
-  }
-
-  console.log(
-    renderTable(result.items, [
-      {
-        header: 'SCOPE',
-        getValue: (entry) => formatSkillInstallScope(entry.scope),
-        minWidth: 7,
-        maxWidth: 7,
-      },
-      {
-        header: 'SKILL',
-        getValue: (entry) => entry.record.skill,
-        minWidth: 18,
-        maxWidth: 32,
-        shrinkPriority: 4,
-      },
-      {
-        header: 'AGENTS',
-        getValue: (entry) => entry.record.agents.join(', '),
-        minWidth: 12,
-        maxWidth: 24,
-      },
-      {
-        header: 'METHOD',
-        getValue: (entry) => formatSkillInstallMethod(entry.record.method),
-        minWidth: 7,
-        maxWidth: 7,
-      },
-      {
-        header: 'SOURCE',
-        getValue: (entry) => entry.record.source,
-        minWidth: 22,
-        maxWidth: 48,
-        shrinkPriority: 5,
-      },
-    ]),
-  );
-}
-
-function printSkillsAddResult(result: Awaited<ReturnType<typeof addSkillsFromSource>>): void {
-  if (result.installedRecords.length === 0) {
-    console.log(`Source: ${result.source}`);
-    console.log(`Discovered ${result.discoveredSkills.length} skill(s):`);
-    for (const skill of result.discoveredSkills) {
-      console.log(`- ${skill.name}: ${skill.description}`);
-    }
-    return;
-  }
-
-  console.log(`Source: ${result.source}`);
-  console.log(
-    `Installed ${result.selectedSkills.length} skill(s) for ${result.selectedAgents.join(', ')} (${formatSkillInstallScope(result.scope)} scope).`,
-  );
-  for (const record of result.installedRecords) {
-    console.log(`- ${record.skill} (${formatSkillInstallMethod(record.method)})`);
-  }
-  console.log(`Manifest: ${result.manifestPath}`);
-}
-
-function printSkillsRemoveResult(
-  result: Awaited<ReturnType<typeof removeInstalledSkills>>,
-): void {
-  if (result.removedRecords.length === 0) {
-    console.log('No skills were removed.');
-    return;
-  }
-
-  console.log(
-    `Removed ${result.removedRecords.length} skill(s) from ${formatSkillInstallScope(result.scope)} scope.`,
-  );
-  for (const record of result.removedRecords) {
-    const removedAgents = record.removedAgents.join(', ');
-    if (record.remainingAgents.length === 0) {
-      console.log(`- ${record.skill} (agents: ${removedAgents})`);
-      continue;
-    }
-
-    console.log(
-      `- ${record.skill} (removed: ${removedAgents}; remaining: ${record.remainingAgents.join(', ')})`,
-    );
-  }
-  console.log(`Manifest: ${result.manifestPath}`);
 }
 
 function normalizeCliText(value: string): string {
@@ -1617,86 +1485,6 @@ cli
       }
 
       printPickRows(picks);
-    } catch (error) {
-      handleCliActionError(error);
-    }
-  });
-
-cli
-  .command('skills <action> [source]', 'Manage agent skills')
-  .option('-a, --agent <agent>', `Target agent (${SUPPORTED_AGENTS.join('|')}); repeat or comma-separate`)
-  .option('-s, --skill <skill>', 'Target skill(s); repeat or comma-separate')
-  .option('--all', 'Target all matching skills (for add/remove)')
-  .option('-g, --global', 'Install to global scope (or only list global installs)')
-  .option('-l, --list', 'List discovered skills without installing (for add)')
-  .option('--copy', 'Copy files instead of symlinking')
-  .option('-y, --yes', 'Skip confirmation prompts')
-  .option('--json', 'Return machine-readable JSON')
-  .example('model-picker skills add vercel-labs/agent-skills --list')
-  .example('model-picker skills add vercel-labs/agent-skills --skill react-best-practices -a opencode -a amp')
-  .example('model-picker skills remove --skill react-best-practices --agent amp')
-  .example('model-picker skills list --global')
-  .action(async (action, source, options) => {
-    try {
-      const normalizedAction = String(action ?? '').trim().toLowerCase();
-
-      if (normalizedAction === 'add') {
-        const normalizedSource = typeof source === 'string' ? source.trim() : '';
-        if (!normalizedSource) {
-          throw new CliUsageError('Provide a skill source for `skills add`.', 'command', [
-            'model-picker skills add vercel-labs/agent-skills --list',
-            'model-picker skills add ./skills --all --agent opencode',
-          ]);
-        }
-
-        const result = await addSkillsFromSource(
-          normalizedSource,
-          parseSkillsAddOptions(options as Record<string, unknown>),
-        );
-
-        if (options.json) {
-          emitJson(result);
-          return;
-        }
-
-        printSkillsAddResult(result);
-        return;
-      }
-
-      if (normalizedAction === 'list') {
-        const result = await listInstalledSkills({
-          global: Boolean(options.global),
-        });
-
-        if (options.json) {
-          emitJson(result);
-          return;
-        }
-
-        printSkillsListResult(result);
-        return;
-      }
-
-      if (normalizedAction === 'remove') {
-        const positionalSkill = typeof source === 'string' ? source : undefined;
-        const result = await removeInstalledSkills(
-          parseSkillsRemoveOptions(options as Record<string, unknown>, positionalSkill),
-        );
-
-        if (options.json) {
-          emitJson(result);
-          return;
-        }
-
-        printSkillsRemoveResult(result);
-        return;
-      }
-
-      throw new CliUsageError(`Unknown skills action: ${action}. Use add, list, or remove.`, 'command', [
-        'model-picker skills add vercel-labs/agent-skills --list',
-        'model-picker skills list',
-        'model-picker skills remove --skill react-best-practices',
-      ]);
     } catch (error) {
       handleCliActionError(error);
     }

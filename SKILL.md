@@ -118,6 +118,6 @@ model-picker get openai/gpt-5.4 --json
 
 ## Full documentation
 
-- Agent docs: [docs/llms.txt](./llms.txt)
+- Agent docs: [llms.txt](./llms.txt)
 - GitHub: https://github.com/byhow/model-picker
 - npm: https://www.npmjs.com/package/model-picker

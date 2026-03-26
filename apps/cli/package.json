@@ -37,6 +37,9 @@
   "files": [
     "dist/index.js",
     "data",
+    "SKILL.md",
+    "llms.txt",
+    "skills",
     "README.md",
     "LICENSE",
     "CHANGELOG.md"
