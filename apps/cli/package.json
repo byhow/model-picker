@@ -16,10 +16,16 @@
   "keywords": [
     "ai",
     "llm",
-    "models",
+    "ai-models",
+    "model-comparison",
+    "openrouter",
     "cli",
-    "comparison",
-    "openrouter"
+    "terminal",
+    "coding-agents",
+    "agent-skills",
+    "developer-tools",
+    "model-picker",
+    "llm-picker"
   ],
   "engines": {
     "node": ">=20"
@@ -32,7 +38,8 @@
     "dist/index.js",
     "data",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "CHANGELOG.md"
   ],
   "scripts": {
     "dev": "bun run src/index.ts",

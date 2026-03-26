@@ -25,9 +25,9 @@ bun install -g model-picker
 
 model-picker has two data modes:
 
-### Live (requires FIRECRAWL_API_KEY)
-- top, search, get
-- Queries OpenRouter live via Firecrawl
+### Live (no API key required for primary path)
+- top, get
+- Queries OpenRouter frontend API directly, falls back to Firecrawl if available
 - Mirrors OpenRouter URL query parameters
 
 ### Snapshot (offline, no API key required)
@@ -44,7 +44,6 @@ model-picker has two data modes:
 model-picker top --order most-popular --limit 10
 model-picker top --categories programming --order top-weekly --zdr
 model-picker top --input-modalities text,image --output-modalities image --max-price 0.5
-model-picker search claude --categories programming --zdr
 model-picker get openai/gpt-5.4
 
 # Local catalog queries
@@ -137,7 +136,7 @@ Use --global to install to each agent's global skills directory.
 
 ## OpenRouter Filter Flags
 
-These apply to live commands (top, search):
+These apply to live commands (top, get):
 
 - --order: most-popular | top-weekly | newest
 - --input-modalities: text, image, audio, video
@@ -148,7 +147,7 @@ These apply to live commands (top, search):
 
 ## Environment Variables
 
-FIRECRAWL_API_KEY    # Required for live commands (top, search, get)
+FIRECRAWL_API_KEY    # Optional; enables Firecrawl fallback for live commands
 MODEL_PICKER_CONFIG_DIR  # Override config directory
 
 ## Config File Location
@@ -176,8 +175,6 @@ See ./ARCHITECTURE.md for full system diagram.
 
 # Discover models (live)
 npx model-picker top --order most-popular --limit 10
-npx model-picker search claude --categories programming --zdr
-
 # Compare two models (snapshot)
 npx model-picker compare anthropic/claude-opus-4.6 openai/gpt-5.4
 
@@ -196,5 +193,5 @@ npx model-picker doctor
 ## Links
 
 Web docs: https://model-picker.dev/docs
-GitHub: https://github.com/flyingbeaver/model-picker
+GitHub: https://github.com/byhow/model-picker
 npm: https://www.npmjs.com/package/model-picker

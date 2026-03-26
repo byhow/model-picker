@@ -1,23 +1,14 @@
 # model-picker
 
-**A terminal-first model discovery and agent-skills tool for AI builders.**
+**Too many AI models. Not enough time to compare them.**
 
-Use `model-picker` to compare models across price, speed, and context, pick the right model for coding agents like OpenCode, Claude Code, and Codex, install skills across agent CLIs, and access documentation through GitHub, a web docs UI, and `llms.txt`.
-
-It ships as:
-
-- a **CLI** for fast lookup, filtering, export, and skills management
-- a **web dashboard** for browser-based model browsing and comparison
-- a **terminal UI** for keyboard-first exploration
-
-All surfaces share the same ingest pipeline, catalog logic, and scoring primitives.
+`model-picker` helps you find the right LLM fast — compare models across price, speed, and context window, get agent-aware recommendations for your coding workflow, and install skills across agent CLIs. All from your terminal.
 
 ## Quick install
 
 ```bash
 # Run instantly — no install required
-npx model-picker doctor
-bunx model-picker doctor
+npx model-picker top --order most-popular --limit 5
 
 # Install globally
 npm i -g model-picker
@@ -26,54 +17,66 @@ bun install -g model-picker
 
 After install, use either `model-picker` or the short alias `mp`.
 
-## Docs
+## Demo
 
-- **GitHub README**: quick install and common workflows (this page)
-- **Web docs**: full guides and command reference → [model-picker.dev/docs](https://model-picker.dev/docs)
-- **`llms.txt`**: agent-readable documentation for coding assistants and automation → [`llms.txt`](./llms.txt)
+> Screenshots and terminal recordings coming soon.
+>
+> **CLI** · **Web dashboard** · **TUI**
 
-## What you can do
+## Use cases
 
-- **Discover live models** with OpenRouter-style filters — `top`, `search`, `get`
-- **Compare models** on price, speed, context, and modality
-- **Get agent-aware picks** for `opencode`, `claude-code`, `codex`, `cursor`, `amp`
-- **Install and manage skills** across supported coding-agent CLIs
-- **Export results** as JSON, CSV, or Markdown for scripts, docs, and CI
-
-## Common workflows
-
-### Find models
+**Find the cheapest coding model:**
 
 ```bash
-model-picker top --order most-popular --limit 10
-model-picker top --categories programming --order top-weekly --zdr --limit 10
-model-picker search claude --categories programming --zdr
-model-picker get openai/gpt-5.4
+model-picker top --categories programming --order most-popular --max-price 1
 ```
 
-### Compare options
+**Pick the best model for your agent:**
 
 ```bash
-model-picker compare anthropic/claude-opus-4.6 openai/gpt-5.4
-model-picker pick --task agent --agent opencode --limit 5
+model-picker pick --agent opencode --task agent --limit 5
 model-picker pick --agent amp --json
 ```
 
-### Work with skills
+**Compare two models side by side:**
 
 ```bash
-model-picker skills add vercel-labs/agent-skills --list
-model-picker skills add vercel-labs/agent-skills --skill react-best-practices --agent opencode --agent amp
-model-picker skills list
-model-picker skills remove --skill react-best-practices --agent amp
+model-picker compare anthropic/claude-opus-4.6 openai/gpt-5.4
 ```
 
-### Export for automation
+**Install skills across coding agents:**
+
+```bash
+model-picker skills add owner/repo --skill my-skill --agent opencode --agent amp
+model-picker skills list
+```
+
+**Export for scripts and docs:**
 
 ```bash
 model-picker export --format markdown --limit 10 --output ./models.md
-model-picker pick --agent codex --json
 ```
+
+## What works from npm install vs source checkout
+
+| From npm / npx | Source checkout only |
+|---|---|
+| `top`, `get`, `compare`, `pick` | `sync` (refresh snapshots) |
+| `skills add/list/remove` | `tui` (terminal UI) |
+| `export`, `doctor`, `onboard`, `configure` | `dev:web` (web dashboard) |
+
+The CLI will tell you which commands need a source checkout and how to set one up.
+
+## How data works
+
+| Command | Data source |
+|---|---|
+| `top`, `get` | Live OpenRouter (no API key required) |
+| `compare`, `pick`, `export`, `doctor` | Local packaged snapshot (works offline) |
+
+Live commands query OpenRouter's frontend API directly. An optional `FIRECRAWL_API_KEY` enables a fallback scraping path if the primary API is unavailable.
+
+Snapshots are refreshed daily via CI and bundled with each npm release.
 
 ## Agent-first picks
 
@@ -119,7 +122,7 @@ Install targets:
 
 ## Live OpenRouter CLI filters
 
-`top` and `search` mirror OpenRouter URL query parameters.
+`top` and `get` mirror OpenRouter URL query parameters.
 
 ```bash
 model-picker top --order most-popular
@@ -161,19 +164,10 @@ export FIRECRAWL_API_KEY=fc-your-key
 
 Run `model-picker doctor` to check resolved config path and whether live access is working.
 
-## Live data vs local snapshot
-
-| Command | Data source |
-|---------|-------------|
-| `top`, `search`, `get` | Live OpenRouter via Firecrawl |
-| `compare`, `pick`, `export`, `doctor` | Local packaged snapshot |
-
-Live commands (`top`, `search`, `get`) require `FIRECRAWL_API_KEY`. Snapshot commands work offline.
-
 ## Also ships as
 
 - **Web dashboard** — browser-based model explorer at `apps/web`
-- **Terminal UI** — keyboard-first browsing at `apps/tui`
+- **Terminal UI** — keyboard-first browsing at `apps/tui` (source checkout only)
 
 ## Development
 
@@ -188,6 +182,20 @@ bun run test
 bun run build
 ```
 
-## Architecture
+## Docs
 
-See [`ARCHITECTURE.md`](./ARCHITECTURE.md) for the system diagram and package breakdown.
+- **Web docs**: full guides and command reference → [model-picker.dev/docs](https://model-picker.dev/docs)
+- **`llms.txt`**: agent-readable documentation → [`llms.txt`](./llms.txt)
+- **Architecture**: system diagram and package breakdown → [`ARCHITECTURE.md`](./ARCHITECTURE.md)
+
+## Contributing
+
+See [`CONTRIBUTING.md`](./CONTRIBUTING.md) for setup instructions and development workflow.
+
+## Security
+
+To report a vulnerability, see [`SECURITY.md`](./SECURITY.md).
+
+## License
+
+[Apache-2.0](./LICENSE)

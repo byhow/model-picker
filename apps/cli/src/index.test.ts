@@ -253,7 +253,7 @@ describe('cli smoke tests', () => {
       const result = await runCli(['sync'], { cwd: tempDir });
 
       expect(result.exitCode).toBe(1);
-      expect(result.stderr).toContain('only available from a model-picker source checkout');
+      expect(result.stderr).toContain('only available from a source checkout');
     });
   });
 

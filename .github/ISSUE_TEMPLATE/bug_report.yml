@@ -1,0 +1,50 @@
+name: Bug Report
+description: Report a bug or unexpected behavior
+labels: ["bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened? What did you expect to happen?
+    validations:
+      required: true
+
+  - type: input
+    id: command
+    attributes:
+      label: Command run
+      description: The exact command you ran
+      placeholder: "model-picker top --order most-popular"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: install-mode
+    attributes:
+      label: Install mode
+      options:
+        - npx / bunx
+        - npm install -g
+        - bun install -g
+        - Source checkout (bun run)
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: "OS, Node/Bun version, and output of `model-picker doctor --json` if available"
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / output
+      description: Paste any relevant terminal output
+      render: shell
+    validations:
+      required: false

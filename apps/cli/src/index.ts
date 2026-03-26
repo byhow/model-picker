@@ -498,7 +498,23 @@ async function runWorkspaceCommand(
   const workspaceRoot = await findSourceWorkspaceRoot();
   if (!workspaceRoot) {
     console.error(
-      `The ${label} command is only available from a model-picker source checkout. Clone https://github.com/byhow/model-picker and run bun install first.`,
+      [
+        `The "${label}" command is only available from a source checkout.`,
+        '',
+        'Installed via npm/bun? These commands work without a checkout:',
+        '  model-picker top        # live model discovery',
+        '  model-picker get        # model details',
+        '  model-picker compare    # side-by-side comparison',
+        '  model-picker pick       # agent-aware recommendations',
+        '  model-picker skills     # install/manage agent skills',
+        '  model-picker export     # export results',
+        '  model-picker doctor     # check setup',
+        '',
+        `To use "${label}", clone the repo and run from source:`,
+        '  git clone https://github.com/byhow/model-picker.git',
+        '  cd model-picker && bun install',
+        `  bun run ${script}`,
+      ].join('\n'),
     );
     process.exit(1);
   }
