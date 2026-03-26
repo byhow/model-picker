@@ -1,115 +1,134 @@
 # model-picker
 
-Model Picker helps AI builders compare models across price, speed, context, and OpenRouter-style discovery filters.
+**Too many AI models. Not enough time to compare them.**
 
-It ships as:
+`model-picker` helps you find the right LLM fast — compare models across price, speed, and context window, get agent-aware recommendations for your coding workflow, and install skills across agent CLIs. All from your terminal.
 
-- a web dashboard for browsing and comparing models
-- a CLI for fast lookup, filtering, and export
-- a terminal UI for keyboard-first exploration
-
-All three surfaces share the same ingest pipeline, catalog logic, and scoring primitives.
-
-## Install the CLI
-
-### Run instantly
+## Quick install
 
 ```bash
-npx model-picker doctor
-```
+# Run instantly — no install required
+npx model-picker top --order most-popular --limit 5
 
-```bash
-bunx model-picker doctor
-```
-
-### Install globally
-
-```bash
+# Install globally
 npm i -g model-picker
-```
-
-```bash
 bun install -g model-picker
 ```
 
-After install, you can use either `model-picker` or the short alias `mp`.
+After install, use either `model-picker` or the short alias `mp`.
 
-## CLI setup
+## Demo
 
-The CLI now has two data modes:
+> Screenshots and terminal recordings coming soon.
+>
+> **CLI** · **Web dashboard** · **TUI**
 
-- `top`, `search`, and `get` use live OpenRouter pages and mimic OpenRouter URL query filters.
-- `compare`, `pick`, `export`, and `doctor` still work from the local packaged snapshot.
+## Use cases
 
-### Recommended onboarding
-
-After `npx` or global install, run:
+**Find the cheapest coding model:**
 
 ```bash
-npx model-picker onboard
+model-picker top --categories programming --order most-popular --max-price 1
 ```
 
-or, if you installed globally:
+**Pick the best model for your agent:**
 
 ```bash
-model-picker onboard
+model-picker pick --agent opencode --task agent --limit 5
+model-picker pick --agent amp --json
 ```
 
-This saves your Firecrawl key to the CLI config file so you do not need to export it on every shell session.
-
-If `FIRECRAWL_API_KEY` is already set, onboarding will keep using that by default and only ask whether you want to save a replacement key.
-
-You can re-run setup later with:
+**Compare two models side by side:**
 
 ```bash
-model-picker configure
-```
-
-### Environment variable setup
-
-If you prefer env vars, set a Firecrawl API key directly:
-
-```bash
-export FIRECRAWL_API_KEY=fc-your-key
-```
-
-### Where credentials are stored
-
-- macOS/Linux default: `~/.config/model-picker/config.json`
-- Windows default: `%APPDATA%\model-picker\config.json`
-- test/custom override: `MODEL_PICKER_CONFIG_DIR`
-
-`doctor` prints the resolved config path and whether live access is coming from `FIRECRAWL_API_KEY`, the config file, fixtures, or is still missing.
-
-If credentials are missing and you run a live command in an interactive terminal, the CLI will offer to launch onboarding automatically.
-
-### Standalone binary from source
-
-Build the single-file binary and run it locally:
-
-```bash
-bun run build:cli-bin
-./apps/cli/dist/model-picker doctor
-```
-
-## Common use cases
-
-```bash
-model-picker onboard
-model-picker doctor
-model-picker top --order most-popular --limit 10
-model-picker top --order newest --limit 10
-model-picker top --categories programming --order top-weekly --zdr --limit 10
-model-picker top --input-modalities text,image --output-modalities image --max-price 0.5 --order most-popular
-model-picker search claude --categories programming --order most-popular --zdr
-model-picker get openai/gpt-5.4
 model-picker compare anthropic/claude-opus-4.6 openai/gpt-5.4
+```
+
+**Install skills across coding agents:**
+
+```bash
+model-picker skills add owner/repo --skill my-skill --agent opencode --agent amp
+model-picker skills list
+```
+
+**Export for scripts and docs:**
+
+```bash
 model-picker export --format markdown --limit 10 --output ./models.md
 ```
 
+## What works from npm install vs source checkout
+
+| From npm / npx | Source checkout only |
+|---|---|
+| `top`, `get`, `compare`, `pick` | `sync` (refresh snapshots) |
+| `skills add/list/remove` | `tui` (terminal UI) |
+| `export`, `doctor`, `onboard`, `configure` | `dev:web` (web dashboard) |
+
+The CLI will tell you which commands need a source checkout and how to set one up.
+
+## How data works
+
+| Command | Data source |
+|---|---|
+| `top`, `get` | Live OpenRouter (no API key required) |
+| `compare`, `pick`, `export`, `doctor` | Local packaged snapshot (works offline) |
+
+Live commands query OpenRouter's frontend API directly. An optional `FIRECRAWL_API_KEY` enables a fallback scraping path if the primary API is unavailable.
+
+Snapshots are refreshed daily via CI and bundled with each npm release.
+
+## Agent-first picks
+
+`pick` recommends models tailored to specific coding agents and workflows.
+
+```bash
+model-picker pick --task agent --agent opencode --limit 5
+model-picker pick --task review --agent claude-code --limit 5
+model-picker pick --agent amp --json
+```
+
+Supported agents: `amp`, `opencode`, `claude-code`, `codex`, `cursor`.
+
+When `--agent` is set and `--task` is omitted, `pick` defaults to `--task agent`. Use `--json` to pipe picks into scripts and tooling.
+
+## Skill installation
+
+`model-picker skills` installs and manages Agent Skills for supported coding-agent CLIs.
+
+```bash
+model-picker skills add owner/repo --list
+model-picker skills add owner/repo --skill my-skill --agent opencode
+model-picker skills add owner/repo --all --agent opencode --yes
+model-picker skills add ./my-local-skills --agent claude-code --copy
+model-picker skills remove --skill my-skill --agent opencode
+model-picker skills list
+model-picker skills list --global
+```
+
+Supported sources:
+
+- GitHub shorthand: `owner/repo`
+- GitHub URL: `https://github.com/owner/repo`
+- GitHub tree URL: `https://github.com/owner/repo/tree/main/skills/skill-name`
+- Generic git URL: `git@github.com:owner/repo.git`
+- Local directory path
+
+Install targets:
+
+- `amp`, `opencode`, `codex`, `cursor` → `.agents/skills/`
+- `claude-code` → `.claude/skills/`
+- `--global` → each agent's global skills directory
+
 ## Live OpenRouter CLI filters
 
-`top` and `search` now mirror OpenRouter query params as closely as possible.
+`top` and `get` mirror OpenRouter URL query parameters.
+
+```bash
+model-picker top --order most-popular
+model-picker top --input-modalities text,image --output-modalities image --max-price 0.5 --order most-popular
+model-picker top --categories programming --order top-weekly --zdr
+```
 
 Supported flags:
 
@@ -118,53 +137,65 @@ Supported flags:
 - `--output-modalities text,image,audio,embeddings`
 - `--categories programming,...`
 - `--max-price <number>`
-- `--zdr`
+- `--zdr` (top of DL, rate limited)
 
-Examples:
+## Setup
+
+### Recommended onboarding
 
 ```bash
-model-picker top --order most-popular
-model-picker top --input-modalities text,image --order most-popular
-model-picker top --input-modalities text,image --output-modalities image --order most-popular
-model-picker top --input-modalities text,image --output-modalities image --max-price 0.5 --order most-popular
-model-picker top --categories programming --order most-popular --zdr
-model-picker top --categories programming --order top-weekly --zdr
-model-picker top --categories programming --order newest --zdr
+npx model-picker onboard
+model-picker configure
 ```
 
-Notes:
+This saves your Firecrawl API key to the CLI config file so you do not set it per-session.
 
-- `top` defaults to `--order most-popular`.
-- `max_price` follows OpenRouter prompt/input pricing semantics.
-- The CLI prints the source OpenRouter URL before results so you can inspect the exact mirrored query.
+### Environment variable
 
-## Run all repo surfaces from source
+```bash
+export FIRECRAWL_API_KEY=fc-your-key
+```
+
+### Config location
+
+- macOS/Linux: `~/.config/model-picker/config.json`
+- Windows: `%APPDATA%\model-picker\config.json`
+- Override: `MODEL_PICKER_CONFIG_DIR`
+
+Run `model-picker doctor` to check resolved config path and whether live access is working.
+
+## Also ships as
+
+- **Web dashboard** — browser-based model explorer at `apps/web`
+- **Terminal UI** — keyboard-first browsing at `apps/tui` (source checkout only)
+
+## Development
 
 ```bash
 bun install
-bun run dev:web
-bun run dev:cli
-bun run dev:tui
-bun run refresh
-```
-
-## Verify the repo
-
-```bash
+bun run dev:web    # Web dashboard
+bun run dev:cli    # CLI development
+bun run dev:tui    # Terminal UI
+bun run refresh    # Refresh local model snapshot
 bun run typecheck
 bun run test
 bun run build
-bun run verify:cli-install
 ```
 
-## How data is refreshed
+## Docs
 
-1. `packages/ingest/src/fetch-models.ts` fetches and curates the local snapshot used by snapshot-backed commands and surfaces.
-2. `packages/ingest/src/scrape-speed.ts` enriches local data with speed metrics when available.
-3. `packages/ingest/src/consolidate.ts` writes the local snapshots used by the catalog and web app.
-4. `bun run refresh` regenerates those artifacts locally, and the tracked web snapshot lives at `apps/web/src/data/models.json`.
-5. Live CLI discovery commands (`top`, `search`, `get`) do not depend on `bun run refresh`; they query OpenRouter live through Firecrawl.
+- **Web docs**: full guides and command reference → [model-picker.dev/docs](https://model-picker.dev/docs)
+- **`llms.txt`**: agent-readable documentation → [`llms.txt`](./llms.txt)
+- **Architecture**: system diagram and package breakdown → [`ARCHITECTURE.md`](./ARCHITECTURE.md)
 
-## Architecture
+## Contributing
 
-See [`ARCHITECTURE.md`](./ARCHITECTURE.md) for the system diagram and package breakdown.
+See [`CONTRIBUTING.md`](./CONTRIBUTING.md) for setup instructions and development workflow.
+
+## Security
+
+To report a vulnerability, see [`SECURITY.md`](./SECURITY.md).
+
+## License
+
+[Apache-2.0](./LICENSE)
