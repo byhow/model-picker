@@ -2,7 +2,7 @@
 
 **Too many AI models. Not enough time to compare them.**
 
-`model-picker` helps you find the right LLM fast — compare models across price, speed, and context window, get agent-aware recommendations for your coding workflow, and install skills across agent CLIs. All from your terminal.
+`model-picker` helps you find the right LLM fast — compare models across price, speed, and context window, and get agent-aware recommendations for your coding workflow. All from your terminal.
 
 ## Quick install
 
@@ -44,13 +44,6 @@ model-picker pick --agent amp --json
 model-picker compare anthropic/claude-opus-4.6 openai/gpt-5.4
 ```
 
-**Install skills across coding agents:**
-
-```bash
-model-picker skills add owner/repo --skill my-skill --agent opencode --agent amp
-model-picker skills list
-```
-
 **Export for scripts and docs:**
 
 ```bash
@@ -62,8 +55,8 @@ model-picker export --format markdown --limit 10 --output ./models.md
 | From npm / npx | Source checkout only |
 |---|---|
 | `top`, `get`, `compare`, `pick` | `sync` (refresh snapshots) |
-| `skills add/list/remove` | `tui` (terminal UI) |
-| `export`, `doctor`, `onboard`, `configure` | `dev:web` (web dashboard) |
+| `export`, `doctor`, `onboard`, `configure` | `tui` (terminal UI) |
+|  | `dev:web` (web dashboard) |
 
 The CLI will tell you which commands need a source checkout and how to set one up.
 
@@ -91,34 +84,6 @@ model-picker pick --agent amp --json
 Supported agents: `amp`, `opencode`, `claude-code`, `codex`, `cursor`.
 
 When `--agent` is set and `--task` is omitted, `pick` defaults to `--task agent`. Use `--json` to pipe picks into scripts and tooling.
-
-## Skill installation
-
-`model-picker skills` installs and manages Agent Skills for supported coding-agent CLIs.
-
-```bash
-model-picker skills add owner/repo --list
-model-picker skills add owner/repo --skill my-skill --agent opencode
-model-picker skills add owner/repo --all --agent opencode --yes
-model-picker skills add ./my-local-skills --agent claude-code --copy
-model-picker skills remove --skill my-skill --agent opencode
-model-picker skills list
-model-picker skills list --global
-```
-
-Supported sources:
-
-- GitHub shorthand: `owner/repo`
-- GitHub URL: `https://github.com/owner/repo`
-- GitHub tree URL: `https://github.com/owner/repo/tree/main/skills/skill-name`
-- Generic git URL: `git@github.com:owner/repo.git`
-- Local directory path
-
-Install targets:
-
-- `amp`, `opencode`, `codex`, `cursor` → `.agents/skills/`
-- `claude-code` → `.claude/skills/`
-- `--global` → each agent's global skills directory
 
 ## Live OpenRouter CLI filters
 
@@ -185,7 +150,7 @@ bun run build
 ## Docs
 
 - **Web docs**: full guides and command reference → [model-picker.dev/docs](https://model-picker.dev/docs)
-- **`llms.txt`**: agent-readable documentation → [`llms.txt`](./llms.txt)
+- **`llms.txt`**: agent-readable documentation → [`llms.txt`](./docs/llms.txt)
 - **Architecture**: system diagram and package breakdown → [`ARCHITECTURE.md`](./ARCHITECTURE.md)
 
 ## Contributing

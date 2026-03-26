@@ -1,5 +1,5 @@
 {
-  "name": "model-picker",
+  "name": "@model-picker/root",
   "private": true,
   "type": "module",
   "workspaces": [
