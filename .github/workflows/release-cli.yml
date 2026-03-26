@@ -47,7 +47,7 @@ jobs:
         working-directory: apps/cli
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm publish --provenance
+        run: npm publish --provenance --access public
 
       - name: Smoke test published package
         run: |
