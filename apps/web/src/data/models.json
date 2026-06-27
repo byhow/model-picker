@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-27T02:24:28.441Z",
+  "generatedAt": "2026-06-27T02:30:27.332Z",
   "count": 339,
   "models": [
     {
@@ -33,7 +33,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 244,
+        "bySpeed": 1,
         "byPrice": 321,
         "byContext": 42
       }
@@ -69,7 +69,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 245,
+        "bySpeed": 2,
         "byPrice": 251,
         "byContext": 175
       }
@@ -105,7 +105,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 246,
+        "bySpeed": 3,
         "byPrice": 309,
         "byContext": 43
       }
@@ -141,7 +141,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 247,
+        "bySpeed": 4,
         "byPrice": 300,
         "byContext": 44
       }
@@ -179,7 +179,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 248,
+        "bySpeed": 5,
         "byPrice": 267,
         "byContext": 13
       }
@@ -217,7 +217,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 249,
+        "bySpeed": 6,
         "byPrice": 289,
         "byContext": 14
       }
@@ -252,7 +252,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 250,
+        "bySpeed": 7,
         "byPrice": 236,
         "byContext": 99
       }
@@ -288,7 +288,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 251,
+        "bySpeed": 8,
         "byPrice": 314,
         "byContext": 6
       }
@@ -324,7 +324,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 252,
+        "bySpeed": 9,
         "byPrice": 249,
         "byContext": 77
       }
@@ -353,18 +353,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "AI21",
-            "throughput": 24,
-            "latency": 0.71
-          }
-        ],
-        "bestThroughput": 24,
-        "avgThroughput": 24
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 211,
+        "bySpeed": 10,
         "byPrice": 260,
         "byContext": 151
       }
@@ -393,18 +387,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "AionLabs",
-            "throughput": 16,
-            "latency": 2.81
-          }
-        ],
-        "bestThroughput": 16,
-        "avgThroughput": 16
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 229,
+        "bySpeed": 11,
         "byPrice": 261,
         "byContext": 203
       }
@@ -433,18 +421,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "AionLabs",
-            "throughput": 30,
-            "latency": 1.22
-          }
-        ],
-        "bestThroughput": 30,
-        "avgThroughput": 30
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 196,
+        "bySpeed": 12,
         "byPrice": 173,
         "byContext": 204
       }
@@ -473,18 +455,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "AionLabs",
-            "throughput": 18,
-            "latency": 3.15
-          }
-        ],
-        "bestThroughput": 18,
-        "avgThroughput": 18
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 227,
+        "bySpeed": 13,
         "byPrice": 182,
         "byContext": 205
       }
@@ -513,18 +489,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "AionLabs",
-            "throughput": 31,
-            "latency": 1.02
-          }
-        ],
-        "bestThroughput": 31,
-        "avgThroughput": 31
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 193,
+        "bySpeed": 14,
         "byPrice": 183,
         "byContext": 309
       }
@@ -553,18 +523,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Parasail",
-            "throughput": 96,
-            "latency": 0.36
-          }
-        ],
-        "bestThroughput": 96,
-        "avgThroughput": 96
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 48,
+        "bySpeed": 15,
         "byPrice": 101,
         "byContext": 301
       }
@@ -596,18 +560,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Amazon Bedrock",
-            "throughput": 82,
-            "latency": 0.56
-          }
-        ],
-        "bestThroughput": 82,
-        "avgThroughput": 82
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 67,
+        "bySpeed": 16,
         "byPrice": 214,
         "byContext": 45
       }
@@ -637,18 +595,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Amazon Bedrock",
-            "throughput": 54,
-            "latency": 0.5
-          }
-        ],
-        "bestThroughput": 54,
-        "avgThroughput": 54
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 118,
+        "bySpeed": 17,
         "byPrice": 65,
         "byContext": 96
       }
@@ -677,18 +629,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Amazon Bedrock",
-            "throughput": 156,
-            "latency": 0.36
-          }
-        ],
-        "bestThroughput": 156,
-        "avgThroughput": 156
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 20,
+        "bySpeed": 18,
         "byPrice": 43,
         "byContext": 263
       }
@@ -718,18 +664,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Amazon Bedrock",
-            "throughput": 24,
-            "latency": 0.48
-          }
-        ],
-        "bestThroughput": 24,
-        "avgThroughput": 24
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 212,
+        "bySpeed": 19,
         "byPrice": 294,
         "byContext": 46
       }
@@ -759,18 +699,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Amazon Bedrock",
-            "throughput": 44,
-            "latency": 0.72
-          }
-        ],
-        "bestThroughput": 44,
-        "avgThroughput": 44
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 154,
+        "bySpeed": 20,
         "byPrice": 233,
         "byContext": 97
       }
@@ -799,18 +733,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Mancer",
-            "throughput": 24,
-            "latency": 0.5
-          }
-        ],
-        "bestThroughput": 24,
-        "avgThroughput": 24
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 213,
+        "bySpeed": 21,
         "byPrice": 252,
         "byContext": 310
       }
@@ -840,23 +768,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Anthropic",
-            "throughput": 73,
-            "latency": 0.62
-          },
-          {
-            "name": "Amazon Bedrock",
-            "throughput": 66,
-            "latency": 0.67
-          }
-        ],
-        "bestThroughput": 73,
-        "avgThroughput": 69.5
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 85,
+        "bySpeed": 22,
         "byPrice": 166,
         "byContext": 176
       }
@@ -892,7 +809,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 253,
+        "bySpeed": 23,
         "byPrice": 322,
         "byContext": 47
       }
@@ -923,28 +840,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Google Vertex",
-            "throughput": 84,
-            "latency": 0.61
-          },
-          {
-            "name": "Anthropic",
-            "throughput": 65,
-            "latency": 0.79
-          },
-          {
-            "name": "Amazon Bedrock",
-            "throughput": 45,
-            "latency": 1.36
-          }
-        ],
-        "bestThroughput": 84,
-        "avgThroughput": 64.66666666666667
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 62,
+        "bySpeed": 24,
         "byPrice": 253,
         "byContext": 177
       }
@@ -975,28 +876,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Anthropic",
-            "throughput": 26,
-            "latency": 1.98
-          },
-          {
-            "name": "Google Vertex",
-            "throughput": 25,
-            "latency": 1.88
-          },
-          {
-            "name": "Amazon Bedrock",
-            "throughput": 9,
-            "latency": 3.76
-          }
-        ],
-        "bestThroughput": 26,
-        "avgThroughput": 20
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 204,
+        "bySpeed": 25,
         "byPrice": 326,
         "byContext": 178
       }
@@ -1027,28 +912,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Google Vertex (Global)",
-            "throughput": 22,
-            "latency": 1.51
-          },
-          {
-            "name": "Anthropic",
-            "throughput": 19,
-            "latency": 1.95
-          },
-          {
-            "name": "Amazon Bedrock",
-            "throughput": 14,
-            "latency": 3.91
-          }
-        ],
-        "bestThroughput": 22,
-        "avgThroughput": 18.333333333333332
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 216,
+        "bySpeed": 26,
         "byPrice": 327,
         "byContext": 179
       }
@@ -1079,28 +948,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Amazon Bedrock",
-            "throughput": 40,
-            "latency": 1.87
-          },
-          {
-            "name": "Anthropic",
-            "throughput": 36,
-            "latency": 1.63
-          },
-          {
-            "name": "Google Vertex",
-            "throughput": 35,
-            "latency": 1.04
-          }
-        ],
-        "bestThroughput": 40,
-        "avgThroughput": 37
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 166,
+        "bySpeed": 27,
         "byPrice": 310,
         "byContext": 180
       }
@@ -1136,7 +989,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 254,
+        "bySpeed": 28,
         "byPrice": 311,
         "byContext": 48
       }
@@ -1172,7 +1025,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 255,
+        "bySpeed": 29,
         "byPrice": 330,
         "byContext": 49
       }
@@ -1208,7 +1061,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 256,
+        "bySpeed": 30,
         "byPrice": 312,
         "byContext": 50
       }
@@ -1244,7 +1097,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 257,
+        "bySpeed": 31,
         "byPrice": 331,
         "byContext": 51
       }
@@ -1280,7 +1133,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 258,
+        "bySpeed": 32,
         "byPrice": 313,
         "byContext": 52
       }
@@ -1316,7 +1169,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 259,
+        "bySpeed": 33,
         "byPrice": 323,
         "byContext": 53
       }
@@ -1347,33 +1200,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Amazon Bedrock",
-            "throughput": 47,
-            "latency": null
-          },
-          {
-            "name": "Anthropic",
-            "throughput": 44,
-            "latency": 1.41
-          },
-          {
-            "name": "Google Vertex",
-            "throughput": 39,
-            "latency": 1.52
-          },
-          {
-            "name": "Google Vertex (Global)",
-            "throughput": null,
-            "latency": 0.81
-          }
-        ],
-        "bestThroughput": 47,
-        "avgThroughput": 43.333333333333336
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 140,
+        "bySpeed": 34,
         "byPrice": 301,
         "byContext": 54
       }
@@ -1404,33 +1236,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Amazon Bedrock",
-            "throughput": 39,
-            "latency": null
-          },
-          {
-            "name": "Google Vertex",
-            "throughput": 38,
-            "latency": 1.32
-          },
-          {
-            "name": "Anthropic",
-            "throughput": 36,
-            "latency": 1.61
-          },
-          {
-            "name": "Google Vertex (Global)",
-            "throughput": null,
-            "latency": 1.15
-          }
-        ],
-        "bestThroughput": 39,
-        "avgThroughput": 37.666666666666664
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 169,
+        "bySpeed": 35,
         "byPrice": 302,
         "byContext": 55
       }
@@ -1461,33 +1272,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Google Vertex (Global)",
-            "throughput": 44,
-            "latency": 1.18
-          },
-          {
-            "name": "Google Vertex (US East)",
-            "throughput": 41,
-            "latency": 1.13
-          },
-          {
-            "name": "Amazon Bedrock",
-            "throughput": 40,
-            "latency": null
-          },
-          {
-            "name": "Anthropic",
-            "throughput": null,
-            "latency": 1.78
-          }
-        ],
-        "bestThroughput": 44,
-        "avgThroughput": 41.666666666666664
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 155,
+        "bySpeed": 36,
         "byPrice": 303,
         "byContext": 56
       }
@@ -1521,7 +1311,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 260,
+        "bySpeed": 37,
         "byPrice": 132,
         "byContext": 311
       }
@@ -1555,7 +1345,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 261,
+        "bySpeed": 38,
         "byPrice": 133,
         "byContext": 100
       }
@@ -1584,18 +1374,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Clarifai",
-            "throughput": 153,
-            "latency": 0.21
-          }
-        ],
-        "bestThroughput": 153,
-        "avgThroughput": 153
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 23,
+        "bySpeed": 39,
         "byPrice": 47,
         "byContext": 206
       }
@@ -1629,7 +1413,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 262,
+        "bySpeed": 40,
         "byPrice": 161,
         "byContext": 207
       }
@@ -1659,18 +1443,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "NovitaAI",
-            "throughput": 22,
-            "latency": 1.27
-          }
-        ],
-        "bestThroughput": 22,
-        "avgThroughput": 22
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 217,
+        "bySpeed": 41,
         "byPrice": 167,
         "byContext": 208
       }
@@ -1700,18 +1478,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Parasail",
-            "throughput": 26,
-            "latency": 0.99
-          }
-        ],
-        "bestThroughput": 26,
-        "avgThroughput": 26
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 205,
+        "bySpeed": 42,
         "byPrice": 57,
         "byContext": 264
       }
@@ -1742,18 +1514,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Seed",
-            "throughput": 35,
-            "latency": 1.02
-          }
-        ],
-        "bestThroughput": 35,
-        "avgThroughput": 35
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 180,
+        "bySpeed": 43,
         "byPrice": 194,
         "byContext": 101
       }
@@ -1784,18 +1550,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Seed",
-            "throughput": 83,
-            "latency": 0.68
-          }
-        ],
-        "bestThroughput": 83,
-        "avgThroughput": 83
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 65,
+        "bySpeed": 44,
         "byPrice": 71,
         "byContext": 102
       }
@@ -1826,18 +1586,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Seed",
-            "throughput": 37,
-            "latency": 0.99
-          }
-        ],
-        "bestThroughput": 37,
-        "avgThroughput": 37
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 173,
+        "bySpeed": 45,
         "byPrice": 195,
         "byContext": 103
       }
@@ -1868,18 +1622,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Seed",
-            "throughput": 34,
-            "latency": 1.25
-          }
-        ],
-        "bestThroughput": 34,
-        "avgThroughput": 34
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 185,
+        "bySpeed": 46,
         "byPrice": 83,
         "byContext": 104
       }
@@ -1908,18 +1656,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Venice",
-            "throughput": 73,
-            "latency": 0.46
-          }
-        ],
-        "bestThroughput": 73,
-        "avgThroughput": 73
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 86,
+        "bySpeed": 47,
         "byPrice": 1,
         "byContext": 312
       }
@@ -1948,18 +1690,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Cohere",
-            "throughput": 23,
-            "latency": 0.54
-          }
-        ],
-        "bestThroughput": 23,
-        "avgThroughput": 23
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 214,
+        "bySpeed": 48,
         "byPrice": 269,
         "byContext": 152
       }
@@ -1988,18 +1724,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Cohere",
-            "throughput": 51,
-            "latency": 0.24
-          }
-        ],
-        "bestThroughput": 51,
-        "avgThroughput": 51
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 131,
+        "bySpeed": 49,
         "byPrice": 109,
         "byContext": 265
       }
@@ -2028,18 +1758,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Cohere",
-            "throughput": 32,
-            "latency": 0.28
-          }
-        ],
-        "bestThroughput": 32,
-        "avgThroughput": 32
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 191,
+        "bySpeed": 50,
         "byPrice": 270,
         "byContext": 266
       }
@@ -2073,7 +1797,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 263,
+        "bySpeed": 51,
         "byPrice": 48,
         "byContext": 267
       }
@@ -2107,7 +1831,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 264,
+        "bySpeed": 52,
         "byPrice": 2,
         "byContext": 153
       }
@@ -2136,18 +1860,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Together",
-            "throughput": 43,
-            "latency": 0.49
-          }
-        ],
-        "bestThroughput": 43,
-        "avgThroughput": 43
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 156,
+        "bySpeed": 53,
         "byPrice": 168,
         "byContext": 268
       }
@@ -2176,23 +1894,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "NovitaAI",
-            "throughput": 23,
-            "latency": 1.19
-          },
-          {
-            "name": "DeepInfra",
-            "throughput": 22,
-            "latency": 0.47
-          }
-        ],
-        "bestThroughput": 23,
-        "avgThroughput": 22.5
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 215,
+        "bySpeed": 54,
         "byPrice": 137,
         "byContext": 209
       }
@@ -2221,28 +1928,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "SambaNova",
-            "throughput": 78,
-            "latency": 0.47
-          },
-          {
-            "name": "Baseten",
-            "throughput": 61,
-            "latency": 0.43
-          },
-          {
-            "name": "Hyperbolic",
-            "throughput": 27,
-            "latency": 0.75
-          }
-        ],
-        "bestThroughput": 78,
-        "avgThroughput": 55.333333333333336
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 76,
+        "bySpeed": 55,
         "byPrice": 126,
         "byContext": 194
       }
@@ -2276,7 +1967,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 265,
+        "bySpeed": 56,
         "byPrice": 131,
         "byContext": 195
       }
@@ -2305,23 +1996,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Azure",
-            "throughput": 79,
-            "latency": 1.35
-          },
-          {
-            "name": "NovitaAI",
-            "throughput": 32,
-            "latency": 1.31
-          }
-        ],
-        "bestThroughput": 79,
-        "avgThroughput": 55.5
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 74,
+        "bySpeed": 57,
         "byPrice": 215,
         "byContext": 196
       }
@@ -2350,43 +2030,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Nebius AI Studio (Fast)",
-            "throughput": 168,
-            "latency": null
-          },
-          {
-            "name": "SambaNova",
-            "throughput": 104,
-            "latency": null
-          },
-          {
-            "name": "Together",
-            "throughput": 91,
-            "latency": 0.86
-          },
-          {
-            "name": "Nebius Token Factory",
-            "throughput": null,
-            "latency": 0.58
-          },
-          {
-            "name": "DeepInfra",
-            "throughput": null,
-            "latency": 0.95
-          },
-          {
-            "name": "Hyperbolic",
-            "throughput": null,
-            "latency": null
-          }
-        ],
-        "bestThroughput": 168,
-        "avgThroughput": 121
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 19,
+        "bySpeed": 58,
         "byPrice": 207,
         "byContext": 197
       }
@@ -2415,28 +2064,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "SambaNova",
-            "throughput": 154,
-            "latency": 0.95
-          },
-          {
-            "name": "DeepInfra",
-            "throughput": 51,
-            "latency": 0.46
-          },
-          {
-            "name": "NovitaAI",
-            "throughput": 51,
-            "latency": 0.63
-          }
-        ],
-        "bestThroughput": 154,
-        "avgThroughput": 85.33333333333333
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 22,
+        "bySpeed": 59,
         "byPrice": 134,
         "byContext": 269
       }
@@ -2465,33 +2098,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "SambaNova",
-            "throughput": 45,
-            "latency": null
-          },
-          {
-            "name": "NovitaAI",
-            "throughput": 26,
-            "latency": 1.52
-          },
-          {
-            "name": "Chutes",
-            "throughput": 25,
-            "latency": 1.5
-          },
-          {
-            "name": "AtlasCloud",
-            "throughput": null,
-            "latency": 1.64
-          }
-        ],
-        "bestThroughput": 45,
-        "avgThroughput": 32
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 150,
+        "bySpeed": 60,
         "byPrice": 145,
         "byContext": 198
       }
@@ -2520,48 +2132,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "NovitaAI",
-            "throughput": 25,
-            "latency": null
-          },
-          {
-            "name": "DeepSeek",
-            "throughput": 23,
-            "latency": null
-          },
-          {
-            "name": "AtlasCloud",
-            "throughput": 21,
-            "latency": null
-          },
-          {
-            "name": "DeepInfra",
-            "throughput": null,
-            "latency": 1.05
-          },
-          {
-            "name": "Parasail",
-            "throughput": null,
-            "latency": 1.1
-          },
-          {
-            "name": "Google Vertex",
-            "throughput": null,
-            "latency": 1.22
-          },
-          {
-            "name": "AtlasCloud Fast",
-            "throughput": null,
-            "latency": null
-          }
-        ],
-        "bestThroughput": 25,
-        "avgThroughput": 23
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 207,
+        "bySpeed": 61,
         "byPrice": 79,
         "byContext": 210
       }
@@ -2590,28 +2166,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "SiliconFlow",
-            "throughput": 27,
-            "latency": 2.68
-          },
-          {
-            "name": "NovitaAI",
-            "throughput": 17,
-            "latency": 1.35
-          },
-          {
-            "name": "AtlasCloud",
-            "throughput": 16,
-            "latency": 2.67
-          }
-        ],
-        "bestThroughput": 27,
-        "avgThroughput": 20
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 200,
+        "bySpeed": 62,
         "byPrice": 98,
         "byContext": 199
       }
@@ -2645,7 +2205,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 266,
+        "bySpeed": 63,
         "byPrice": 54,
         "byContext": 15
       }
@@ -2679,7 +2239,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 267,
+        "bySpeed": 64,
         "byPrice": 140,
         "byContext": 16
       }
@@ -2712,28 +2272,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Google Vertex (Global)",
-            "throughput": 70,
-            "latency": 0.71
-          },
-          {
-            "name": "Google Vertex",
-            "throughput": 56,
-            "latency": 1
-          },
-          {
-            "name": "Google AI Studio",
-            "throughput": 52,
-            "latency": 0.7
-          }
-        ],
-        "bestThroughput": 70,
-        "avgThroughput": 59.333333333333336
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 91,
+        "bySpeed": 65,
         "byPrice": 216,
         "byContext": 17
       }
@@ -2764,23 +2308,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Google AI Studio",
-            "throughput": 156,
-            "latency": 4.01
-          },
-          {
-            "name": "Google Vertex",
-            "throughput": 112,
-            "latency": 7.41
-          }
-        ],
-        "bestThroughput": 156,
-        "avgThroughput": 134
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 21,
+        "bySpeed": 66,
         "byPrice": 217,
         "byContext": 313
       }
@@ -2813,23 +2346,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Google AI Studio",
-            "throughput": 144,
-            "latency": 0.5
-          },
-          {
-            "name": "Google Vertex",
-            "throughput": 68,
-            "latency": 0.58
-          }
-        ],
-        "bestThroughput": 144,
-        "avgThroughput": 106
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 24,
+        "bySpeed": 67,
         "byPrice": 84,
         "byContext": 18
       }
@@ -2862,23 +2384,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Google AI Studio",
-            "throughput": 138,
-            "latency": 0.39
-          },
-          {
-            "name": "Google Vertex",
-            "throughput": 132,
-            "latency": 0.85
-          }
-        ],
-        "bestThroughput": 138,
-        "avgThroughput": 135
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 27,
+        "bySpeed": 68,
         "byPrice": 85,
         "byContext": 19
       }
@@ -2911,28 +2422,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Google AI Studio",
-            "throughput": 99,
-            "latency": 3.04
-          },
-          {
-            "name": "Google Vertex (Global)",
-            "throughput": 92,
-            "latency": 2.76
-          },
-          {
-            "name": "Google Vertex (US)",
-            "throughput": 75,
-            "latency": 5.26
-          }
-        ],
-        "bestThroughput": 99,
-        "avgThroughput": 88.66666666666667
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 43,
+        "bySpeed": 69,
         "byPrice": 271,
         "byContext": 20
       }
@@ -2964,28 +2459,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Google AI Studio",
-            "throughput": 99,
-            "latency": 3.05
-          },
-          {
-            "name": "Google Vertex (Global)",
-            "throughput": 92,
-            "latency": 2.77
-          },
-          {
-            "name": "Google Vertex (US)",
-            "throughput": 75,
-            "latency": 5.27
-          }
-        ],
-        "bestThroughput": 99,
-        "avgThroughput": 88.66666666666667
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 44,
+        "bySpeed": 70,
         "byPrice": 272,
         "byContext": 21
       }
@@ -3018,28 +2497,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Google AI Studio",
-            "throughput": 98,
-            "latency": 3.05
-          },
-          {
-            "name": "Google Vertex (Global)",
-            "throughput": 93,
-            "latency": 2.77
-          },
-          {
-            "name": "Google Vertex (US)",
-            "throughput": 77,
-            "latency": 5.27
-          }
-        ],
-        "bestThroughput": 98,
-        "avgThroughput": 89.33333333333333
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 45,
+        "bySpeed": 71,
         "byPrice": 273,
         "byContext": 22
       }
@@ -3072,23 +2535,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Google AI Studio",
-            "throughput": 79,
-            "latency": 1.07
-          },
-          {
-            "name": "Google Vertex",
-            "throughput": 61,
-            "latency": 1.62
-          }
-        ],
-        "bestThroughput": 79,
-        "avgThroughput": 70
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 75,
+        "bySpeed": 72,
         "byPrice": 225,
         "byContext": 23
       }
@@ -3124,7 +2576,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 268,
+        "bySpeed": 73,
         "byPrice": 290,
         "byContext": 302
       }
@@ -3155,23 +2607,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Google Vertex",
-            "throughput": 46,
-            "latency": 24.62
-          },
-          {
-            "name": "Google AI Studio",
-            "throughput": 19,
-            "latency": 3.81
-          }
-        ],
-        "bestThroughput": 46,
-        "avgThroughput": 32.5
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 144,
+        "bySpeed": 74,
         "byPrice": 291,
         "byContext": 303
       }
@@ -3207,7 +2648,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 269,
+        "bySpeed": 75,
         "byPrice": 226,
         "byContext": 211
       }
@@ -3238,23 +2679,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Google AI Studio",
-            "throughput": 93,
-            "latency": 14.66
-          },
-          {
-            "name": "Google Vertex",
-            "throughput": 69,
-            "latency": 15.05
-          }
-        ],
-        "bestThroughput": 93,
-        "avgThroughput": 81
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 52,
+        "bySpeed": 76,
         "byPrice": 227,
         "byContext": 212
       }
@@ -3292,7 +2722,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 270,
+        "bySpeed": 77,
         "byPrice": 174,
         "byContext": 24
       }
@@ -3325,23 +2755,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Google AI Studio",
-            "throughput": 88,
-            "latency": 0.81
-          },
-          {
-            "name": "Google Vertex",
-            "throughput": 63,
-            "latency": 1.1
-          }
-        ],
-        "bestThroughput": 88,
-        "avgThroughput": 75.5
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 59,
+        "bySpeed": 78,
         "byPrice": 175,
         "byContext": 25
       }
@@ -3374,23 +2793,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Google AI Studio",
-            "throughput": 80,
-            "latency": 3.7
-          },
-          {
-            "name": "Google Vertex",
-            "throughput": 51,
-            "latency": 5.1
-          }
-        ],
-        "bestThroughput": 80,
-        "avgThroughput": 65.5
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 73,
+        "bySpeed": 79,
         "byPrice": 292,
         "byContext": 26
       }
@@ -3423,18 +2831,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Google AI Studio",
-            "throughput": 53,
-            "latency": 3.53
-          }
-        ],
-        "bestThroughput": 53,
-        "avgThroughput": 53
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 125,
+        "bySpeed": 80,
         "byPrice": 293,
         "byContext": 11
       }
@@ -3472,7 +2874,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 271,
+        "bySpeed": 81,
         "byPrice": 268,
         "byContext": 27
       }
@@ -3501,18 +2903,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "NextBit",
-            "throughput": 25,
-            "latency": 2.71
-          }
-        ],
-        "bestThroughput": 25,
-        "avgThroughput": 25
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 208,
+        "bySpeed": 82,
         "byPrice": 120,
         "byContext": 329
       }
@@ -3542,23 +2938,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Cloudflare",
-            "throughput": 20,
-            "latency": 0.32
-          },
-          {
-            "name": "DeepInfra",
-            "throughput": 20,
-            "latency": 0.46
-          }
-        ],
-        "bestThroughput": 20,
-        "avgThroughput": 20
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 222,
+        "bySpeed": 83,
         "byPrice": 49,
         "byContext": 213
       }
@@ -3588,33 +2973,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Phala",
-            "throughput": 35,
-            "latency": 0.67
-          },
-          {
-            "name": "DeepInfra",
-            "throughput": 32,
-            "latency": 0.71
-          },
-          {
-            "name": "NovitaAI",
-            "throughput": 27,
-            "latency": null
-          },
-          {
-            "name": "Parasail",
-            "throughput": null,
-            "latency": 0.73
-          }
-        ],
-        "bestThroughput": 35,
-        "avgThroughput": 31.333333333333332
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 181,
+        "bySpeed": 84,
         "byPrice": 53,
         "byContext": 214
       }
@@ -3644,18 +3008,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "DeepInfra",
-            "throughput": 30,
-            "latency": 0.42
-          }
-        ],
-        "bestThroughput": 30,
-        "avgThroughput": 30
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 197,
+        "bySpeed": 85,
         "byPrice": 33,
         "byContext": 215
       }
@@ -3684,18 +3042,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Together",
-            "throughput": 29,
-            "latency": 0.24
-          }
-        ],
-        "bestThroughput": 29,
-        "avgThroughput": 29
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 198,
+        "bySpeed": 86,
         "byPrice": 41,
         "byContext": 314
       }
@@ -3731,7 +3083,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 272,
+        "bySpeed": 87,
         "byPrice": 77,
         "byContext": 105
       }
@@ -3767,7 +3119,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 273,
+        "bySpeed": 88,
         "byPrice": 3,
         "byContext": 106
       }
@@ -3803,7 +3155,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 274,
+        "bySpeed": 89,
         "byPrice": 81,
         "byContext": 107
       }
@@ -3839,7 +3191,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 275,
+        "bySpeed": 90,
         "byPrice": 4,
         "byContext": 108
       }
@@ -3875,7 +3227,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 276,
+        "bySpeed": 91,
         "byPrice": 5,
         "byContext": 28
       }
@@ -3911,7 +3263,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 277,
+        "bySpeed": 92,
         "byPrice": 6,
         "byContext": 29
       }
@@ -3940,28 +3292,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "DeepInfra",
-            "throughput": 43,
-            "latency": 0.22
-          },
-          {
-            "name": "Mancer",
-            "throughput": 39,
-            "latency": 0.37
-          },
-          {
-            "name": "NextBit",
-            "throughput": 20,
-            "latency": 0.89
-          }
-        ],
-        "bestThroughput": 43,
-        "avgThroughput": 34
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 157,
+        "bySpeed": 93,
         "byPrice": 31,
         "byContext": 337
       }
@@ -3990,18 +3326,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Cloudflare",
-            "throughput": 25,
-            "latency": 0.58
-          }
-        ],
-        "bestThroughput": 25,
-        "avgThroughput": 25
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 209,
+        "bySpeed": 94,
         "byPrice": 40,
         "byContext": 262
       }
@@ -4035,7 +3365,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 278,
+        "bySpeed": 95,
         "byPrice": 34,
         "byContext": 216
       }
@@ -4064,18 +3394,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Inception",
-            "throughput": 258,
-            "latency": 0.37
-          }
-        ],
-        "bestThroughput": 258,
-        "avgThroughput": 258
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 10,
+        "bySpeed": 96,
         "byPrice": 124,
         "byContext": 270
       }
@@ -4109,7 +3433,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 279,
+        "bySpeed": 97,
         "byPrice": 118,
         "byContext": 109
       }
@@ -4143,7 +3467,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 280,
+        "bySpeed": 98,
         "byPrice": 27,
         "byContext": 110
       }
@@ -4177,7 +3501,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 281,
+        "bySpeed": 99,
         "byPrice": 119,
         "byContext": 111
       }
@@ -4206,18 +3530,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Inflection",
-            "throughput": 5,
-            "latency": 2.37
-          }
-        ],
-        "bestThroughput": 5,
-        "avgThroughput": 5
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 242,
+        "bySpeed": 100,
         "byPrice": 274,
         "byContext": 333
       }
@@ -4246,18 +3564,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Inflection",
-            "throughput": 3,
-            "latency": 2.45
-          }
-        ],
-        "bestThroughput": 3,
-        "avgThroughput": 3
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 243,
+        "bySpeed": 101,
         "byPrice": 275,
         "byContext": 334
       }
@@ -4291,7 +3603,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 282,
+        "bySpeed": 102,
         "byPrice": 162,
         "byContext": 154
       }
@@ -4320,18 +3632,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Together",
-            "throughput": 74,
-            "latency": 0.35
-          }
-        ],
-        "bestThroughput": 74,
-        "avgThroughput": 74
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 83,
+        "bySpeed": 103,
         "byPrice": 42,
         "byContext": 271
       }
@@ -4360,18 +3666,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Liquid",
-            "throughput": 98,
-            "latency": 0.42
-          }
-        ],
-        "bestThroughput": 98,
-        "avgThroughput": 98
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 46,
+        "bySpeed": 104,
         "byPrice": 7,
         "byContext": 315
       }
@@ -4400,18 +3700,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Liquid",
-            "throughput": 303,
-            "latency": 0.51
-          }
-        ],
-        "bestThroughput": 303,
-        "avgThroughput": 303
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 9,
+        "bySpeed": 105,
         "byPrice": 8,
         "byContext": 316
       }
@@ -4440,18 +3734,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Mancer",
-            "throughput": 38,
-            "latency": 0.7
-          }
-        ],
-        "bestThroughput": 38,
-        "avgThroughput": 38
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 170,
+        "bySpeed": 106,
         "byPrice": 148,
         "byContext": 335
       }
@@ -4480,33 +3768,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "NovitaAI",
-            "throughput": 51,
-            "latency": 0.57
-          },
-          {
-            "name": "DeepInfra",
-            "throughput": 41,
-            "latency": 0.25
-          },
-          {
-            "name": "Together",
-            "throughput": 39,
-            "latency": null
-          },
-          {
-            "name": "Cloudflare",
-            "throughput": null,
-            "latency": 0.35
-          }
-        ],
-        "bestThroughput": 51,
-        "avgThroughput": 43.666666666666664
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 132,
+        "bySpeed": 107,
         "byPrice": 44,
         "byContext": 330
       }
@@ -4535,23 +3802,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "DeepInfra (Turbo)",
-            "throughput": 20,
-            "latency": 0.28
-          },
-          {
-            "name": "DeepInfra",
-            "throughput": 15,
-            "latency": 0.43
-          }
-        ],
-        "bestThroughput": 20,
-        "avgThroughput": 17.5
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 223,
+        "bySpeed": 108,
         "byPrice": 86,
         "byContext": 217
       }
@@ -4580,33 +3836,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Groq",
-            "throughput": 230,
-            "latency": 0.17
-          },
-          {
-            "name": "Friendli",
-            "throughput": 178,
-            "latency": 0.09
-          },
-          {
-            "name": "Cerebras",
-            "throughput": 68,
-            "latency": null
-          },
-          {
-            "name": "Nebius AI Studio (Fast)",
-            "throughput": null,
-            "latency": 0.24
-          }
-        ],
-        "bestThroughput": 230,
-        "avgThroughput": 158.66666666666666
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 11,
+        "bySpeed": 109,
         "byPrice": 28,
         "byContext": 218
       }
@@ -4641,7 +3876,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 283,
+        "bySpeed": 110,
         "byPrice": 80,
         "byContext": 219
       }
@@ -4670,18 +3905,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Cloudflare",
-            "throughput": 113,
-            "latency": 0.2
-          }
-        ],
-        "bestThroughput": 113,
-        "avgThroughput": 113
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 34,
+        "bySpeed": 111,
         "byPrice": 63,
         "byContext": 220
       }
@@ -4710,18 +3939,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Cloudflare",
-            "throughput": 82,
-            "latency": 0.21
-          }
-        ],
-        "bestThroughput": 82,
-        "avgThroughput": 82
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 68,
+        "bySpeed": 112,
         "byPrice": 78,
         "byContext": 221
       }
@@ -4750,18 +3973,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Venice",
-            "throughput": 11,
-            "latency": 2.52
-          }
-        ],
-        "bestThroughput": 11,
-        "avgThroughput": 11
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 235,
+        "bySpeed": 113,
         "byPrice": 9,
         "byContext": 222
       }
@@ -4790,43 +4007,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Groq",
-            "throughput": 143,
-            "latency": 0.33
-          },
-          {
-            "name": "Google Vertex",
-            "throughput": 78,
-            "latency": null
-          },
-          {
-            "name": "Friendli",
-            "throughput": 74,
-            "latency": 0.2
-          },
-          {
-            "name": "Weights & Biases",
-            "throughput": null,
-            "latency": 0.27
-          },
-          {
-            "name": "SambaNova Turbo",
-            "throughput": null,
-            "latency": null
-          },
-          {
-            "name": "SambaNova",
-            "throughput": null,
-            "latency": null
-          }
-        ],
-        "bestThroughput": 143,
-        "avgThroughput": 98.33333333333333
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 25,
+        "bySpeed": 114,
         "byPrice": 76,
         "byContext": 223
       }
@@ -4855,18 +4041,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Venice",
-            "throughput": 6,
-            "latency": 4.42
-          }
-        ],
-        "bestThroughput": 6,
-        "avgThroughput": 6
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 241,
+        "bySpeed": 115,
         "byPrice": 10,
         "byContext": 224
       }
@@ -4896,43 +4076,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "SambaNova",
-            "throughput": 100,
-            "latency": null
-          },
-          {
-            "name": "Parasail",
-            "throughput": 88,
-            "latency": 0.35
-          },
-          {
-            "name": "Google Vertex",
-            "throughput": 57,
-            "latency": null
-          },
-          {
-            "name": "DeepInfra",
-            "throughput": null,
-            "latency": 0.3
-          },
-          {
-            "name": "NovitaAI",
-            "throughput": null,
-            "latency": 0.48
-          },
-          {
-            "name": "Together",
-            "throughput": null,
-            "latency": null
-          }
-        ],
-        "bestThroughput": 100,
-        "avgThroughput": 81.66666666666667
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 42,
+        "bySpeed": 116,
         "byPrice": 110,
         "byContext": 30
       }
@@ -4962,33 +4111,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Google Vertex",
-            "throughput": 52,
-            "latency": null
-          },
-          {
-            "name": "Groq",
-            "throughput": 45,
-            "latency": 0.12
-          },
-          {
-            "name": "NovitaAI",
-            "throughput": 28,
-            "latency": 0.5
-          },
-          {
-            "name": "DeepInfra",
-            "throughput": null,
-            "latency": 0.41
-          }
-        ],
-        "bestThroughput": 52,
-        "avgThroughput": 41.666666666666664
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 130,
+        "bySpeed": 117,
         "byPrice": 72,
         "byContext": 1
       }
@@ -5018,23 +4146,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "DeepInfra",
-            "throughput": 16,
-            "latency": 0.18
-          },
-          {
-            "name": "Together",
-            "throughput": 13,
-            "latency": 0.18
-          }
-        ],
-        "bestThroughput": 16,
-        "avgThroughput": 14.5
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 230,
+        "bySpeed": 118,
         "byPrice": 55,
         "byContext": 200
       }
@@ -5063,23 +4180,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "DeepInfra",
-            "throughput": 67,
-            "latency": 0.27
-          },
-          {
-            "name": "NextBit",
-            "throughput": 49,
-            "latency": 0.5
-          }
-        ],
-        "bestThroughput": 67,
-        "avgThroughput": 58
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 96,
+        "bySpeed": 119,
         "byPrice": 45,
         "byContext": 326
       }
@@ -5113,7 +4219,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 284,
+        "bySpeed": 120,
         "byPrice": 82,
         "byContext": 225
       }
@@ -5142,18 +4248,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "NovitaAI",
-            "throughput": 10,
-            "latency": 1.02
-          }
-        ],
-        "bestThroughput": 10,
-        "avgThroughput": 10
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 237,
+        "bySpeed": 121,
         "byPrice": 117,
         "byContext": 304
       }
@@ -5183,18 +4283,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "MiniMax",
-            "throughput": 27,
-            "latency": 1.06
-          }
-        ],
-        "bestThroughput": 27,
-        "avgThroughput": 27
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 201,
+        "bySpeed": 122,
         "byPrice": 157,
         "byContext": 41
       }
@@ -5223,23 +4317,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "MiniMax",
-            "throughput": 38,
-            "latency": 10.08
-          },
-          {
-            "name": "NovitaAI",
-            "throughput": 24,
-            "latency": 5.95
-          }
-        ],
-        "bestThroughput": 38,
-        "avgThroughput": 31
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 171,
+        "bySpeed": 123,
         "byPrice": 208,
         "byContext": 57
       }
@@ -5268,33 +4351,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Google Vertex",
-            "throughput": 114,
-            "latency": 0.44
-          },
-          {
-            "name": "MiniMax",
-            "throughput": 34,
-            "latency": 2.28
-          },
-          {
-            "name": "AtlasCloud",
-            "throughput": 33,
-            "latency": null
-          },
-          {
-            "name": "NovitaAI",
-            "throughput": null,
-            "latency": 1.88
-          }
-        ],
-        "bestThroughput": 114,
-        "avgThroughput": 60.333333333333336
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 33,
+        "bySpeed": 124,
         "byPrice": 149,
         "byContext": 165
       }
@@ -5323,18 +4385,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "MiniMax",
-            "throughput": 32,
-            "latency": 0.66
-          }
-        ],
-        "bestThroughput": 32,
-        "avgThroughput": 32
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 192,
+        "bySpeed": 125,
         "byPrice": 163,
         "byContext": 305
       }
@@ -5363,38 +4419,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Fireworks",
-            "throughput": 74,
-            "latency": null
-          },
-          {
-            "name": "Friendli",
-            "throughput": 62,
-            "latency": 0.22
-          },
-          {
-            "name": "Nebius Token Factory",
-            "throughput": 52,
-            "latency": 0.54
-          },
-          {
-            "name": "Venice",
-            "throughput": null,
-            "latency": 1.03
-          },
-          {
-            "name": "MiniMax",
-            "throughput": null,
-            "latency": null
-          }
-        ],
-        "bestThroughput": 74,
-        "avgThroughput": 62.666666666666664
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 84,
+        "bySpeed": 126,
         "byPrice": 146,
         "byContext": 166
       }
@@ -5423,38 +4453,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "SambaNova",
-            "throughput": 194,
-            "latency": null
-          },
-          {
-            "name": "Together",
-            "throughput": 66,
-            "latency": 0.47
-          },
-          {
-            "name": "Nebius Token Factory",
-            "throughput": 56,
-            "latency": null
-          },
-          {
-            "name": "Friendli",
-            "throughput": null,
-            "latency": 0.51
-          },
-          {
-            "name": "Ionstream",
-            "throughput": null,
-            "latency": 0.6
-          }
-        ],
-        "bestThroughput": 194,
-        "avgThroughput": 105.33333333333333
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 15,
+        "bySpeed": 127,
         "byPrice": 100,
         "byContext": 167
       }
@@ -5483,23 +4487,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "MiniMax Highspeed",
-            "throughput": 55,
-            "latency": 0.9
-          },
-          {
-            "name": "MiniMax",
-            "throughput": 33,
-            "latency": 1.95
-          }
-        ],
-        "bestThroughput": 55,
-        "avgThroughput": 44
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 115,
+        "bySpeed": 128,
         "byPrice": 123,
         "byContext": 168
       }
@@ -5535,7 +4528,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 285,
+        "bySpeed": 129,
         "byPrice": 164,
         "byContext": 31
       }
@@ -5565,18 +4558,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Mistral",
-            "throughput": 57,
-            "latency": 0.22
-          }
-        ],
-        "bestThroughput": 57,
-        "avgThroughput": 57
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 112,
+        "bySpeed": 130,
         "byPrice": 143,
         "byContext": 155
       }
@@ -5606,18 +4593,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Mistral",
-            "throughput": 60,
-            "latency": 0.48
-          }
-        ],
-        "bestThroughput": 60,
-        "avgThroughput": 60
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 108,
+        "bySpeed": 131,
         "byPrice": 196,
         "byContext": 112
       }
@@ -5647,23 +4628,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Mistral",
-            "throughput": 63,
-            "latency": 0.41
-          },
-          {
-            "name": "NextBit",
-            "throughput": 19,
-            "latency": 0.45
-          }
-        ],
-        "bestThroughput": 63,
-        "avgThroughput": 41
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 104,
+        "bySpeed": 132,
         "byPrice": 58,
         "byContext": 113
       }
@@ -5693,23 +4663,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Mistral",
-            "throughput": 66,
-            "latency": 0.23
-          },
-          {
-            "name": "NextBit",
-            "throughput": 13,
-            "latency": 0.59
-          }
-        ],
-        "bestThroughput": 66,
-        "avgThroughput": 39.5
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 98,
+        "bySpeed": 133,
         "byPrice": 35,
         "byContext": 226
       }
@@ -5739,23 +4698,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Mistral",
-            "throughput": 75,
-            "latency": 0.28
-          },
-          {
-            "name": "NextBit",
-            "throughput": 29,
-            "latency": 0.6
-          }
-        ],
-        "bestThroughput": 75,
-        "avgThroughput": 52
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 80,
+        "bySpeed": 134,
         "byPrice": 50,
         "byContext": 114
       }
@@ -5785,18 +4733,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Mistral",
-            "throughput": 35,
-            "latency": 0.45
-          }
-        ],
-        "bestThroughput": 35,
-        "avgThroughput": 35
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 182,
+        "bySpeed": 135,
         "byPrice": 254,
         "byContext": 272
       }
@@ -5831,7 +4773,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 286,
+        "bySpeed": 136,
         "byPrice": 255,
         "byContext": 227
       }
@@ -5862,18 +4804,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Mistral",
-            "throughput": 38,
-            "latency": 0.51
-          }
-        ],
-        "bestThroughput": 38,
-        "avgThroughput": 38
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 172,
+        "bySpeed": 137,
         "byPrice": 176,
         "byContext": 115
       }
@@ -5904,18 +4840,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Mistral",
-            "throughput": 42,
-            "latency": 0.43
-          }
-        ],
-        "bestThroughput": 42,
-        "avgThroughput": 42
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 163,
+        "bySpeed": 138,
         "byPrice": 197,
         "byContext": 228
       }
@@ -5951,7 +4881,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 287,
+        "bySpeed": 139,
         "byPrice": 259,
         "byContext": 116
       }
@@ -5982,18 +4912,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Mistral",
-            "throughput": 43,
-            "latency": 0.6
-          }
-        ],
-        "bestThroughput": 43,
-        "avgThroughput": 43
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 158,
+        "bySpeed": 140,
         "byPrice": 198,
         "byContext": 229
       }
@@ -6022,28 +4946,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Mistral",
-            "throughput": 101,
-            "latency": 0.3
-          },
-          {
-            "name": "DeepInfra",
-            "throughput": 32,
-            "latency": 0.43
-          },
-          {
-            "name": "NovitaAI",
-            "throughput": 25,
-            "latency": 0.78
-          }
-        ],
-        "bestThroughput": 101,
-        "avgThroughput": 52.666666666666664
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 41,
+        "bySpeed": 141,
         "byPrice": 29,
         "byContext": 230
       }
@@ -6073,18 +4981,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Mistral",
-            "throughput": 87,
-            "latency": 0.25
-          }
-        ],
-        "bestThroughput": 87,
-        "avgThroughput": 87
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 60,
+        "bySpeed": 142,
         "byPrice": 111,
         "byContext": 317
       }
@@ -6113,23 +5015,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Together",
-            "throughput": 54,
-            "latency": 1.12
-          },
-          {
-            "name": "DeepInfra",
-            "throughput": 45,
-            "latency": 0.64
-          }
-        ],
-        "bestThroughput": 54,
-        "avgThroughput": 49.5
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 119,
+        "bySpeed": 143,
         "byPrice": 32,
         "byContext": 318
       }
@@ -6164,7 +5055,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 288,
+        "bySpeed": 144,
         "byPrice": 112,
         "byContext": 117
       }
@@ -6194,18 +5085,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Cloudflare",
-            "throughput": 9,
-            "latency": 0.39
-          }
-        ],
-        "bestThroughput": 9,
-        "avgThroughput": 9
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 238,
+        "bySpeed": 145,
         "byPrice": 107,
         "byContext": 273
       }
@@ -6235,28 +5120,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Mistral",
-            "throughput": 110,
-            "latency": 0.33
-          },
-          {
-            "name": "DeepInfra",
-            "throughput": 94,
-            "latency": 0.46
-          },
-          {
-            "name": "Parasail",
-            "throughput": 13,
-            "latency": 0.69
-          }
-        ],
-        "bestThroughput": 110,
-        "avgThroughput": 72.33333333333333
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 36,
+        "bySpeed": 146,
         "byPrice": 59,
         "byContext": 274
       }
@@ -6286,18 +5155,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Mistral",
-            "throughput": 92,
-            "latency": 0.33
-          }
-        ],
-        "bestThroughput": 92,
-        "avgThroughput": 92
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 54,
+        "bySpeed": 147,
         "byPrice": 256,
         "byContext": 306
       }
@@ -6328,18 +5191,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Mistral",
-            "throughput": 75,
-            "latency": 0.28
-          }
-        ],
-        "bestThroughput": 75,
-        "avgThroughput": 75
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 81,
+        "bySpeed": 148,
         "byPrice": 73,
         "byContext": 323
       }
@@ -6368,28 +5225,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "DeepInfra",
-            "throughput": 31,
-            "latency": 0.67
-          },
-          {
-            "name": "NovitaAI",
-            "throughput": 25,
-            "latency": 1.08
-          },
-          {
-            "name": "Moonshot AI",
-            "throughput": 20,
-            "latency": 1.23
-          }
-        ],
-        "bestThroughput": 31,
-        "avgThroughput": 25.333333333333332
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 194,
+        "bySpeed": 149,
         "byPrice": 211,
         "byContext": 231
       }
@@ -6418,38 +5259,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Groq",
-            "throughput": 124,
-            "latency": 0.32
-          },
-          {
-            "name": "Fireworks",
-            "throughput": 35,
-            "latency": null
-          },
-          {
-            "name": "Moonshot AI Turbo",
-            "throughput": 34,
-            "latency": null
-          },
-          {
-            "name": "DeepInfra",
-            "throughput": null,
-            "latency": 0.52
-          },
-          {
-            "name": "AtlasCloud",
-            "throughput": null,
-            "latency": 0.81
-          }
-        ],
-        "bestThroughput": 124,
-        "avgThroughput": 64.33333333333333
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 29,
+        "bySpeed": 150,
         "byPrice": 218,
         "byContext": 118
       }
@@ -6478,33 +5293,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Google Vertex",
-            "throughput": 173,
-            "latency": 0.42
-          },
-          {
-            "name": "DeepInfra",
-            "throughput": 61,
-            "latency": 0.38
-          },
-          {
-            "name": "Moonshot AI Turbo",
-            "throughput": 57,
-            "latency": null
-          },
-          {
-            "name": "Nebius Token Factory",
-            "throughput": null,
-            "latency": 0.48
-          }
-        ],
-        "bestThroughput": 173,
-        "avgThroughput": 97
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 18,
+        "bySpeed": 151,
         "byPrice": 219,
         "byContext": 119
       }
@@ -6534,43 +5328,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Fireworks",
-            "throughput": 73,
-            "latency": null
-          },
-          {
-            "name": "Baseten",
-            "throughput": 71,
-            "latency": 0.63
-          },
-          {
-            "name": "Venice",
-            "throughput": 48,
-            "latency": null
-          },
-          {
-            "name": "Parasail",
-            "throughput": null,
-            "latency": 0.62
-          },
-          {
-            "name": "Inceptron",
-            "throughput": null,
-            "latency": 0.65
-          },
-          {
-            "name": "DeepInfra",
-            "throughput": null,
-            "latency": null
-          }
-        ],
-        "bestThroughput": 73,
-        "avgThroughput": 64
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 87,
+        "bySpeed": 152,
         "byPrice": 205,
         "byContext": 120
       }
@@ -6605,7 +5368,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 289,
+        "bySpeed": 153,
         "byPrice": 237,
         "byContext": 121
       }
@@ -6640,7 +5403,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 290,
+        "bySpeed": 154,
         "byPrice": 238,
         "byContext": 122
       }
@@ -6669,18 +5432,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Morph",
-            "throughput": 2463,
-            "latency": 0.39
-          }
-        ],
-        "bestThroughput": 2463,
-        "avgThroughput": 2463
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 2,
+        "bySpeed": 155,
         "byPrice": 165,
         "byContext": 300
       }
@@ -6709,18 +5466,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Morph",
-            "throughput": 3015,
-            "latency": 0.37
-          }
-        ],
-        "bestThroughput": 3015,
-        "avgThroughput": 3015
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 1,
+        "bySpeed": 156,
         "byPrice": 191,
         "byContext": 123
       }
@@ -6755,7 +5506,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 291,
+        "bySpeed": 157,
         "byPrice": 150,
         "byContext": 124
       }
@@ -6784,18 +5535,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "DeepInfra",
-            "throughput": 19,
-            "latency": 0.64
-          }
-        ],
-        "bestThroughput": 19,
-        "avgThroughput": 19
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 224,
+        "bySpeed": 158,
         "byPrice": 151,
         "byContext": 232
       }
@@ -6824,18 +5569,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Venice (Beta)",
-            "throughput": 12,
-            "latency": 1.71
-          }
-        ],
-        "bestThroughput": 12,
-        "avgThroughput": 12
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 233,
+        "bySpeed": 159,
         "byPrice": 11,
         "byContext": 233
       }
@@ -6864,18 +5603,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "DeepInfra",
-            "throughput": 36,
-            "latency": 0.54
-          }
-        ],
-        "bestThroughput": 36,
-        "avgThroughput": 36
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 176,
+        "bySpeed": 160,
         "byPrice": 122,
         "byContext": 234
       }
@@ -6904,18 +5637,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Nebius Token Factory",
-            "throughput": 27,
-            "latency": 0.48
-          }
-        ],
-        "bestThroughput": 27,
-        "avgThroughput": 27
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 202,
+        "bySpeed": 161,
         "byPrice": 228,
         "byContext": 235
       }
@@ -6944,18 +5671,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Nebius Token Factory",
-            "throughput": 68,
-            "latency": 0.28
-          }
-        ],
-        "bestThroughput": 68,
-        "avgThroughput": 68
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 94,
+        "bySpeed": 162,
         "byPrice": 87,
         "byContext": 236
       }
@@ -6984,18 +5705,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "DeepInfra",
-            "throughput": 82,
-            "latency": 0.19
-          }
-        ],
-        "bestThroughput": 82,
-        "avgThroughput": 82
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 69,
+        "bySpeed": 163,
         "byPrice": 88,
         "byContext": 237
       }
@@ -7024,18 +5739,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "DeepInfra",
-            "throughput": 71,
-            "latency": 1
-          }
-        ],
-        "bestThroughput": 71,
-        "avgThroughput": 71
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 89,
+        "bySpeed": 164,
         "byPrice": 60,
         "byContext": 125
       }
@@ -7064,18 +5773,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "NVIDIA",
-            "throughput": 197,
-            "latency": 0.4
-          }
-        ],
-        "bestThroughput": 197,
-        "avgThroughput": 197
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 14,
+        "bySpeed": 165,
         "byPrice": 12,
         "byContext": 156
       }
@@ -7112,7 +5815,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 292,
+        "bySpeed": 166,
         "byPrice": 13,
         "byContext": 157
       }
@@ -7141,23 +5844,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Nebius Token Factory",
-            "throughput": 183,
-            "latency": 1
-          },
-          {
-            "name": "DeepInfra",
-            "throughput": 115,
-            "latency": 3.06
-          }
-        ],
-        "bestThroughput": 183,
-        "avgThroughput": 149
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 17,
+        "bySpeed": 167,
         "byPrice": 89,
         "byContext": 58
       }
@@ -7186,18 +5878,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "NVIDIA",
-            "throughput": 22,
-            "latency": 4.72
-          }
-        ],
-        "bestThroughput": 22,
-        "avgThroughput": 22
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 218,
+        "bySpeed": 168,
         "byPrice": 14,
         "byContext": 59
       }
@@ -7231,7 +5917,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 293,
+        "bySpeed": 169,
         "byPrice": 209,
         "byContext": 60
       }
@@ -7265,7 +5951,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 294,
+        "bySpeed": 170,
         "byPrice": 15,
         "byContext": 61
       }
@@ -7300,7 +5986,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 295,
+        "bySpeed": 171,
         "byPrice": 16,
         "byContext": 275
       }
@@ -7331,18 +6017,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "NVIDIA",
-            "throughput": 46,
-            "latency": 1.83
-          }
-        ],
-        "bestThroughput": 46,
-        "avgThroughput": 46
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 145,
+        "bySpeed": 172,
         "byPrice": 17,
         "byContext": 276
       }
@@ -7371,18 +6051,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "NVIDIA",
-            "throughput": 13,
-            "latency": 7.57
-          }
-        ],
-        "bestThroughput": 13,
-        "avgThroughput": 13
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 231,
+        "bySpeed": 173,
         "byPrice": 18,
         "byContext": 277
       }
@@ -7411,18 +6085,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 58,
-            "latency": 0.43
-          }
-        ],
-        "bestThroughput": 58,
-        "avgThroughput": 58
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 111,
+        "bySpeed": 174,
         "byPrice": 177,
         "byContext": 324
       }
@@ -7451,18 +6119,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Azure",
-            "throughput": 36,
-            "latency": 0.81
-          }
-        ],
-        "bestThroughput": 36,
-        "avgThroughput": 36
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 177,
+        "bySpeed": 175,
         "byPrice": 199,
         "byContext": 338
       }
@@ -7491,18 +6153,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 51,
-            "latency": 0.46
-          }
-        ],
-        "bestThroughput": 51,
-        "avgThroughput": 51
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 133,
+        "bySpeed": 176,
         "byPrice": 242,
         "byContext": 325
       }
@@ -7531,18 +6187,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 84,
-            "latency": 0.85
-          }
-        ],
-        "bestThroughput": 84,
-        "avgThroughput": 84
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 63,
+        "bySpeed": 177,
         "byPrice": 200,
         "byContext": 339
       }
@@ -7571,23 +6221,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Azure",
-            "throughput": 65,
-            "latency": 0.52
-          },
-          {
-            "name": "OpenAI",
-            "throughput": 14,
-            "latency": 0.78
-          }
-        ],
-        "bestThroughput": 65,
-        "avgThroughput": 39.5
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 100,
+        "bySpeed": 178,
         "byPrice": 324,
         "byContext": 332
       }
@@ -7617,18 +6256,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 25,
-            "latency": 0.97
-          }
-        ],
-        "bestThroughput": 25,
-        "avgThroughput": 25
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 210,
+        "bySpeed": 179,
         "byPrice": 315,
         "byContext": 278
       }
@@ -7657,18 +6290,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 28,
-            "latency": 1.05
-          }
-        ],
-        "bestThroughput": 28,
-        "avgThroughput": 28
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 199,
+        "bySpeed": 180,
         "byPrice": 316,
         "byContext": 279
       }
@@ -7699,23 +6326,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 43,
-            "latency": 0.73
-          },
-          {
-            "name": "Azure",
-            "throughput": 36,
-            "latency": 1.05
-          }
-        ],
-        "bestThroughput": 43,
-        "avgThroughput": 39.5
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 159,
+        "bySpeed": 181,
         "byPrice": 262,
         "byContext": 37
       }
@@ -7746,23 +6362,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Azure",
-            "throughput": 62,
-            "latency": 2.22
-          },
-          {
-            "name": "OpenAI",
-            "throughput": 41,
-            "latency": 0.63
-          }
-        ],
-        "bestThroughput": 62,
-        "avgThroughput": 51.5
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 105,
+        "bySpeed": 182,
         "byPrice": 184,
         "byContext": 38
       }
@@ -7793,23 +6398,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Azure",
-            "throughput": 93,
-            "latency": 0.55
-          },
-          {
-            "name": "OpenAI",
-            "throughput": 54,
-            "latency": 0.55
-          }
-        ],
-        "bestThroughput": 93,
-        "avgThroughput": 73.5
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 53,
+        "bySpeed": 183,
         "byPrice": 90,
         "byContext": 39
       }
@@ -7840,23 +6434,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Azure",
-            "throughput": 46,
-            "latency": 0.74
-          },
-          {
-            "name": "OpenAI",
-            "throughput": 39,
-            "latency": 0.55
-          }
-        ],
-        "bestThroughput": 46,
-        "avgThroughput": 42.5
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 146,
+        "bySpeed": 184,
         "byPrice": 276,
         "byContext": 280
       }
@@ -7887,23 +6470,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 91,
-            "latency": 0.41
-          },
-          {
-            "name": "Azure",
-            "throughput": 58,
-            "latency": 1.46
-          }
-        ],
-        "bestThroughput": 91,
-        "avgThroughput": 74.5
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 57,
+        "bySpeed": 185,
         "byPrice": 304,
         "byContext": 281
       }
@@ -7934,20 +6506,9 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Azure",
-            "throughput": 34,
-            "latency": 0.96
-          },
-          {
-            "name": "OpenAI",
-            "throughput": 30,
-            "latency": 1.33
-          }
-        ],
-        "bestThroughput": 34,
-        "avgThroughput": 32
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
         "bySpeed": 186,
@@ -7981,18 +6542,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 70,
-            "latency": 0.48
-          }
-        ],
-        "bestThroughput": 70,
-        "avgThroughput": 70
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 92,
+        "bySpeed": 187,
         "byPrice": 278,
         "byContext": 283
       }
@@ -8023,23 +6578,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Azure",
-            "throughput": 53,
-            "latency": 0.72
-          },
-          {
-            "name": "OpenAI",
-            "throughput": 35,
-            "latency": 0.51
-          }
-        ],
-        "bestThroughput": 53,
-        "avgThroughput": 44
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 126,
+        "bySpeed": 188,
         "byPrice": 113,
         "byContext": 284
       }
@@ -8070,18 +6614,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 40,
-            "latency": 0.53
-          }
-        ],
-        "bestThroughput": 40,
-        "avgThroughput": 40
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 167,
+        "bySpeed": 189,
         "byPrice": 114,
         "byContext": 285
       }
@@ -8110,18 +6648,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 68,
-            "latency": 1.74
-          }
-        ],
-        "bestThroughput": 68,
-        "avgThroughput": 68
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 95,
+        "bySpeed": 190,
         "byPrice": 115,
         "byContext": 286
       }
@@ -8150,18 +6682,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAIAdapter",
-            "throughput": 33,
-            "latency": 3.35
-          }
-        ],
-        "bestThroughput": 33,
-        "avgThroughput": 33
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 187,
+        "bySpeed": 191,
         "byPrice": 279,
         "byContext": 287
       }
@@ -8192,23 +6718,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Azure",
-            "throughput": 71,
-            "latency": 21.18
-          },
-          {
-            "name": "OpenAI",
-            "throughput": 47,
-            "latency": 14.61
-          }
-        ],
-        "bestThroughput": 71,
-        "avgThroughput": 59
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 90,
+        "bySpeed": 192,
         "byPrice": 280,
         "byContext": 78
       }
@@ -8239,18 +6754,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 78,
-            "latency": 0.65
-          }
-        ],
-        "bestThroughput": 78,
-        "avgThroughput": 78
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 77,
+        "bySpeed": 193,
         "byPrice": 281,
         "byContext": 288
       }
@@ -8280,18 +6789,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 59,
-            "latency": 2.62
-          }
-        ],
-        "bestThroughput": 59,
-        "avgThroughput": 59
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 109,
+        "bySpeed": 194,
         "byPrice": 282,
         "byContext": 79
       }
@@ -8323,18 +6826,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 73,
-            "latency": 0.41
-          }
-        ],
-        "bestThroughput": 73,
-        "avgThroughput": 73
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 88,
+        "bySpeed": 195,
         "byPrice": 283,
         "byContext": 80
       }
@@ -8366,18 +6863,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 89,
-            "latency": 7.73
-          }
-        ],
-        "bestThroughput": 89,
-        "avgThroughput": 89
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 58,
+        "bySpeed": 196,
         "byPrice": 201,
         "byContext": 81
       }
@@ -8408,23 +6899,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Azure",
-            "throughput": 75,
-            "latency": 14.09
-          },
-          {
-            "name": "OpenAI",
-            "throughput": 66,
-            "latency": 8.14
-          }
-        ],
-        "bestThroughput": 75,
-        "avgThroughput": 70.5
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 82,
+        "bySpeed": 197,
         "byPrice": 202,
         "byContext": 82
       }
@@ -8455,23 +6935,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 92,
-            "latency": 6.64
-          },
-          {
-            "name": "Azure",
-            "throughput": 60,
-            "latency": 6.12
-          }
-        ],
-        "bestThroughput": 92,
-        "avgThroughput": 76
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 55,
+        "bySpeed": 198,
         "byPrice": 91,
         "byContext": 83
       }
@@ -8507,7 +6976,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 296,
+        "bySpeed": 199,
         "byPrice": 329,
         "byContext": 84
       }
@@ -8538,23 +7007,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Azure",
-            "throughput": 67,
-            "latency": 1.55
-          },
-          {
-            "name": "OpenAI",
-            "throughput": 45,
-            "latency": 1.07
-          }
-        ],
-        "bestThroughput": 67,
-        "avgThroughput": 56
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 97,
+        "bySpeed": 200,
         "byPrice": 284,
         "byContext": 85
       }
@@ -8585,23 +7043,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 53,
-            "latency": 1.73
-          },
-          {
-            "name": "Azure",
-            "throughput": 37,
-            "latency": 2.74
-          }
-        ],
-        "bestThroughput": 53,
-        "avgThroughput": 45
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 127,
+        "bySpeed": 201,
         "byPrice": 285,
         "byContext": 289
       }
@@ -8631,23 +7078,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 35,
-            "latency": 2.16
-          },
-          {
-            "name": "Azure",
-            "throughput": 27,
-            "latency": 2.09
-          }
-        ],
-        "bestThroughput": 35,
-        "avgThroughput": 31
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 183,
+        "bySpeed": 202,
         "byPrice": 286,
         "byContext": 86
       }
@@ -8677,23 +7113,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 65,
-            "latency": 2.68
-          },
-          {
-            "name": "Azure",
-            "throughput": 19,
-            "latency": 4.55
-          }
-        ],
-        "bestThroughput": 65,
-        "avgThroughput": 42
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 101,
+        "bySpeed": 203,
         "byPrice": 287,
         "byContext": 87
       }
@@ -8728,7 +7153,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 297,
+        "bySpeed": 204,
         "byPrice": 203,
         "byContext": 88
       }
@@ -8759,23 +7184,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 43,
-            "latency": 3.57
-          },
-          {
-            "name": "Azure",
-            "throughput": 34,
-            "latency": 4.49
-          }
-        ],
-        "bestThroughput": 43,
-        "avgThroughput": 38.5
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 160,
+        "bySpeed": 205,
         "byPrice": 295,
         "byContext": 89
       }
@@ -8806,23 +7220,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 49,
-            "latency": 1.73
-          },
-          {
-            "name": "Azure",
-            "throughput": 42,
-            "latency": 2.3
-          }
-        ],
-        "bestThroughput": 49,
-        "avgThroughput": 45.5
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 138,
+        "bySpeed": 206,
         "byPrice": 296,
         "byContext": 290
       }
@@ -8852,23 +7255,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 47,
-            "latency": 2.42
-          },
-          {
-            "name": "Azure",
-            "throughput": 29,
-            "latency": 4.12
-          }
-        ],
-        "bestThroughput": 47,
-        "avgThroughput": 38
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 141,
+        "bySpeed": 207,
         "byPrice": 297,
         "byContext": 90
       }
@@ -8899,18 +7291,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 12,
-            "latency": 32.35
-          }
-        ],
-        "bestThroughput": 12,
-        "avgThroughput": 12
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 234,
+        "bySpeed": 208,
         "byPrice": 332,
         "byContext": 91
       }
@@ -8941,23 +7327,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 62,
-            "latency": 0.97
-          },
-          {
-            "name": "Azure",
-            "throughput": 20,
-            "latency": 6.23
-          }
-        ],
-        "bestThroughput": 62,
-        "avgThroughput": 41
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 106,
+        "bySpeed": 209,
         "byPrice": 298,
         "byContext": 291
       }
@@ -8988,23 +7363,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 45,
-            "latency": 3.77
-          },
-          {
-            "name": "Azure",
-            "throughput": 45,
-            "latency": 5.62
-          }
-        ],
-        "bestThroughput": 45,
-        "avgThroughput": 45
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 151,
+        "bySpeed": 210,
         "byPrice": 299,
         "byContext": 92
       }
@@ -9035,23 +7399,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 46,
-            "latency": 1.49
-          },
-          {
-            "name": "Azure",
-            "throughput": 40,
-            "latency": 5.21
-          }
-        ],
-        "bestThroughput": 46,
-        "avgThroughput": 43
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 147,
+        "bySpeed": 211,
         "byPrice": 305,
         "byContext": 7
       }
@@ -9088,7 +7441,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 298,
+        "bySpeed": 212,
         "byPrice": 306,
         "byContext": 98
       }
@@ -9119,18 +7472,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 81,
-            "latency": 0.9
-          }
-        ],
-        "bestThroughput": 81,
-        "avgThroughput": 81
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 71,
+        "bySpeed": 213,
         "byPrice": 250,
         "byContext": 93
       }
@@ -9161,18 +7508,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 92,
-            "latency": 0.83
-          }
-        ],
-        "bestThroughput": 92,
-        "avgThroughput": 92
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 56,
+        "bySpeed": 214,
         "byPrice": 169,
         "byContext": 94
       }
@@ -9203,23 +7544,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Azure",
-            "throughput": 11,
-            "latency": 151.99
-          },
-          {
-            "name": "OpenAI",
-            "throughput": 9,
-            "latency": 186.71
-          }
-        ],
-        "bestThroughput": 11,
-        "avgThroughput": 10
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 236,
+        "bySpeed": 215,
         "byPrice": 333,
         "byContext": 8
       }
@@ -9255,7 +7585,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 299,
+        "bySpeed": 216,
         "byPrice": 317,
         "byContext": 9
       }
@@ -9291,7 +7621,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 300,
+        "bySpeed": 217,
         "byPrice": 334,
         "byContext": 10
       }
@@ -9327,7 +7657,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 301,
+        "bySpeed": 218,
         "byPrice": 288,
         "byContext": 292
       }
@@ -9358,18 +7688,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 124,
-            "latency": 0.51
-          }
-        ],
-        "bestThroughput": 124,
-        "avgThroughput": 124
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 30,
+        "bySpeed": 219,
         "byPrice": 212,
         "byContext": 293
       }
@@ -9405,7 +7729,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 302,
+        "bySpeed": 220,
         "byPrice": 318,
         "byContext": 95
       }
@@ -9434,38 +7758,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Groq",
-            "throughput": 349,
-            "latency": 0.14
-          },
-          {
-            "name": "SambaNova",
-            "throughput": 292,
-            "latency": null
-          },
-          {
-            "name": "Google Vertex",
-            "throughput": 289,
-            "latency": null
-          },
-          {
-            "name": "Baseten",
-            "throughput": null,
-            "latency": 0.2
-          },
-          {
-            "name": "Weights & Biases",
-            "throughput": null,
-            "latency": 0.28
-          }
-        ],
-        "bestThroughput": 349,
-        "avgThroughput": 310
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 8,
+        "bySpeed": 221,
         "byPrice": 51,
         "byContext": 238
       }
@@ -9494,18 +7792,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenInference",
-            "throughput": 95,
-            "latency": 0.62
-          }
-        ],
-        "bestThroughput": 95,
-        "avgThroughput": 95
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 49,
+        "bySpeed": 222,
         "byPrice": 19,
         "byContext": 239
       }
@@ -9534,38 +7826,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Groq",
-            "throughput": 766,
-            "latency": 0.18
-          },
-          {
-            "name": "Amazon Bedrock",
-            "throughput": 261,
-            "latency": null
-          },
-          {
-            "name": "Weights & Biases",
-            "throughput": 252,
-            "latency": null
-          },
-          {
-            "name": "Nebius Token Factory",
-            "throughput": null,
-            "latency": 0.22
-          },
-          {
-            "name": "Clarifai",
-            "throughput": null,
-            "latency": 0.22
-          }
-        ],
-        "bestThroughput": 766,
-        "avgThroughput": 426.3333333333333
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 5,
+        "bySpeed": 223,
         "byPrice": 46,
         "byContext": 240
       }
@@ -9594,18 +7860,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenInference",
-            "throughput": 94,
-            "latency": 0.58
-          }
-        ],
-        "bestThroughput": 94,
-        "avgThroughput": 94
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 51,
+        "bySpeed": 224,
         "byPrice": 20,
         "byContext": 241
       }
@@ -9634,18 +7894,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Groq",
-            "throughput": 739,
-            "latency": 0.17
-          }
-        ],
-        "bestThroughput": 739,
-        "avgThroughput": 739
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 6,
+        "bySpeed": 225,
         "byPrice": 74,
         "byContext": 242
       }
@@ -9676,18 +7930,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 124,
-            "latency": 6
-          }
-        ],
-        "bestThroughput": 124,
-        "avgThroughput": 124
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 31,
+        "bySpeed": 226,
         "byPrice": 325,
         "byContext": 181
       }
@@ -9718,18 +7966,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 19,
-            "latency": 28.11
-          }
-        ],
-        "bestThroughput": 19,
-        "avgThroughput": 19
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 225,
+        "bySpeed": 227,
         "byPrice": 335,
         "byContext": 182
       }
@@ -9760,18 +8002,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 54,
-            "latency": 9.67
-          }
-        ],
-        "bestThroughput": 54,
-        "avgThroughput": 54
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 120,
+        "bySpeed": 228,
         "byPrice": 263,
         "byContext": 183
       }
@@ -9802,18 +8038,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 83,
-            "latency": 29.46
-          }
-        ],
-        "bestThroughput": 83,
-        "avgThroughput": 83
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 66,
+        "bySpeed": 229,
         "byPrice": 320,
         "byContext": 184
       }
@@ -9843,18 +8073,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 218,
-            "latency": 6.53
-          }
-        ],
-        "bestThroughput": 218,
-        "avgThroughput": 218
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 13,
+        "bySpeed": 230,
         "byPrice": 245,
         "byContext": 185
       }
@@ -9884,18 +8108,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 192,
-            "latency": 4.57
-          }
-        ],
-        "bestThroughput": 192,
-        "avgThroughput": 192
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 16,
+        "bySpeed": 231,
         "byPrice": 246,
         "byContext": 186
       }
@@ -9926,15 +8144,9 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 13,
-            "latency": 52.46
-          }
-        ],
-        "bestThroughput": 13,
-        "avgThroughput": 13
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
         "bySpeed": 232,
@@ -9968,18 +8180,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 97,
-            "latency": 6.13
-          }
-        ],
-        "bestThroughput": 97,
-        "avgThroughput": 97
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 47,
+        "bySpeed": 233,
         "byPrice": 247,
         "byContext": 188
       }
@@ -10010,18 +8216,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 48,
-            "latency": 109.53
-          }
-        ],
-        "bestThroughput": 48,
-        "avgThroughput": 48
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 139,
+        "bySpeed": 234,
         "byPrice": 264,
         "byContext": 189
       }
@@ -10052,18 +8252,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "OpenAI",
-            "throughput": 104,
-            "latency": 10.45
-          }
-        ],
-        "bestThroughput": 104,
-        "avgThroughput": 104
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 38,
+        "bySpeed": 235,
         "byPrice": 248,
         "byContext": 190
       }
@@ -10102,7 +8296,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 303,
+        "bySpeed": 236,
         "byPrice": 336,
         "byContext": 2
       }
@@ -10136,7 +8330,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 304,
+        "bySpeed": 237,
         "byPrice": 337,
         "byContext": 294
       }
@@ -10171,7 +8365,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 305,
+        "bySpeed": 238,
         "byPrice": 21,
         "byContext": 191
       }
@@ -10205,7 +8399,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 306,
+        "bySpeed": 239,
         "byPrice": 338,
         "byContext": 62
       }
@@ -10239,7 +8433,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 307,
+        "bySpeed": 240,
         "byPrice": 22,
         "byContext": 12
       }
@@ -10273,7 +8467,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 308,
+        "bySpeed": 241,
         "byPrice": 339,
         "byContext": 3
       }
@@ -10309,7 +8503,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 309,
+        "bySpeed": 242,
         "byPrice": 178,
         "byContext": 319
       }
@@ -10339,18 +8533,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Perplexity",
-            "throughput": 65,
-            "latency": 1.46
-          }
-        ],
-        "bestThroughput": 65,
-        "avgThroughput": 65
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 102,
+        "bySpeed": 243,
         "byPrice": 152,
         "byContext": 299
       }
@@ -10379,18 +8567,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Perplexity",
-            "throughput": 1913,
-            "latency": 29.87
-          }
-        ],
-        "bestThroughput": 1913,
-        "avgThroughput": 1913
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 3,
+        "bySpeed": 244,
         "byPrice": 265,
         "byContext": 295
       }
@@ -10420,18 +8602,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Perplexity",
-            "throughput": 54,
-            "latency": 1.55
-          }
-        ],
-        "bestThroughput": 54,
-        "avgThroughput": 54
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 121,
+        "bySpeed": 245,
         "byPrice": 307,
         "byContext": 192
       }
@@ -10461,18 +8637,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Perplexity",
-            "throughput": 37,
-            "latency": 4.85
-          }
-        ],
-        "bestThroughput": 37,
-        "avgThroughput": 37
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 174,
+        "bySpeed": 246,
         "byPrice": 308,
         "byContext": 193
       }
@@ -10502,18 +8672,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Perplexity",
-            "throughput": 82,
-            "latency": 1.97
-          }
-        ],
-        "bestThroughput": 82,
-        "avgThroughput": 82
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 70,
+        "bySpeed": 247,
         "byPrice": 266,
         "byContext": 296
       }
@@ -10547,7 +8711,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 310,
+        "bySpeed": 248,
         "byPrice": 92,
         "byContext": 126
       }
@@ -10581,7 +8745,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 311,
+        "bySpeed": 249,
         "byPrice": 23,
         "byContext": 127
       }
@@ -10615,7 +8779,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 312,
+        "bySpeed": 250,
         "byPrice": 61,
         "byContext": 128
       }
@@ -10649,7 +8813,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 313,
+        "bySpeed": 251,
         "byPrice": 24,
         "byContext": 129
       }
@@ -10678,23 +8842,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "DeepInfra",
-            "throughput": 33,
-            "latency": 0.59
-          },
-          {
-            "name": "NovitaAI",
-            "throughput": 28,
-            "latency": 0.86
-          }
-        ],
-        "bestThroughput": 33,
-        "avgThroughput": 30.5
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 188,
+        "bySpeed": 252,
         "byPrice": 93,
         "byContext": 243
       }
@@ -10723,28 +8876,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Together",
-            "throughput": 59,
-            "latency": 0.32
-          },
-          {
-            "name": "Phala",
-            "throughput": 42,
-            "latency": 0.52
-          },
-          {
-            "name": "AtlasCloud",
-            "throughput": 24,
-            "latency": 1.19
-          }
-        ],
-        "bestThroughput": 59,
-        "avgThroughput": 41.666666666666664
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 110,
+        "bySpeed": 253,
         "byPrice": 36,
         "byContext": 244
       }
@@ -10773,18 +8910,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Cloudflare",
-            "throughput": 22,
-            "latency": 0.37
-          }
-        ],
-        "bestThroughput": 22,
-        "avgThroughput": 22
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 219,
+        "bySpeed": 254,
         "byPrice": 153,
         "byContext": 297
       }
@@ -10813,18 +8944,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Alibaba Cloud Int.",
-            "throughput": 46,
-            "latency": 0.4
-          }
-        ],
-        "bestThroughput": 46,
-        "avgThroughput": 46
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 148,
+        "bySpeed": 255,
         "byPrice": 127,
         "byContext": 63
       }
@@ -10853,18 +8978,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Alibaba Cloud Int.",
-            "throughput": 54,
-            "latency": 0.48
-          }
-        ],
-        "bestThroughput": 54,
-        "avgThroughput": 54
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 122,
+        "bySpeed": 256,
         "byPrice": 128,
         "byContext": 64
       }
@@ -10893,18 +9012,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Alibaba Cloud Int.",
-            "throughput": 43,
-            "latency": 0.69
-          }
-        ],
-        "bestThroughput": 43,
-        "avgThroughput": 43
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 161,
+        "bySpeed": 257,
         "byPrice": 129,
         "byContext": 65
       }
@@ -10934,23 +9047,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Parasail",
-            "throughput": 21,
-            "latency": 0.8
-          },
-          {
-            "name": "NovitaAI",
-            "throughput": 13,
-            "latency": 1.41
-          }
-        ],
-        "bestThroughput": 21,
-        "avgThroughput": 17
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 221,
+        "bySpeed": 258,
         "byPrice": 154,
         "byContext": 245
       }
@@ -10979,28 +9081,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Alibaba Cloud Int.",
-            "throughput": 50,
-            "latency": 0.49
-          },
-          {
-            "name": "DeepInfra",
-            "throughput": 44,
-            "latency": 0.61
-          },
-          {
-            "name": "NextBit",
-            "throughput": 17,
-            "latency": 0.95
-          }
-        ],
-        "bestThroughput": 50,
-        "avgThroughput": 37
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 136,
+        "bySpeed": 259,
         "byPrice": 66,
         "byContext": 202
       }
@@ -11029,18 +9115,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Alibaba Cloud Int.",
-            "throughput": 41,
-            "latency": 0.65
-          }
-        ],
-        "bestThroughput": 41,
-        "avgThroughput": 41
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 165,
+        "bySpeed": 260,
         "byPrice": 190,
         "byContext": 246
       }
@@ -11069,33 +9149,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Crusoe",
-            "throughput": 47,
-            "latency": 0.39
-          },
-          {
-            "name": "Google Vertex",
-            "throughput": 42,
-            "latency": null
-          },
-          {
-            "name": "Friendli",
-            "throughput": 41,
-            "latency": 0.22
-          },
-          {
-            "name": "Weights & Biases",
-            "throughput": null,
-            "latency": 0.27
-          }
-        ],
-        "bestThroughput": 47,
-        "avgThroughput": 43.333333333333336
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 142,
+        "bySpeed": 261,
         "byPrice": 37,
         "byContext": 130
       }
@@ -11124,33 +9183,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "AtlasCloud",
-            "throughput": 45,
-            "latency": 0.9
-          },
-          {
-            "name": "Alibaba Cloud Int.",
-            "throughput": 39,
-            "latency": null
-          },
-          {
-            "name": "NovitaAI",
-            "throughput": 33,
-            "latency": 0.65
-          },
-          {
-            "name": "DeepInfra",
-            "throughput": null,
-            "latency": 0.58
-          }
-        ],
-        "bestThroughput": 45,
-        "avgThroughput": 39
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 152,
+        "bySpeed": 262,
         "byPrice": 38,
         "byContext": 131
       }
@@ -11179,28 +9217,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Friendli",
-            "throughput": 141,
-            "latency": 0.11
-          },
-          {
-            "name": "Alibaba Cloud Int.",
-            "throughput": 57,
-            "latency": 0.6
-          },
-          {
-            "name": "DeepInfra",
-            "throughput": 45,
-            "latency": 0.29
-          }
-        ],
-        "bestThroughput": 141,
-        "avgThroughput": 81
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 26,
+        "bySpeed": 263,
         "byPrice": 102,
         "byContext": 247
       }
@@ -11229,33 +9251,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Weights & Biases",
-            "throughput": 54,
-            "latency": 0.29
-          },
-          {
-            "name": "AtlasCloud",
-            "throughput": 52,
-            "latency": null
-          },
-          {
-            "name": "Alibaba Cloud Int.",
-            "throughput": 49,
-            "latency": 0.46
-          },
-          {
-            "name": "Nebius Token Factory",
-            "throughput": null,
-            "latency": 0.36
-          }
-        ],
-        "bestThroughput": 54,
-        "avgThroughput": 51.666666666666664
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 123,
+        "bySpeed": 264,
         "byPrice": 56,
         "byContext": 248
       }
@@ -11284,33 +9285,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Alibaba Cloud Int.",
-            "throughput": 131,
-            "latency": 0.52
-          },
-          {
-            "name": "AtlasCloud",
-            "throughput": 78,
-            "latency": 0.99
-          },
-          {
-            "name": "Nebius Token Factory",
-            "throughput": 77,
-            "latency": 0.31
-          },
-          {
-            "name": "SiliconFlow",
-            "throughput": null,
-            "latency": null
-          }
-        ],
-        "bestThroughput": 131,
-        "avgThroughput": 95.33333333333333
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 28,
+        "bySpeed": 265,
         "byPrice": 94,
         "byContext": 249
       }
@@ -11339,33 +9319,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Groq",
-            "throughput": 384,
-            "latency": 0.35
-          },
-          {
-            "name": "SambaNova",
-            "throughput": 168,
-            "latency": null
-          },
-          {
-            "name": "Alibaba Cloud Int.",
-            "throughput": 59,
-            "latency": 0.66
-          },
-          {
-            "name": "Nebius Token Factory",
-            "throughput": null,
-            "latency": 0.31
-          }
-        ],
-        "bestThroughput": 384,
-        "avgThroughput": 203.66666666666666
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 7,
+        "bySpeed": 266,
         "byPrice": 69,
         "byContext": 250
       }
@@ -11394,23 +9353,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "AtlasCloud",
-            "throughput": 53,
-            "latency": 1.04
-          },
-          {
-            "name": "Alibaba Cloud Int.",
-            "throughput": 49,
-            "latency": 0.4
-          }
-        ],
-        "bestThroughput": 53,
-        "avgThroughput": 51
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 128,
+        "bySpeed": 267,
         "byPrice": 95,
         "byContext": 251
       }
@@ -11439,33 +9387,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Google Vertex",
-            "throughput": 51,
-            "latency": null
-          },
-          {
-            "name": "DeepInfra",
-            "throughput": 51,
-            "latency": 0.43
-          },
-          {
-            "name": "Weights & Biases",
-            "throughput": 46,
-            "latency": 0.5
-          },
-          {
-            "name": "DeepInfra (Turbo)",
-            "throughput": null,
-            "latency": 0.5
-          }
-        ],
-        "bestThroughput": 51,
-        "avgThroughput": 49.333333333333336
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 134,
+        "bySpeed": 268,
         "byPrice": 187,
         "byContext": 32
       }
@@ -11494,33 +9421,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Nebius Token Factory",
-            "throughput": 66,
-            "latency": 0.31
-          },
-          {
-            "name": "NovitaAI",
-            "throughput": 65,
-            "latency": 1.07
-          },
-          {
-            "name": "Alibaba Cloud Int.",
-            "throughput": 24,
-            "latency": 1.02
-          },
-          {
-            "name": "SiliconFlow",
-            "throughput": null,
-            "latency": null
-          }
-        ],
-        "bestThroughput": 66,
-        "avgThroughput": 51.666666666666664
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 99,
+        "bySpeed": 269,
         "byPrice": 68,
         "byContext": 201
       }
@@ -11549,18 +9455,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Alibaba Cloud Int.",
-            "throughput": 36,
-            "latency": 1.27
-          }
-        ],
-        "bestThroughput": 36,
-        "avgThroughput": 36
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 178,
+        "bySpeed": 270,
         "byPrice": 147,
         "byContext": 66
       }
@@ -11589,33 +9489,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Ionstream",
-            "throughput": 81,
-            "latency": 0.61
-          },
-          {
-            "name": "NovitaAI",
-            "throughput": 65,
-            "latency": 1.09
-          },
-          {
-            "name": "Together",
-            "throughput": 47,
-            "latency": null
-          },
-          {
-            "name": "Parasail",
-            "throughput": null,
-            "latency": 0.94
-          }
-        ],
-        "bestThroughput": 81,
-        "avgThroughput": 64.33333333333333
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 72,
+        "bySpeed": 271,
         "byPrice": 135,
         "byContext": 132
       }
@@ -11644,18 +9523,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Alibaba Cloud Int.",
-            "throughput": 33,
-            "latency": 1.65
-          }
-        ],
-        "bestThroughput": 33,
-        "avgThroughput": 33
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 189,
+        "bySpeed": 272,
         "byPrice": 234,
         "byContext": 67
       }
@@ -11684,18 +9557,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Venice (Beta)",
-            "throughput": 7,
-            "latency": 5.46
-          }
-        ],
-        "bestThroughput": 7,
-        "avgThroughput": 7
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 240,
+        "bySpeed": 273,
         "byPrice": 25,
         "byContext": 33
       }
@@ -11724,18 +9591,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Alibaba Cloud Int.",
-            "throughput": 26,
-            "latency": 1.05
-          }
-        ],
-        "bestThroughput": 26,
-        "avgThroughput": 26
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 206,
+        "bySpeed": 274,
         "byPrice": 240,
         "byContext": 133
       }
@@ -11764,18 +9625,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Alibaba Cloud Int.",
-            "throughput": 27,
-            "latency": 1.08
-          }
-        ],
-        "bestThroughput": 27,
-        "avgThroughput": 27
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 203,
+        "bySpeed": 275,
         "byPrice": 241,
         "byContext": 134
       }
@@ -11804,33 +9659,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Google Vertex",
-            "throughput": 113,
-            "latency": 0.49
-          },
-          {
-            "name": "Alibaba Cloud Int.",
-            "throughput": 80,
-            "latency": 0.52
-          },
-          {
-            "name": "Parasail",
-            "throughput": 64,
-            "latency": null
-          },
-          {
-            "name": "DeepInfra",
-            "throughput": null,
-            "latency": 0.47
-          }
-        ],
-        "bestThroughput": 113,
-        "avgThroughput": 85.66666666666667
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 35,
+        "bySpeed": 276,
         "byPrice": 158,
         "byContext": 135
       }
@@ -11859,18 +9693,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Venice (Beta)",
-            "throughput": 31,
-            "latency": 1.23
-          }
-        ],
-        "bestThroughput": 31,
-        "avgThroughput": 31
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 195,
+        "bySpeed": 277,
         "byPrice": 26,
         "byContext": 136
       }
@@ -11899,38 +9727,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Hyperbolic",
-            "throughput": 224,
-            "latency": null
-          },
-          {
-            "name": "NovitaAI",
-            "throughput": 177,
-            "latency": null
-          },
-          {
-            "name": "Google Vertex",
-            "throughput": 161,
-            "latency": 0.41
-          },
-          {
-            "name": "Nebius Token Factory",
-            "throughput": null,
-            "latency": 0.4
-          },
-          {
-            "name": "Alibaba Cloud Int.",
-            "throughput": null,
-            "latency": 0.58
-          }
-        ],
-        "bestThroughput": 224,
-        "avgThroughput": 187.33333333333334
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 12,
+        "bySpeed": 278,
         "byPrice": 130,
         "byContext": 137
       }
@@ -11960,38 +9762,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Alibaba Cloud Int.",
-            "throughput": 40,
-            "latency": 0.92
-          },
-          {
-            "name": "AtlasCloud",
-            "throughput": 24,
-            "latency": null
-          },
-          {
-            "name": "NovitaAI",
-            "throughput": 21,
-            "latency": null
-          },
-          {
-            "name": "Venice",
-            "throughput": null,
-            "latency": 2.24
-          },
-          {
-            "name": "DeepInfra",
-            "throughput": null,
-            "latency": 2.7
-          }
-        ],
-        "bestThroughput": 40,
-        "avgThroughput": 28.333333333333332
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 168,
+        "bySpeed": 279,
         "byPrice": 142,
         "byContext": 138
       }
@@ -12021,28 +9797,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Alibaba Cloud Int.",
-            "throughput": 51,
-            "latency": 0.78
-          },
-          {
-            "name": "NovitaAI",
-            "throughput": 34,
-            "latency": 3.16
-          },
-          {
-            "name": "SiliconFlow",
-            "throughput": 12,
-            "latency": 5.08
-          }
-        ],
-        "bestThroughput": 51,
-        "avgThroughput": 32.333333333333336
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 135,
+        "bySpeed": 280,
         "byPrice": 223,
         "byContext": 252
       }
@@ -12072,28 +9832,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Alibaba Cloud Int.",
-            "throughput": 22,
-            "latency": 1.21
-          },
-          {
-            "name": "DeepInfra",
-            "throughput": 22,
-            "latency": 0.72
-          },
-          {
-            "name": "Phala",
-            "throughput": 18,
-            "latency": 1.11
-          }
-        ],
-        "bestThroughput": 22,
-        "avgThroughput": 20.666666666666668
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 220,
+        "bySpeed": 281,
         "byPrice": 106,
         "byContext": 139
       }
@@ -12123,28 +9867,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Alibaba Cloud Int.",
-            "throughput": 103,
-            "latency": 0.79
-          },
-          {
-            "name": "NovitaAI",
-            "throughput": 63,
-            "latency": 2.06
-          },
-          {
-            "name": "SiliconFlow",
-            "throughput": 24,
-            "latency": 6.26
-          }
-        ],
-        "bestThroughput": 103,
-        "avgThroughput": 63.333333333333336
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 39,
+        "bySpeed": 282,
         "byPrice": 179,
         "byContext": 253
       }
@@ -12174,18 +9902,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Alibaba Cloud Int.",
-            "throughput": 45,
-            "latency": 1.38
-          }
-        ],
-        "bestThroughput": 45,
-        "avgThroughput": 45
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 153,
+        "bySpeed": 283,
         "byPrice": 99,
         "byContext": 140
       }
@@ -12215,28 +9937,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Together",
-            "throughput": 78,
-            "latency": 0.31
-          },
-          {
-            "name": "Alibaba Cloud Int.",
-            "throughput": 71,
-            "latency": 0.64
-          },
-          {
-            "name": "Parasail",
-            "throughput": 59,
-            "latency": 0.44
-          }
-        ],
-        "bestThroughput": 78,
-        "avgThroughput": 69.33333333333333
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 78,
+        "bySpeed": 284,
         "byPrice": 103,
         "byContext": 158
       }
@@ -12266,18 +9972,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Alibaba Cloud Int.",
-            "throughput": 108,
-            "latency": 0.5
-          }
-        ],
-        "bestThroughput": 108,
-        "avgThroughput": 108
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 37,
+        "bySpeed": 285,
         "byPrice": 172,
         "byContext": 159
       }
@@ -12313,7 +10013,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 314,
+        "bySpeed": 286,
         "byPrice": 206,
         "byContext": 141
       }
@@ -12344,28 +10044,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Alibaba Cloud Int.",
-            "throughput": 54,
-            "latency": 1.4
-          },
-          {
-            "name": "AtlasCloud",
-            "throughput": 51,
-            "latency": 1.83
-          },
-          {
-            "name": "NovitaAI",
-            "throughput": 50,
-            "latency": 1.32
-          }
-        ],
-        "bestThroughput": 54,
-        "avgThroughput": 51.666666666666664
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 124,
+        "bySpeed": 287,
         "byPrice": 180,
         "byContext": 142
       }
@@ -12396,38 +10080,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "AtlasCloud",
-            "throughput": 102,
-            "latency": null
-          },
-          {
-            "name": "Alibaba Cloud Int.",
-            "throughput": 98,
-            "latency": 0.7
-          },
-          {
-            "name": "NextBit",
-            "throughput": 83,
-            "latency": null
-          },
-          {
-            "name": "Parasail",
-            "throughput": null,
-            "latency": 0.61
-          },
-          {
-            "name": "Venice",
-            "throughput": null,
-            "latency": 0.8
-          }
-        ],
-        "bestThroughput": 102,
-        "avgThroughput": 94.33333333333333
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 40,
+        "bySpeed": 288,
         "byPrice": 155,
         "byContext": 143
       }
@@ -12458,33 +10116,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Together",
-            "throughput": 55,
-            "latency": 0.98
-          },
-          {
-            "name": "Alibaba Cloud Int.",
-            "throughput": 52,
-            "latency": 1.27
-          },
-          {
-            "name": "Nebius Token Factory",
-            "throughput": 52,
-            "latency": null
-          },
-          {
-            "name": "Parasail",
-            "throughput": null,
-            "latency": 0.94
-          }
-        ],
-        "bestThroughput": 55,
-        "avgThroughput": 53
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 116,
+        "bySpeed": 289,
         "byPrice": 213,
         "byContext": 160
       }
@@ -12515,23 +10152,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Venice",
-            "throughput": 61,
-            "latency": 0.68
-          },
-          {
-            "name": "Together",
-            "throughput": 51,
-            "latency": 0.36
-          }
-        ],
-        "bestThroughput": 61,
-        "avgThroughput": 56
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 107,
+        "bySpeed": 290,
         "byPrice": 52,
         "byContext": 144
       }
@@ -12562,18 +10188,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Alibaba Cloud Int.",
-            "throughput": 95,
-            "latency": 0.57
-          }
-        ],
-        "bestThroughput": 95,
-        "avgThroughput": 95
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 50,
+        "bySpeed": 291,
         "byPrice": 67,
         "byContext": 68
       }
@@ -12604,18 +10224,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Alibaba Cloud Int.",
-            "throughput": 35,
-            "latency": 1.72
-          }
-        ],
-        "bestThroughput": 35,
-        "avgThroughput": 35
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 184,
+        "bySpeed": 292,
         "byPrice": 181,
         "byContext": 69
       }
@@ -12651,7 +10265,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 315,
+        "bySpeed": 293,
         "byPrice": 188,
         "byContext": 70
       }
@@ -12687,7 +10301,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 316,
+        "bySpeed": 294,
         "byPrice": 224,
         "byContext": 145
       }
@@ -12723,7 +10337,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 317,
+        "bySpeed": 295,
         "byPrice": 156,
         "byContext": 146
       }
@@ -12759,7 +10373,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 318,
+        "bySpeed": 296,
         "byPrice": 159,
         "byContext": 71
       }
@@ -12793,7 +10407,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 319,
+        "bySpeed": 297,
         "byPrice": 258,
         "byContext": 147
       }
@@ -12829,7 +10443,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 320,
+        "bySpeed": 298,
         "byPrice": 193,
         "byContext": 72
       }
@@ -12863,7 +10477,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 321,
+        "bySpeed": 299,
         "byPrice": 239,
         "byContext": 73
       }
@@ -12898,7 +10512,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 322,
+        "bySpeed": 300,
         "byPrice": 171,
         "byContext": 74
       }
@@ -12934,7 +10548,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 323,
+        "bySpeed": 301,
         "byPrice": 39,
         "byContext": 327
       }
@@ -12968,7 +10582,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 324,
+        "bySpeed": 302,
         "byPrice": 62,
         "byContext": 307
       }
@@ -12997,18 +10611,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Relace",
-            "throughput": 1102,
-            "latency": 0.44
-          }
-        ],
-        "bestThroughput": 1102,
-        "avgThroughput": 1102
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 4,
+        "bySpeed": 303,
         "byPrice": 170,
         "byContext": 161
       }
@@ -13037,18 +10645,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Relace",
-            "throughput": 43,
-            "latency": 0.78
-          }
-        ],
-        "bestThroughput": 43,
-        "avgThroughput": 43
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 162,
+        "bySpeed": 304,
         "byPrice": 229,
         "byContext": 162
       }
@@ -13083,7 +10685,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 325,
+        "bySpeed": 305,
         "byPrice": 319,
         "byContext": 75
       }
@@ -13112,23 +10714,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "DeepInfra (Turbo)",
-            "throughput": 84,
-            "latency": 0.18
-          },
-          {
-            "name": "NovitaAI",
-            "throughput": 26,
-            "latency": 1.42
-          }
-        ],
-        "bestThroughput": 84,
-        "avgThroughput": 55
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 64,
+        "bySpeed": 306,
         "byPrice": 30,
         "byContext": 331
       }
@@ -13157,18 +10748,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Infermatic",
-            "throughput": 9,
-            "latency": 3.21
-          }
-        ],
-        "bestThroughput": 9,
-        "avgThroughput": 9
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 239,
+        "bySpeed": 307,
         "byPrice": 230,
         "byContext": 328
       }
@@ -13197,23 +10782,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "DeepInfra",
-            "throughput": 56,
-            "latency": 0.23
-          },
-          {
-            "name": "NovitaAI",
-            "throughput": 53,
-            "latency": 0.4
-          }
-        ],
-        "bestThroughput": 56,
-        "avgThroughput": 54.5
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 113,
+        "bySpeed": 308,
         "byPrice": 138,
         "byContext": 254
       }
@@ -13242,23 +10816,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "DeepInfra",
-            "throughput": 37,
-            "latency": 0.35
-          },
-          {
-            "name": "NextBit",
-            "throughput": 19,
-            "latency": 0.99
-          }
-        ],
-        "bestThroughput": 37,
-        "avgThroughput": 28
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 175,
+        "bySpeed": 309,
         "byPrice": 125,
         "byContext": 255
       }
@@ -13287,18 +10850,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "StepFun",
-            "throughput": 64,
-            "latency": 2.23
-          }
-        ],
-        "bestThroughput": 64,
-        "avgThroughput": 64
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 103,
+        "bySpeed": 310,
         "byPrice": 75,
         "byContext": 148
       }
@@ -13334,7 +10891,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 326,
+        "bySpeed": 311,
         "byPrice": 160,
         "byContext": 163
       }
@@ -13363,18 +10920,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Switchpoint",
-            "throughput": 19,
-            "latency": 3.92
-          }
-        ],
-        "bestThroughput": 19,
-        "avgThroughput": 19
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 226,
+        "bySpeed": 312,
         "byPrice": 235,
         "byContext": 256
       }
@@ -13403,18 +10954,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "SiliconFlow",
-            "throughput": 18,
-            "latency": 1.43
-          }
-        ],
-        "bestThroughput": 18,
-        "avgThroughput": 18
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 228,
+        "bySpeed": 313,
         "byPrice": 108,
         "byContext": 257
       }
@@ -13448,7 +10993,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 327,
+        "bySpeed": 314,
         "byPrice": 64,
         "byContext": 149
       }
@@ -13477,18 +11022,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Parasail",
-            "throughput": 50,
-            "latency": 0.37
-          }
-        ],
-        "bestThroughput": 50,
-        "avgThroughput": 50
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 137,
+        "bySpeed": 315,
         "byPrice": 104,
         "byContext": 258
       }
@@ -13517,23 +11056,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Infermatic",
-            "throughput": 86,
-            "latency": 0.28
-          },
-          {
-            "name": "NextBit",
-            "throughput": 70,
-            "latency": 0.51
-          }
-        ],
-        "bestThroughput": 86,
-        "avgThroughput": 78
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 61,
+        "bySpeed": 316,
         "byPrice": 105,
         "byContext": 320
       }
@@ -13562,18 +11090,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Parasail",
-            "throughput": 42,
-            "latency": 0.51
-          }
-        ],
-        "bestThroughput": 42,
-        "avgThroughput": 42
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 164,
+        "bySpeed": 317,
         "byPrice": 136,
         "byContext": 321
       }
@@ -13602,18 +11124,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "NextBit",
-            "throughput": 69,
-            "latency": 0.46
-          }
-        ],
-        "bestThroughput": 69,
-        "avgThroughput": 69
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 93,
+        "bySpeed": 318,
         "byPrice": 96,
         "byContext": 322
       }
@@ -13642,23 +11158,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Mancer",
-            "throughput": 33,
-            "latency": 0.43
-          },
-          {
-            "name": "NextBit",
-            "throughput": 19,
-            "latency": 0.82
-          }
-        ],
-        "bestThroughput": 33,
-        "avgThroughput": 26
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 190,
+        "bySpeed": 319,
         "byPrice": 121,
         "byContext": 336
       }
@@ -13687,18 +11192,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Upstage",
-            "throughput": 53,
-            "latency": 1.03
-          }
-        ],
-        "bestThroughput": 53,
-        "avgThroughput": 53
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 129,
+        "bySpeed": 320,
         "byPrice": 116,
         "byContext": 298
       }
@@ -13727,18 +11226,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Amazon Bedrock",
-            "throughput": 56,
-            "latency": 0.59
-          }
-        ],
-        "bestThroughput": 56,
-        "avgThroughput": 56
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 114,
+        "bySpeed": 321,
         "byPrice": 257,
         "byContext": 40
       }
@@ -13774,7 +11267,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 328,
+        "bySpeed": 322,
         "byPrice": 220,
         "byContext": 4
       }
@@ -13810,7 +11303,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 329,
+        "bySpeed": 323,
         "byPrice": 221,
         "byContext": 5
       }
@@ -13846,7 +11339,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 330,
+        "bySpeed": 324,
         "byPrice": 222,
         "byContext": 76
       }
@@ -13881,7 +11374,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 331,
+        "bySpeed": 325,
         "byPrice": 204,
         "byContext": 164
       }
@@ -13918,7 +11411,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 332,
+        "bySpeed": 326,
         "byPrice": 70,
         "byContext": 34
       }
@@ -13952,7 +11445,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 333,
+        "bySpeed": 327,
         "byPrice": 141,
         "byContext": 35
       }
@@ -13981,28 +11474,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Nebius Token Factory",
-            "throughput": 47,
-            "latency": 0.58
-          },
-          {
-            "name": "NovitaAI",
-            "throughput": 36,
-            "latency": 1.28
-          },
-          {
-            "name": "Z.ai",
-            "throughput": 33,
-            "latency": 3.95
-          }
-        ],
-        "bestThroughput": 47,
-        "avgThroughput": 38.666666666666664
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 143,
+        "bySpeed": 328,
         "byPrice": 210,
         "byContext": 259
       }
@@ -14036,7 +11513,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 334,
+        "bySpeed": 329,
         "byPrice": 139,
         "byContext": 260
       }
@@ -14066,23 +11543,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Z.ai",
-            "throughput": 46,
-            "latency": 2.78
-          },
-          {
-            "name": "NovitaAI",
-            "throughput": 45,
-            "latency": 1.03
-          }
-        ],
-        "bestThroughput": 46,
-        "avgThroughput": 45.5
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 149,
+        "bySpeed": 330,
         "byPrice": 189,
         "byContext": 308
       }
@@ -14116,7 +11582,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 335,
+        "bySpeed": 331,
         "byPrice": 185,
         "byContext": 169
       }
@@ -14152,7 +11618,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 336,
+        "bySpeed": 332,
         "byPrice": 144,
         "byContext": 261
       }
@@ -14181,43 +11647,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Google Vertex",
-            "throughput": 123,
-            "latency": 0.73
-          },
-          {
-            "name": "Together",
-            "throughput": 60,
-            "latency": null
-          },
-          {
-            "name": "NovitaAI",
-            "throughput": 51,
-            "latency": null
-          },
-          {
-            "name": "DeepInfra",
-            "throughput": null,
-            "latency": 0.68
-          },
-          {
-            "name": "Nebius Token Factory",
-            "throughput": null,
-            "latency": 0.91
-          },
-          {
-            "name": "Z.ai",
-            "throughput": null,
-            "latency": null
-          }
-        ],
-        "bestThroughput": 123,
-        "avgThroughput": 78
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 32,
+        "bySpeed": 333,
         "byPrice": 186,
         "byContext": 170
       }
@@ -14246,28 +11681,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Venice",
-            "throughput": 55,
-            "latency": 0.73
-          },
-          {
-            "name": "DeepInfra",
-            "throughput": 52,
-            "latency": 0.57
-          },
-          {
-            "name": "NovitaAI",
-            "throughput": 40,
-            "latency": 0.99
-          }
-        ],
-        "bestThroughput": 55,
-        "avgThroughput": 49
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 117,
+        "bySpeed": 334,
         "byPrice": 97,
         "byContext": 171
       }
@@ -14296,38 +11715,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Fireworks",
-            "throughput": 78,
-            "latency": null
-          },
-          {
-            "name": "Friendli",
-            "throughput": 72,
-            "latency": 0.39
-          },
-          {
-            "name": "GMICloud",
-            "throughput": 43,
-            "latency": null
-          },
-          {
-            "name": "Parasail",
-            "throughput": null,
-            "latency": 0.77
-          },
-          {
-            "name": "DeepInfra",
-            "throughput": null,
-            "latency": 1.02
-          }
-        ],
-        "bestThroughput": 78,
-        "avgThroughput": 64.33333333333333
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 79,
+        "bySpeed": 335,
         "byPrice": 192,
         "byContext": 172
       }
@@ -14356,18 +11749,12 @@
         ]
       },
       "speed": {
-        "providers": [
-          {
-            "name": "Z.ai",
-            "throughput": 36,
-            "latency": 2.8
-          }
-        ],
-        "bestThroughput": 36,
-        "avgThroughput": 36
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 179,
+        "bySpeed": 336,
         "byPrice": 243,
         "byContext": 150
       }
