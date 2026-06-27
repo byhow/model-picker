@@ -36,7 +36,7 @@ const sufficientModels = [
   'google/gemini-2.5-pro',
   'google/gemini-2.5-pro-preview',
   'google/gemini-3.1-pro-preview',
-  'x-ai/grok-4',
+  'x-ai/grok-4.3',
   'x-ai/grok-4-fast',
   'x-ai/grok-4.20-beta',
   'deepseek/deepseek-r1-0528',

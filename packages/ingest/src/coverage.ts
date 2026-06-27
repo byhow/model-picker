@@ -25,7 +25,7 @@ export const REQUIRED_MODEL_IDS = [
   'openai/gpt-5.4',
   'anthropic/claude-opus-4.6',
   'google/gemini-2.5-pro',
-  'x-ai/grok-4',
+  'x-ai/grok-4.3',
   'deepseek/deepseek-r1-0528',
   'moonshotai/kimi-k2.5',
   'minimax/minimax-m2.5',
