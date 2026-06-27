@@ -9,6 +9,8 @@ on:
 jobs:
   update-models:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     
     steps:
     - name: Checkout repository
@@ -37,6 +39,9 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     needs: update-models
+    permissions:
+      contents: read
+      deployments: write
     
     steps:
     - name: Checkout repository
