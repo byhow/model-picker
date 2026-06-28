@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-27T02:30:27.332Z",
+  "generatedAt": "2026-06-28T00:29:09.728Z",
   "count": 339,
   "models": [
     {
@@ -566,7 +566,7 @@
       },
       "rank": {
         "bySpeed": 16,
-        "byPrice": 214,
+        "byPrice": 215,
         "byContext": 45
       }
     },
@@ -2002,7 +2002,7 @@
       },
       "rank": {
         "bySpeed": 57,
-        "byPrice": 215,
+        "byPrice": 216,
         "byContext": 196
       }
     },
@@ -2278,7 +2278,7 @@
       },
       "rank": {
         "bySpeed": 65,
-        "byPrice": 216,
+        "byPrice": 217,
         "byContext": 17
       }
     },
@@ -2314,7 +2314,7 @@
       },
       "rank": {
         "bySpeed": 66,
-        "byPrice": 217,
+        "byPrice": 218,
         "byContext": 313
       }
     },
@@ -5265,7 +5265,7 @@
       },
       "rank": {
         "bySpeed": 150,
-        "byPrice": 218,
+        "byPrice": 219,
         "byContext": 118
       }
     },
@@ -5299,7 +5299,7 @@
       },
       "rank": {
         "bySpeed": 151,
-        "byPrice": 219,
+        "byPrice": 220,
         "byContext": 119
       }
     },
@@ -7694,7 +7694,7 @@
       },
       "rank": {
         "bySpeed": 219,
-        "byPrice": 212,
+        "byPrice": 213,
         "byContext": 293
       }
     },
@@ -9803,7 +9803,7 @@
       },
       "rank": {
         "bySpeed": 280,
-        "byPrice": 223,
+        "byPrice": 224,
         "byContext": 252
       }
     },
@@ -10122,7 +10122,7 @@
       },
       "rank": {
         "bySpeed": 289,
-        "byPrice": 213,
+        "byPrice": 214,
         "byContext": 160
       }
     },
@@ -10276,8 +10276,8 @@
       "description": "Qwen3.6 27B is a dense 27-billion-parameter language model from the Qwen Team at Alibaba, released in April 2026. It features hybrid multimodal capabilities — accepting text, image, and video inputs...",
       "contextLength": 262144,
       "pricing": {
-        "inputPerMillion": 0.28850000000000003,
-        "outputPerMillion": 2.65
+        "inputPerMillion": 0.2596,
+        "outputPerMillion": 2.3850000000000002
       },
       "topProvider": {
         "contextLength": 262140,
@@ -10302,7 +10302,7 @@
       },
       "rank": {
         "bySpeed": 294,
-        "byPrice": 224,
+        "byPrice": 212,
         "byContext": 145
       }
     },
@@ -11268,7 +11268,7 @@
       },
       "rank": {
         "bySpeed": 322,
-        "byPrice": 220,
+        "byPrice": 221,
         "byContext": 4
       }
     },
@@ -11304,7 +11304,7 @@
       },
       "rank": {
         "bySpeed": 323,
-        "byPrice": 221,
+        "byPrice": 222,
         "byContext": 5
       }
     },
@@ -11340,7 +11340,7 @@
       },
       "rank": {
         "bySpeed": 324,
-        "byPrice": 222,
+        "byPrice": 223,
         "byContext": 76
       }
     },
