@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-30T00:30:07.165Z",
+  "generatedAt": "2026-07-01T00:31:22.613Z",
   "count": 338,
   "models": [
     {
@@ -35,7 +35,7 @@
       "rank": {
         "bySpeed": 1,
         "byPrice": 321,
-        "byContext": 42
+        "byContext": 41
       }
     },
     {
@@ -70,7 +70,7 @@
       },
       "rank": {
         "bySpeed": 2,
-        "byPrice": 251,
+        "byPrice": 250,
         "byContext": 174
       }
     },
@@ -107,7 +107,7 @@
       "rank": {
         "bySpeed": 3,
         "byPrice": 309,
-        "byContext": 43
+        "byContext": 42
       }
     },
     {
@@ -116,8 +116,8 @@
       "description": "This model always redirects to the latest model in the Anthropic Claude Sonnet family.",
       "contextLength": 1000000,
       "pricing": {
-        "inputPerMillion": 3,
-        "outputPerMillion": 15
+        "inputPerMillion": 2,
+        "outputPerMillion": 10
       },
       "topProvider": {
         "contextLength": 1000000,
@@ -142,8 +142,8 @@
       },
       "rank": {
         "bySpeed": 4,
-        "byPrice": 300,
-        "byContext": 44
+        "byPrice": 268,
+        "byContext": 43
       }
     },
     {
@@ -180,8 +180,8 @@
       },
       "rank": {
         "bySpeed": 5,
-        "byPrice": 267,
-        "byContext": 13
+        "byPrice": 266,
+        "byContext": 12
       }
     },
     {
@@ -218,8 +218,8 @@
       },
       "rank": {
         "bySpeed": 6,
-        "byPrice": 289,
-        "byContext": 14
+        "byPrice": 290,
+        "byContext": 13
       }
     },
     {
@@ -253,7 +253,7 @@
       },
       "rank": {
         "bySpeed": 7,
-        "byPrice": 232,
+        "byPrice": 231,
         "byContext": 98
       }
     },
@@ -325,7 +325,7 @@
       },
       "rank": {
         "bySpeed": 9,
-        "byPrice": 249,
+        "byPrice": 248,
         "byContext": 76
       }
     },
@@ -359,7 +359,7 @@
       },
       "rank": {
         "bySpeed": 10,
-        "byPrice": 260,
+        "byPrice": 259,
         "byContext": 150
       }
     },
@@ -393,7 +393,7 @@
       },
       "rank": {
         "bySpeed": 11,
-        "byPrice": 261,
+        "byPrice": 260,
         "byContext": 202
       }
     },
@@ -427,7 +427,7 @@
       },
       "rank": {
         "bySpeed": 12,
-        "byPrice": 173,
+        "byPrice": 170,
         "byContext": 203
       }
     },
@@ -461,7 +461,7 @@
       },
       "rank": {
         "bySpeed": 13,
-        "byPrice": 182,
+        "byPrice": 181,
         "byContext": 204
       }
     },
@@ -495,7 +495,7 @@
       },
       "rank": {
         "bySpeed": 14,
-        "byPrice": 183,
+        "byPrice": 182,
         "byContext": 308
       }
     },
@@ -529,8 +529,8 @@
       },
       "rank": {
         "bySpeed": 15,
-        "byPrice": 101,
-        "byContext": 300
+        "byPrice": 98,
+        "byContext": 299
       }
     },
     {
@@ -566,8 +566,8 @@
       },
       "rank": {
         "bySpeed": 16,
-        "byPrice": 215,
-        "byContext": 45
+        "byPrice": 214,
+        "byContext": 44
       }
     },
     {
@@ -601,7 +601,7 @@
       },
       "rank": {
         "bySpeed": 17,
-        "byPrice": 65,
+        "byPrice": 63,
         "byContext": 95
       }
     },
@@ -635,8 +635,8 @@
       },
       "rank": {
         "bySpeed": 18,
-        "byPrice": 43,
-        "byContext": 262
+        "byPrice": 41,
+        "byContext": 261
       }
     },
     {
@@ -670,8 +670,8 @@
       },
       "rank": {
         "bySpeed": 19,
-        "byPrice": 294,
-        "byContext": 46
+        "byPrice": 295,
+        "byContext": 45
       }
     },
     {
@@ -705,7 +705,7 @@
       },
       "rank": {
         "bySpeed": 20,
-        "byPrice": 233,
+        "byPrice": 232,
         "byContext": 96
       }
     },
@@ -739,7 +739,7 @@
       },
       "rank": {
         "bySpeed": 21,
-        "byPrice": 252,
+        "byPrice": 251,
         "byContext": 309
       }
     },
@@ -774,7 +774,7 @@
       },
       "rank": {
         "bySpeed": 22,
-        "byPrice": 166,
+        "byPrice": 163,
         "byContext": 175
       }
     },
@@ -811,7 +811,7 @@
       "rank": {
         "bySpeed": 23,
         "byPrice": 322,
-        "byContext": 47
+        "byContext": 46
       }
     },
     {
@@ -846,7 +846,7 @@
       },
       "rank": {
         "bySpeed": 24,
-        "byPrice": 253,
+        "byPrice": 252,
         "byContext": 176
       }
     },
@@ -991,7 +991,7 @@
       "rank": {
         "bySpeed": 28,
         "byPrice": 311,
-        "byContext": 48
+        "byContext": 47
       }
     },
     {
@@ -1027,7 +1027,7 @@
       "rank": {
         "bySpeed": 29,
         "byPrice": 312,
-        "byContext": 49
+        "byContext": 48
       }
     },
     {
@@ -1063,7 +1063,7 @@
       "rank": {
         "bySpeed": 30,
         "byPrice": 330,
-        "byContext": 50
+        "byContext": 49
       }
     },
     {
@@ -1099,7 +1099,7 @@
       "rank": {
         "bySpeed": 31,
         "byPrice": 313,
-        "byContext": 51
+        "byContext": 50
       }
     },
     {
@@ -1135,7 +1135,7 @@
       "rank": {
         "bySpeed": 32,
         "byPrice": 323,
-        "byContext": 52
+        "byContext": 51
       }
     },
     {
@@ -1171,7 +1171,7 @@
       "rank": {
         "bySpeed": 33,
         "byPrice": 301,
-        "byContext": 53
+        "byContext": 52
       }
     },
     {
@@ -1207,7 +1207,7 @@
       "rank": {
         "bySpeed": 34,
         "byPrice": 302,
-        "byContext": 54
+        "byContext": 53
       }
     },
     {
@@ -1243,6 +1243,42 @@
       "rank": {
         "bySpeed": 35,
         "byPrice": 303,
+        "byContext": 54
+      }
+    },
+    {
+      "id": "anthropic/claude-sonnet-5",
+      "name": "Anthropic: Claude Sonnet 5",
+      "description": "Sonnet 5 is Anthropic's most capable Sonnet-class model, with frontier performance across coding, agents, and professional work. It supports adaptive thinking with selectable reasoning effort levels (low, medium, high, max,...",
+      "contextLength": 1000000,
+      "pricing": {
+        "inputPerMillion": 2,
+        "outputPerMillion": 10
+      },
+      "topProvider": {
+        "contextLength": 1000000,
+        "maxCompletionTokens": 128000,
+        "isModerated": true
+      },
+      "architecture": {
+        "modality": "text+image+file->text",
+        "inputModalities": [
+          "text",
+          "image",
+          "file"
+        ],
+        "outputModalities": [
+          "text"
+        ]
+      },
+      "speed": {
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
+      },
+      "rank": {
+        "bySpeed": 36,
+        "byPrice": 269,
         "byContext": 55
       }
     },
@@ -1275,8 +1311,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 36,
-        "byPrice": 132,
+        "bySpeed": 37,
+        "byPrice": 129,
         "byContext": 310
       }
     },
@@ -1309,8 +1345,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 37,
-        "byPrice": 133,
+        "bySpeed": 38,
+        "byPrice": 130,
         "byContext": 99
       }
     },
@@ -1343,8 +1379,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 38,
-        "byPrice": 47,
+        "bySpeed": 39,
+        "byPrice": 45,
         "byContext": 205
       }
     },
@@ -1377,8 +1413,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 39,
-        "byPrice": 161,
+        "bySpeed": 40,
+        "byPrice": 158,
         "byContext": 206
       }
     },
@@ -1412,8 +1448,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 40,
-        "byPrice": 167,
+        "bySpeed": 41,
+        "byPrice": 164,
         "byContext": 207
       }
     },
@@ -1447,9 +1483,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 41,
-        "byPrice": 57,
-        "byContext": 263
+        "bySpeed": 42,
+        "byPrice": 55,
+        "byContext": 262
       }
     },
     {
@@ -1483,8 +1519,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 42,
-        "byPrice": 194,
+        "bySpeed": 43,
+        "byPrice": 193,
         "byContext": 100
       }
     },
@@ -1519,8 +1555,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 43,
-        "byPrice": 71,
+        "bySpeed": 44,
+        "byPrice": 69,
         "byContext": 101
       }
     },
@@ -1555,8 +1591,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 44,
-        "byPrice": 195,
+        "bySpeed": 45,
+        "byPrice": 194,
         "byContext": 102
       }
     },
@@ -1591,8 +1627,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 45,
-        "byPrice": 83,
+        "bySpeed": 46,
+        "byPrice": 80,
         "byContext": 103
       }
     },
@@ -1625,7 +1661,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 46,
+        "bySpeed": 47,
         "byPrice": 1,
         "byContext": 311
       }
@@ -1659,8 +1695,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 47,
-        "byPrice": 269,
+        "bySpeed": 48,
+        "byPrice": 270,
         "byContext": 151
       }
     },
@@ -1693,9 +1729,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 48,
-        "byPrice": 109,
-        "byContext": 264
+        "bySpeed": 49,
+        "byPrice": 106,
+        "byContext": 263
       }
     },
     {
@@ -1727,9 +1763,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 49,
-        "byPrice": 270,
-        "byContext": 265
+        "bySpeed": 50,
+        "byPrice": 271,
+        "byContext": 264
       }
     },
     {
@@ -1761,9 +1797,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 50,
-        "byPrice": 48,
-        "byContext": 266
+        "bySpeed": 51,
+        "byPrice": 46,
+        "byContext": 265
       }
     },
     {
@@ -1795,7 +1831,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 51,
+        "bySpeed": 52,
         "byPrice": 2,
         "byContext": 152
       }
@@ -1829,9 +1865,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 52,
-        "byPrice": 168,
-        "byContext": 267
+        "bySpeed": 53,
+        "byPrice": 165,
+        "byContext": 266
       }
     },
     {
@@ -1863,8 +1899,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 53,
-        "byPrice": 137,
+        "bySpeed": 54,
+        "byPrice": 134,
         "byContext": 208
       }
     },
@@ -1897,8 +1933,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 54,
-        "byPrice": 126,
+        "bySpeed": 55,
+        "byPrice": 123,
         "byContext": 193
       }
     },
@@ -1931,8 +1967,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 55,
-        "byPrice": 131,
+        "bySpeed": 56,
+        "byPrice": 128,
         "byContext": 194
       }
     },
@@ -1965,8 +2001,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 56,
-        "byPrice": 216,
+        "bySpeed": 57,
+        "byPrice": 215,
         "byContext": 195
       }
     },
@@ -1999,8 +2035,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 57,
-        "byPrice": 207,
+        "bySpeed": 58,
+        "byPrice": 206,
         "byContext": 196
       }
     },
@@ -2033,9 +2069,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 58,
-        "byPrice": 134,
-        "byContext": 268
+        "bySpeed": 59,
+        "byPrice": 131,
+        "byContext": 267
       }
     },
     {
@@ -2067,8 +2103,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 59,
-        "byPrice": 145,
+        "bySpeed": 60,
+        "byPrice": 142,
         "byContext": 197
       }
     },
@@ -2101,8 +2137,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 60,
-        "byPrice": 79,
+        "bySpeed": 61,
+        "byPrice": 77,
         "byContext": 209
       }
     },
@@ -2135,8 +2171,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 61,
-        "byPrice": 98,
+        "bySpeed": 62,
+        "byPrice": 95,
         "byContext": 198
       }
     },
@@ -2146,12 +2182,12 @@
       "description": "DeepSeek V4 Flash is an efficiency-optimized Mixture-of-Experts model from DeepSeek with 284B total parameters and 13B activated parameters, supporting a 1M-token context window. It is designed for fast inference and...",
       "contextLength": 1048576,
       "pricing": {
-        "inputPerMillion": 0.09,
-        "outputPerMillion": 0.18
+        "inputPerMillion": 0.098,
+        "outputPerMillion": 0.196
       },
       "topProvider": {
-        "contextLength": 1000000,
-        "maxCompletionTokens": 65536,
+        "contextLength": 1048575,
+        "maxCompletionTokens": null,
         "isModerated": false
       },
       "architecture": {
@@ -2169,9 +2205,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 62,
+        "bySpeed": 63,
         "byPrice": 54,
-        "byContext": 15
+        "byContext": 14
       }
     },
     {
@@ -2203,9 +2239,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 63,
-        "byPrice": 140,
-        "byContext": 16
+        "bySpeed": 64,
+        "byPrice": 137,
+        "byContext": 15
       }
     },
     {
@@ -2241,9 +2277,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 64,
-        "byPrice": 217,
-        "byContext": 17
+        "bySpeed": 65,
+        "byPrice": 216,
+        "byContext": 16
       }
     },
     {
@@ -2277,8 +2313,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 65,
-        "byPrice": 218,
+        "bySpeed": 66,
+        "byPrice": 217,
         "byContext": 312
       }
     },
@@ -2315,9 +2351,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 66,
-        "byPrice": 84,
-        "byContext": 18
+        "bySpeed": 67,
+        "byPrice": 81,
+        "byContext": 17
       }
     },
     {
@@ -2353,9 +2389,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 67,
-        "byPrice": 85,
-        "byContext": 19
+        "bySpeed": 68,
+        "byPrice": 82,
+        "byContext": 18
       }
     },
     {
@@ -2391,9 +2427,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 68,
-        "byPrice": 271,
-        "byContext": 20
+        "bySpeed": 69,
+        "byPrice": 272,
+        "byContext": 19
       }
     },
     {
@@ -2428,9 +2464,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 69,
-        "byPrice": 272,
-        "byContext": 21
+        "bySpeed": 70,
+        "byPrice": 273,
+        "byContext": 20
       }
     },
     {
@@ -2466,9 +2502,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 70,
-        "byPrice": 273,
-        "byContext": 22
+        "bySpeed": 71,
+        "byPrice": 274,
+        "byContext": 21
       }
     },
     {
@@ -2504,9 +2540,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 71,
-        "byPrice": 225,
-        "byContext": 23
+        "bySpeed": 72,
+        "byPrice": 224,
+        "byContext": 22
       }
     },
     {
@@ -2540,9 +2576,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 72,
-        "byPrice": 290,
-        "byContext": 301
+        "bySpeed": 73,
+        "byPrice": 291,
+        "byContext": 300
       }
     },
     {
@@ -2576,9 +2612,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 73,
-        "byPrice": 291,
-        "byContext": 302
+        "bySpeed": 74,
+        "byPrice": 292,
+        "byContext": 301
       }
     },
     {
@@ -2612,8 +2648,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 74,
-        "byPrice": 226,
+        "bySpeed": 75,
+        "byPrice": 225,
         "byContext": 210
       }
     },
@@ -2648,8 +2684,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 75,
-        "byPrice": 227,
+        "bySpeed": 76,
+        "byPrice": 226,
         "byContext": 211
       }
     },
@@ -2686,9 +2722,45 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 76,
-        "byPrice": 174,
-        "byContext": 24
+        "bySpeed": 77,
+        "byPrice": 172,
+        "byContext": 23
+      }
+    },
+    {
+      "id": "google/gemini-3.1-flash-lite-image",
+      "name": "Google: Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)",
+      "description": "Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image) is Google's fastest, most cost-efficient Gemini image model, built for high-velocity developer pipelines and rapid-fire visual exploration. It delivers text-to-image generation...",
+      "contextLength": 65536,
+      "pricing": {
+        "inputPerMillion": 0.25,
+        "outputPerMillion": 1.5
+      },
+      "topProvider": {
+        "contextLength": 65536,
+        "maxCompletionTokens": 66000,
+        "isModerated": false
+      },
+      "architecture": {
+        "modality": "text+image->text+image",
+        "inputModalities": [
+          "image",
+          "text"
+        ],
+        "outputModalities": [
+          "image",
+          "text"
+        ]
+      },
+      "speed": {
+        "providers": [],
+        "bestThroughput": null,
+        "avgThroughput": null
+      },
+      "rank": {
+        "bySpeed": 78,
+        "byPrice": 173,
+        "byContext": 302
       }
     },
     {
@@ -2724,9 +2796,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 77,
-        "byPrice": 175,
-        "byContext": 25
+        "bySpeed": 79,
+        "byPrice": 174,
+        "byContext": 24
       }
     },
     {
@@ -2762,9 +2834,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 78,
-        "byPrice": 292,
-        "byContext": 26
+        "bySpeed": 80,
+        "byPrice": 293,
+        "byContext": 25
       }
     },
     {
@@ -2800,8 +2872,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 79,
-        "byPrice": 293,
+        "bySpeed": 81,
+        "byPrice": 294,
         "byContext": 11
       }
     },
@@ -2838,9 +2910,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 80,
-        "byPrice": 268,
-        "byContext": 27
+        "bySpeed": 82,
+        "byPrice": 267,
+        "byContext": 26
       }
     },
     {
@@ -2872,8 +2944,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 81,
-        "byPrice": 120,
+        "bySpeed": 83,
+        "byPrice": 117,
         "byContext": 328
       }
     },
@@ -2907,8 +2979,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 82,
-        "byPrice": 49,
+        "bySpeed": 84,
+        "byPrice": 47,
         "byContext": 212
       }
     },
@@ -2942,8 +3014,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 83,
-        "byPrice": 53,
+        "bySpeed": 85,
+        "byPrice": 51,
         "byContext": 213
       }
     },
@@ -2977,8 +3049,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 84,
-        "byPrice": 33,
+        "bySpeed": 86,
+        "byPrice": 32,
         "byContext": 214
       }
     },
@@ -3011,8 +3083,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 85,
-        "byPrice": 41,
+        "bySpeed": 87,
+        "byPrice": 39,
         "byContext": 313
       }
     },
@@ -3047,8 +3119,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 86,
-        "byPrice": 77,
+        "bySpeed": 88,
+        "byPrice": 75,
         "byContext": 104
       }
     },
@@ -3083,7 +3155,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 87,
+        "bySpeed": 89,
         "byPrice": 3,
         "byContext": 105
       }
@@ -3119,8 +3191,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 88,
-        "byPrice": 81,
+        "bySpeed": 90,
+        "byPrice": 79,
         "byContext": 106
       }
     },
@@ -3155,7 +3227,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 89,
+        "bySpeed": 91,
         "byPrice": 4,
         "byContext": 107
       }
@@ -3191,9 +3263,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 90,
+        "bySpeed": 92,
         "byPrice": 5,
-        "byContext": 28
+        "byContext": 27
       }
     },
     {
@@ -3227,9 +3299,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 91,
+        "bySpeed": 93,
         "byPrice": 6,
-        "byContext": 29
+        "byContext": 28
       }
     },
     {
@@ -3261,8 +3333,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 92,
-        "byPrice": 31,
+        "bySpeed": 94,
+        "byPrice": 30,
         "byContext": 336
       }
     },
@@ -3295,9 +3367,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 93,
-        "byPrice": 40,
-        "byContext": 261
+        "bySpeed": 95,
+        "byPrice": 38,
+        "byContext": 260
       }
     },
     {
@@ -3329,8 +3401,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 94,
-        "byPrice": 34,
+        "bySpeed": 96,
+        "byPrice": 33,
         "byContext": 215
       }
     },
@@ -3363,9 +3435,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 95,
-        "byPrice": 124,
-        "byContext": 269
+        "bySpeed": 97,
+        "byPrice": 121,
+        "byContext": 268
       }
     },
     {
@@ -3397,8 +3469,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 96,
-        "byPrice": 118,
+        "bySpeed": 98,
+        "byPrice": 115,
         "byContext": 108
       }
     },
@@ -3431,8 +3503,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 97,
-        "byPrice": 27,
+        "bySpeed": 99,
+        "byPrice": 26,
         "byContext": 109
       }
     },
@@ -3465,8 +3537,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 98,
-        "byPrice": 119,
+        "bySpeed": 100,
+        "byPrice": 116,
         "byContext": 110
       }
     },
@@ -3499,8 +3571,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 99,
-        "byPrice": 274,
+        "bySpeed": 101,
+        "byPrice": 275,
         "byContext": 332
       }
     },
@@ -3533,8 +3605,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 100,
-        "byPrice": 275,
+        "bySpeed": 102,
+        "byPrice": 276,
         "byContext": 333
       }
     },
@@ -3567,8 +3639,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 101,
-        "byPrice": 162,
+        "bySpeed": 103,
+        "byPrice": 159,
         "byContext": 153
       }
     },
@@ -3601,9 +3673,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 102,
-        "byPrice": 42,
-        "byContext": 270
+        "bySpeed": 104,
+        "byPrice": 40,
+        "byContext": 269
       }
     },
     {
@@ -3635,7 +3707,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 103,
+        "bySpeed": 105,
         "byPrice": 7,
         "byContext": 314
       }
@@ -3669,7 +3741,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 104,
+        "bySpeed": 106,
         "byPrice": 8,
         "byContext": 315
       }
@@ -3703,8 +3775,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 105,
-        "byPrice": 148,
+        "bySpeed": 107,
+        "byPrice": 145,
         "byContext": 334
       }
     },
@@ -3737,8 +3809,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 106,
-        "byPrice": 44,
+        "bySpeed": 108,
+        "byPrice": 42,
         "byContext": 329
       }
     },
@@ -3771,8 +3843,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 107,
-        "byPrice": 86,
+        "bySpeed": 109,
+        "byPrice": 83,
         "byContext": 216
       }
     },
@@ -3805,8 +3877,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 108,
-        "byPrice": 28,
+        "bySpeed": 110,
+        "byPrice": 27,
         "byContext": 217
       }
     },
@@ -3840,8 +3912,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 109,
-        "byPrice": 80,
+        "bySpeed": 111,
+        "byPrice": 78,
         "byContext": 218
       }
     },
@@ -3874,8 +3946,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 110,
-        "byPrice": 63,
+        "bySpeed": 112,
+        "byPrice": 61,
         "byContext": 219
       }
     },
@@ -3908,8 +3980,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 111,
-        "byPrice": 78,
+        "bySpeed": 113,
+        "byPrice": 76,
         "byContext": 220
       }
     },
@@ -3942,7 +4014,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 112,
+        "bySpeed": 114,
         "byPrice": 9,
         "byContext": 221
       }
@@ -3976,8 +4048,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 113,
-        "byPrice": 76,
+        "bySpeed": 115,
+        "byPrice": 74,
         "byContext": 222
       }
     },
@@ -4010,7 +4082,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 114,
+        "bySpeed": 116,
         "byPrice": 10,
         "byContext": 223
       }
@@ -4045,9 +4117,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 115,
-        "byPrice": 110,
-        "byContext": 30
+        "bySpeed": 117,
+        "byPrice": 107,
+        "byContext": 29
       }
     },
     {
@@ -4080,8 +4152,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 116,
-        "byPrice": 72,
+        "bySpeed": 118,
+        "byPrice": 70,
         "byContext": 1
       }
     },
@@ -4115,8 +4187,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 117,
-        "byPrice": 55,
+        "bySpeed": 119,
+        "byPrice": 52,
         "byContext": 199
       }
     },
@@ -4149,43 +4221,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 118,
-        "byPrice": 45,
+        "bySpeed": 120,
+        "byPrice": 43,
         "byContext": 325
-      }
-    },
-    {
-      "id": "microsoft/phi-4-mini-instruct",
-      "name": "Microsoft: Phi 4 Mini Instruct",
-      "description": "Phi-4-mini-instruct is a lightweight open model built upon synthetic data and filtered publicly available websites - with a focus on high-quality, reasoning dense data. The model belongs to the Phi-4...",
-      "contextLength": 131072,
-      "pricing": {
-        "inputPerMillion": 0.08,
-        "outputPerMillion": 0.35
-      },
-      "topProvider": {
-        "contextLength": 128000,
-        "maxCompletionTokens": 128000,
-        "isModerated": false
-      },
-      "architecture": {
-        "modality": "text->text",
-        "inputModalities": [
-          "text"
-        ],
-        "outputModalities": [
-          "text"
-        ]
-      },
-      "speed": {
-        "providers": [],
-        "bestThroughput": null,
-        "avgThroughput": null
-      },
-      "rank": {
-        "bySpeed": 119,
-        "byPrice": 82,
-        "byContext": 224
       }
     },
     {
@@ -4217,8 +4255,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 120,
-        "byPrice": 117,
+        "bySpeed": 121,
+        "byPrice": 114,
         "byContext": 303
       }
     },
@@ -4252,9 +4290,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 121,
-        "byPrice": 157,
-        "byContext": 41
+        "bySpeed": 122,
+        "byPrice": 154,
+        "byContext": 40
       }
     },
     {
@@ -4286,8 +4324,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 122,
-        "byPrice": 208,
+        "bySpeed": 123,
+        "byPrice": 207,
         "byContext": 56
       }
     },
@@ -4320,8 +4358,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 123,
-        "byPrice": 149,
+        "bySpeed": 124,
+        "byPrice": 146,
         "byContext": 164
       }
     },
@@ -4354,8 +4392,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 124,
-        "byPrice": 163,
+        "bySpeed": 125,
+        "byPrice": 160,
         "byContext": 304
       }
     },
@@ -4388,8 +4426,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 125,
-        "byPrice": 146,
+        "bySpeed": 126,
+        "byPrice": 143,
         "byContext": 165
       }
     },
@@ -4422,8 +4460,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 126,
-        "byPrice": 100,
+        "bySpeed": 127,
+        "byPrice": 97,
         "byContext": 166
       }
     },
@@ -4456,8 +4494,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 127,
-        "byPrice": 123,
+        "bySpeed": 128,
+        "byPrice": 120,
         "byContext": 167
       }
     },
@@ -4492,9 +4530,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 128,
-        "byPrice": 164,
-        "byContext": 31
+        "bySpeed": 129,
+        "byPrice": 161,
+        "byContext": 30
       }
     },
     {
@@ -4527,8 +4565,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 129,
-        "byPrice": 143,
+        "bySpeed": 130,
+        "byPrice": 140,
         "byContext": 154
       }
     },
@@ -4562,8 +4600,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 130,
-        "byPrice": 196,
+        "bySpeed": 131,
+        "byPrice": 195,
         "byContext": 111
       }
     },
@@ -4597,8 +4635,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 131,
-        "byPrice": 58,
+        "bySpeed": 132,
+        "byPrice": 56,
         "byContext": 112
       }
     },
@@ -4632,9 +4670,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 132,
-        "byPrice": 35,
-        "byContext": 225
+        "bySpeed": 133,
+        "byPrice": 34,
+        "byContext": 224
       }
     },
     {
@@ -4667,8 +4705,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 133,
-        "byPrice": 50,
+        "bySpeed": 134,
+        "byPrice": 48,
         "byContext": 113
       }
     },
@@ -4702,9 +4740,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 134,
-        "byPrice": 254,
-        "byContext": 271
+        "bySpeed": 135,
+        "byPrice": 253,
+        "byContext": 270
       }
     },
     {
@@ -4737,9 +4775,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 135,
-        "byPrice": 255,
-        "byContext": 226
+        "bySpeed": 136,
+        "byPrice": 254,
+        "byContext": 225
       }
     },
     {
@@ -4773,8 +4811,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 136,
-        "byPrice": 176,
+        "bySpeed": 137,
+        "byPrice": 175,
         "byContext": 114
       }
     },
@@ -4809,9 +4847,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 137,
-        "byPrice": 197,
-        "byContext": 227
+        "bySpeed": 138,
+        "byPrice": 196,
+        "byContext": 226
       }
     },
     {
@@ -4845,8 +4883,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 138,
-        "byPrice": 259,
+        "bySpeed": 139,
+        "byPrice": 258,
         "byContext": 115
       }
     },
@@ -4881,9 +4919,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 139,
-        "byPrice": 198,
-        "byContext": 228
+        "bySpeed": 140,
+        "byPrice": 197,
+        "byContext": 227
       }
     },
     {
@@ -4915,9 +4953,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 140,
-        "byPrice": 29,
-        "byContext": 229
+        "bySpeed": 141,
+        "byPrice": 28,
+        "byContext": 228
       }
     },
     {
@@ -4950,8 +4988,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 141,
-        "byPrice": 111,
+        "bySpeed": 142,
+        "byPrice": 108,
         "byContext": 316
       }
     },
@@ -4984,8 +5022,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 142,
-        "byPrice": 32,
+        "bySpeed": 143,
+        "byPrice": 31,
         "byContext": 317
       }
     },
@@ -5019,8 +5057,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 143,
-        "byPrice": 112,
+        "bySpeed": 144,
+        "byPrice": 109,
         "byContext": 116
       }
     },
@@ -5054,9 +5092,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 144,
-        "byPrice": 107,
-        "byContext": 272
+        "bySpeed": 145,
+        "byPrice": 104,
+        "byContext": 271
       }
     },
     {
@@ -5089,9 +5127,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 145,
-        "byPrice": 59,
-        "byContext": 273
+        "bySpeed": 146,
+        "byPrice": 57,
+        "byContext": 272
       }
     },
     {
@@ -5124,8 +5162,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 146,
-        "byPrice": 256,
+        "bySpeed": 147,
+        "byPrice": 255,
         "byContext": 305
       }
     },
@@ -5160,8 +5198,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 147,
-        "byPrice": 73,
+        "bySpeed": 148,
+        "byPrice": 71,
         "byContext": 322
       }
     },
@@ -5194,9 +5232,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 148,
-        "byPrice": 211,
-        "byContext": 230
+        "bySpeed": 149,
+        "byPrice": 210,
+        "byContext": 229
       }
     },
     {
@@ -5228,8 +5266,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 149,
-        "byPrice": 219,
+        "bySpeed": 150,
+        "byPrice": 218,
         "byContext": 117
       }
     },
@@ -5262,8 +5300,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 150,
-        "byPrice": 220,
+        "bySpeed": 151,
+        "byPrice": 219,
         "byContext": 118
       }
     },
@@ -5297,8 +5335,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 151,
-        "byPrice": 205,
+        "bySpeed": 152,
+        "byPrice": 204,
         "byContext": 119
       }
     },
@@ -5332,8 +5370,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 152,
-        "byPrice": 234,
+        "bySpeed": 153,
+        "byPrice": 233,
         "byContext": 120
       }
     },
@@ -5367,8 +5405,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 153,
-        "byPrice": 237,
+        "bySpeed": 154,
+        "byPrice": 236,
         "byContext": 121
       }
     },
@@ -5401,9 +5439,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 154,
-        "byPrice": 165,
-        "byContext": 299
+        "bySpeed": 155,
+        "byPrice": 162,
+        "byContext": 298
       }
     },
     {
@@ -5435,8 +5473,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 155,
-        "byPrice": 191,
+        "bySpeed": 156,
+        "byPrice": 190,
         "byContext": 122
       }
     },
@@ -5470,8 +5508,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 156,
-        "byPrice": 150,
+        "bySpeed": 157,
+        "byPrice": 147,
         "byContext": 123
       }
     },
@@ -5504,9 +5542,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 157,
-        "byPrice": 151,
-        "byContext": 231
+        "bySpeed": 158,
+        "byPrice": 148,
+        "byContext": 230
       }
     },
     {
@@ -5538,9 +5576,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 158,
+        "bySpeed": 159,
         "byPrice": 11,
-        "byContext": 232
+        "byContext": 231
       }
     },
     {
@@ -5572,9 +5610,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 159,
-        "byPrice": 122,
-        "byContext": 233
+        "bySpeed": 160,
+        "byPrice": 119,
+        "byContext": 232
       }
     },
     {
@@ -5606,9 +5644,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 160,
-        "byPrice": 228,
-        "byContext": 234
+        "bySpeed": 161,
+        "byPrice": 227,
+        "byContext": 233
       }
     },
     {
@@ -5640,9 +5678,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 161,
-        "byPrice": 87,
-        "byContext": 235
+        "bySpeed": 162,
+        "byPrice": 84,
+        "byContext": 234
       }
     },
     {
@@ -5674,9 +5712,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 162,
-        "byPrice": 88,
-        "byContext": 236
+        "bySpeed": 163,
+        "byPrice": 85,
+        "byContext": 235
       }
     },
     {
@@ -5708,8 +5746,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 163,
-        "byPrice": 60,
+        "bySpeed": 164,
+        "byPrice": 58,
         "byContext": 124
       }
     },
@@ -5742,7 +5780,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 164,
+        "bySpeed": 165,
         "byPrice": 12,
         "byContext": 155
       }
@@ -5779,7 +5817,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 165,
+        "bySpeed": 166,
         "byPrice": 13,
         "byContext": 156
       }
@@ -5813,8 +5851,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 166,
-        "byPrice": 89,
+        "bySpeed": 167,
+        "byPrice": 86,
         "byContext": 57
       }
     },
@@ -5847,7 +5885,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 167,
+        "bySpeed": 168,
         "byPrice": 14,
         "byContext": 58
       }
@@ -5881,8 +5919,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 168,
-        "byPrice": 209,
+        "bySpeed": 169,
+        "byPrice": 208,
         "byContext": 59
       }
     },
@@ -5915,7 +5953,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 169,
+        "bySpeed": 170,
         "byPrice": 15,
         "byContext": 60
       }
@@ -5950,9 +5988,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 170,
+        "bySpeed": 171,
         "byPrice": 16,
-        "byContext": 274
+        "byContext": 273
       }
     },
     {
@@ -5986,9 +6024,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 171,
+        "bySpeed": 172,
         "byPrice": 17,
-        "byContext": 275
+        "byContext": 274
       }
     },
     {
@@ -6020,9 +6058,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 172,
+        "bySpeed": 173,
         "byPrice": 18,
-        "byContext": 276
+        "byContext": 275
       }
     },
     {
@@ -6054,8 +6092,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 173,
-        "byPrice": 177,
+        "bySpeed": 174,
+        "byPrice": 176,
         "byContext": 323
       }
     },
@@ -6088,8 +6126,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 174,
-        "byPrice": 199,
+        "bySpeed": 175,
+        "byPrice": 198,
         "byContext": 337
       }
     },
@@ -6122,8 +6160,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 175,
-        "byPrice": 241,
+        "bySpeed": 176,
+        "byPrice": 240,
         "byContext": 324
       }
     },
@@ -6156,8 +6194,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 176,
-        "byPrice": 200,
+        "bySpeed": 177,
+        "byPrice": 199,
         "byContext": 338
       }
     },
@@ -6190,7 +6228,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 177,
+        "bySpeed": 178,
         "byPrice": 324,
         "byContext": 331
       }
@@ -6225,9 +6263,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 178,
+        "bySpeed": 179,
         "byPrice": 315,
-        "byContext": 277
+        "byContext": 276
       }
     },
     {
@@ -6259,9 +6297,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 179,
+        "bySpeed": 180,
         "byPrice": 316,
-        "byContext": 278
+        "byContext": 277
       }
     },
     {
@@ -6295,9 +6333,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 180,
-        "byPrice": 262,
-        "byContext": 37
+        "bySpeed": 181,
+        "byPrice": 261,
+        "byContext": 36
       }
     },
     {
@@ -6331,9 +6369,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 181,
-        "byPrice": 184,
-        "byContext": 38
+        "bySpeed": 182,
+        "byPrice": 183,
+        "byContext": 37
       }
     },
     {
@@ -6367,9 +6405,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 182,
-        "byPrice": 90,
-        "byContext": 39
+        "bySpeed": 183,
+        "byPrice": 87,
+        "byContext": 38
       }
     },
     {
@@ -6403,9 +6441,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 183,
-        "byPrice": 276,
-        "byContext": 279
+        "bySpeed": 184,
+        "byPrice": 277,
+        "byContext": 278
       }
     },
     {
@@ -6439,9 +6477,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 184,
+        "bySpeed": 185,
         "byPrice": 304,
-        "byContext": 280
+        "byContext": 279
       }
     },
     {
@@ -6475,9 +6513,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 185,
-        "byPrice": 277,
-        "byContext": 281
+        "bySpeed": 186,
+        "byPrice": 278,
+        "byContext": 280
       }
     },
     {
@@ -6511,9 +6549,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 186,
-        "byPrice": 278,
-        "byContext": 282
+        "bySpeed": 187,
+        "byPrice": 279,
+        "byContext": 281
       }
     },
     {
@@ -6547,9 +6585,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 187,
-        "byPrice": 113,
-        "byContext": 283
+        "bySpeed": 188,
+        "byPrice": 110,
+        "byContext": 282
       }
     },
     {
@@ -6583,9 +6621,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 188,
-        "byPrice": 114,
-        "byContext": 284
+        "bySpeed": 189,
+        "byPrice": 111,
+        "byContext": 283
       }
     },
     {
@@ -6617,9 +6655,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 189,
-        "byPrice": 115,
-        "byContext": 285
+        "bySpeed": 190,
+        "byPrice": 112,
+        "byContext": 284
       }
     },
     {
@@ -6651,9 +6689,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 190,
-        "byPrice": 279,
-        "byContext": 286
+        "bySpeed": 191,
+        "byPrice": 280,
+        "byContext": 285
       }
     },
     {
@@ -6687,8 +6725,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 191,
-        "byPrice": 280,
+        "bySpeed": 192,
+        "byPrice": 281,
         "byContext": 77
       }
     },
@@ -6723,9 +6761,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 192,
-        "byPrice": 281,
-        "byContext": 287
+        "bySpeed": 193,
+        "byPrice": 282,
+        "byContext": 286
       }
     },
     {
@@ -6758,8 +6796,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 193,
-        "byPrice": 282,
+        "bySpeed": 194,
+        "byPrice": 283,
         "byContext": 78
       }
     },
@@ -6795,8 +6833,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 194,
-        "byPrice": 283,
+        "bySpeed": 195,
+        "byPrice": 284,
         "byContext": 79
       }
     },
@@ -6832,8 +6870,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 195,
-        "byPrice": 201,
+        "bySpeed": 196,
+        "byPrice": 200,
         "byContext": 80
       }
     },
@@ -6868,8 +6906,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 196,
-        "byPrice": 202,
+        "bySpeed": 197,
+        "byPrice": 201,
         "byContext": 81
       }
     },
@@ -6904,8 +6942,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 197,
-        "byPrice": 91,
+        "bySpeed": 198,
+        "byPrice": 88,
         "byContext": 82
       }
     },
@@ -6940,7 +6978,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 198,
+        "bySpeed": 199,
         "byPrice": 329,
         "byContext": 83
       }
@@ -6976,8 +7014,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 199,
-        "byPrice": 284,
+        "bySpeed": 200,
+        "byPrice": 285,
         "byContext": 84
       }
     },
@@ -7012,9 +7050,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 200,
-        "byPrice": 285,
-        "byContext": 288
+        "bySpeed": 201,
+        "byPrice": 286,
+        "byContext": 287
       }
     },
     {
@@ -7047,8 +7085,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 201,
-        "byPrice": 286,
+        "bySpeed": 202,
+        "byPrice": 287,
         "byContext": 85
       }
     },
@@ -7082,8 +7120,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 202,
-        "byPrice": 287,
+        "bySpeed": 203,
+        "byPrice": 288,
         "byContext": 86
       }
     },
@@ -7117,8 +7155,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 203,
-        "byPrice": 203,
+        "bySpeed": 204,
+        "byPrice": 202,
         "byContext": 87
       }
     },
@@ -7153,8 +7191,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 204,
-        "byPrice": 295,
+        "bySpeed": 205,
+        "byPrice": 296,
         "byContext": 88
       }
     },
@@ -7189,9 +7227,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 205,
-        "byPrice": 296,
-        "byContext": 289
+        "bySpeed": 206,
+        "byPrice": 297,
+        "byContext": 288
       }
     },
     {
@@ -7224,8 +7262,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 206,
-        "byPrice": 297,
+        "bySpeed": 207,
+        "byPrice": 298,
         "byContext": 89
       }
     },
@@ -7260,7 +7298,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 207,
+        "bySpeed": 208,
         "byPrice": 331,
         "byContext": 90
       }
@@ -7296,9 +7334,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 208,
-        "byPrice": 298,
-        "byContext": 290
+        "bySpeed": 209,
+        "byPrice": 299,
+        "byContext": 289
       }
     },
     {
@@ -7332,8 +7370,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 209,
-        "byPrice": 299,
+        "bySpeed": 210,
+        "byPrice": 300,
         "byContext": 91
       }
     },
@@ -7368,7 +7406,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 210,
+        "bySpeed": 211,
         "byPrice": 305,
         "byContext": 7
       }
@@ -7405,7 +7443,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 211,
+        "bySpeed": 212,
         "byPrice": 306,
         "byContext": 97
       }
@@ -7441,8 +7479,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 212,
-        "byPrice": 250,
+        "bySpeed": 213,
+        "byPrice": 249,
         "byContext": 92
       }
     },
@@ -7477,8 +7515,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 213,
-        "byPrice": 169,
+        "bySpeed": 214,
+        "byPrice": 166,
         "byContext": 93
       }
     },
@@ -7513,7 +7551,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 214,
+        "bySpeed": 215,
         "byPrice": 332,
         "byContext": 8
       }
@@ -7549,7 +7587,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 215,
+        "bySpeed": 216,
         "byPrice": 317,
         "byContext": 9
       }
@@ -7585,7 +7623,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 216,
+        "bySpeed": 217,
         "byPrice": 333,
         "byContext": 10
       }
@@ -7621,9 +7659,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 217,
-        "byPrice": 288,
-        "byContext": 291
+        "bySpeed": 218,
+        "byPrice": 289,
+        "byContext": 290
       }
     },
     {
@@ -7657,9 +7695,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 218,
-        "byPrice": 213,
-        "byContext": 292
+        "bySpeed": 219,
+        "byPrice": 211,
+        "byContext": 291
       }
     },
     {
@@ -7693,7 +7731,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 219,
+        "bySpeed": 220,
         "byPrice": 318,
         "byContext": 94
       }
@@ -7727,9 +7765,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 220,
-        "byPrice": 51,
-        "byContext": 237
+        "bySpeed": 221,
+        "byPrice": 49,
+        "byContext": 236
       }
     },
     {
@@ -7761,9 +7799,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 221,
+        "bySpeed": 222,
         "byPrice": 19,
-        "byContext": 238
+        "byContext": 237
       }
     },
     {
@@ -7795,9 +7833,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 222,
-        "byPrice": 46,
-        "byContext": 239
+        "bySpeed": 223,
+        "byPrice": 44,
+        "byContext": 238
       }
     },
     {
@@ -7829,9 +7867,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 223,
+        "bySpeed": 224,
         "byPrice": 20,
-        "byContext": 240
+        "byContext": 239
       }
     },
     {
@@ -7863,9 +7901,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 224,
-        "byPrice": 74,
-        "byContext": 241
+        "bySpeed": 225,
+        "byPrice": 72,
+        "byContext": 240
       }
     },
     {
@@ -7899,7 +7937,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 225,
+        "bySpeed": 226,
         "byPrice": 325,
         "byContext": 180
       }
@@ -7935,7 +7973,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 226,
+        "bySpeed": 227,
         "byPrice": 334,
         "byContext": 181
       }
@@ -7971,8 +8009,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 227,
-        "byPrice": 263,
+        "bySpeed": 228,
+        "byPrice": 262,
         "byContext": 182
       }
     },
@@ -8007,7 +8045,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 228,
+        "bySpeed": 229,
         "byPrice": 320,
         "byContext": 183
       }
@@ -8042,8 +8080,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 229,
-        "byPrice": 245,
+        "bySpeed": 230,
+        "byPrice": 244,
         "byContext": 184
       }
     },
@@ -8077,8 +8115,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 230,
-        "byPrice": 246,
+        "bySpeed": 231,
+        "byPrice": 245,
         "byContext": 185
       }
     },
@@ -8113,7 +8151,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 231,
+        "bySpeed": 232,
         "byPrice": 328,
         "byContext": 186
       }
@@ -8149,8 +8187,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 232,
-        "byPrice": 247,
+        "bySpeed": 233,
+        "byPrice": 246,
         "byContext": 187
       }
     },
@@ -8185,8 +8223,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 233,
-        "byPrice": 264,
+        "bySpeed": 234,
+        "byPrice": 263,
         "byContext": 188
       }
     },
@@ -8221,8 +8259,8 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 234,
-        "byPrice": 248,
+        "bySpeed": 235,
+        "byPrice": 247,
         "byContext": 189
       }
     },
@@ -8260,7 +8298,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 235,
+        "bySpeed": 236,
         "byPrice": 335,
         "byContext": 2
       }
@@ -8294,9 +8332,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 236,
+        "bySpeed": 237,
         "byPrice": 336,
-        "byContext": 293
+        "byContext": 292
       }
     },
     {
@@ -8329,7 +8367,7 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 237,
+        "bySpeed": 238,
         "byPrice": 21,
         "byContext": 190
       }
@@ -8363,43 +8401,9 @@
         "avgThroughput": null
       },
       "rank": {
-        "bySpeed": 238,
+        "bySpeed": 239,
         "byPrice": 337,
         "byContext": 61
-      }
-    },
-    {
-      "id": "openrouter/owl-alpha",
-      "name": "Owl Alpha",
-      "description": "Owl Alpha is a high-performance foundation model designed for agentic workloads. Natively supports tool use, and long-context tasks, with strong performance in code generation, automated workflows, and complex instruction execution....",
-      "contextLength": 1048756,
-      "pricing": {
-        "inputPerMillion": 0,
-        "outputPerMillion": 0
-      },
-      "topProvider": {
-        "contextLength": 1048756,
-        "maxCompletionTokens": 262144,
-        "isModerated": false
-      },
-      "architecture": {
-        "modality": "text->text",
-        "inputModalities": [
-          "text"
-        ],
-        "outputModalities": [
-          "text"
-        ]
-      },
-      "speed": {
-        "providers": [],
-        "bestThroughput": null,
-        "avgThroughput": null
-      },
-      "rank": {
-        "bySpeed": 239,
-        "byPrice": 22,
-        "byContext": 12
       }
     },
     {
@@ -8468,7 +8472,7 @@
       },
       "rank": {
         "bySpeed": 241,
-        "byPrice": 178,
+        "byPrice": 177,
         "byContext": 318
       }
     },
@@ -8503,8 +8507,8 @@
       },
       "rank": {
         "bySpeed": 242,
-        "byPrice": 152,
-        "byContext": 298
+        "byPrice": 149,
+        "byContext": 297
       }
     },
     {
@@ -8537,8 +8541,8 @@
       },
       "rank": {
         "bySpeed": 243,
-        "byPrice": 265,
-        "byContext": 294
+        "byPrice": 264,
+        "byContext": 293
       }
     },
     {
@@ -8642,8 +8646,8 @@
       },
       "rank": {
         "bySpeed": 246,
-        "byPrice": 266,
-        "byContext": 295
+        "byPrice": 265,
+        "byContext": 294
       }
     },
     {
@@ -8676,7 +8680,7 @@
       },
       "rank": {
         "bySpeed": 247,
-        "byPrice": 92,
+        "byPrice": 89,
         "byContext": 125
       }
     },
@@ -8710,7 +8714,7 @@
       },
       "rank": {
         "bySpeed": 248,
-        "byPrice": 23,
+        "byPrice": 22,
         "byContext": 126
       }
     },
@@ -8744,7 +8748,7 @@
       },
       "rank": {
         "bySpeed": 249,
-        "byPrice": 61,
+        "byPrice": 59,
         "byContext": 127
       }
     },
@@ -8778,7 +8782,7 @@
       },
       "rank": {
         "bySpeed": 250,
-        "byPrice": 24,
+        "byPrice": 23,
         "byContext": 128
       }
     },
@@ -8812,8 +8816,8 @@
       },
       "rank": {
         "bySpeed": 251,
-        "byPrice": 93,
-        "byContext": 242
+        "byPrice": 90,
+        "byContext": 241
       }
     },
     {
@@ -8846,8 +8850,8 @@
       },
       "rank": {
         "bySpeed": 252,
-        "byPrice": 36,
-        "byContext": 243
+        "byPrice": 35,
+        "byContext": 242
       }
     },
     {
@@ -8880,8 +8884,8 @@
       },
       "rank": {
         "bySpeed": 253,
-        "byPrice": 153,
-        "byContext": 296
+        "byPrice": 150,
+        "byContext": 295
       }
     },
     {
@@ -8914,7 +8918,7 @@
       },
       "rank": {
         "bySpeed": 254,
-        "byPrice": 127,
+        "byPrice": 124,
         "byContext": 62
       }
     },
@@ -8948,7 +8952,7 @@
       },
       "rank": {
         "bySpeed": 255,
-        "byPrice": 128,
+        "byPrice": 125,
         "byContext": 63
       }
     },
@@ -8982,7 +8986,7 @@
       },
       "rank": {
         "bySpeed": 256,
-        "byPrice": 129,
+        "byPrice": 126,
         "byContext": 64
       }
     },
@@ -9017,8 +9021,8 @@
       },
       "rank": {
         "bySpeed": 257,
-        "byPrice": 154,
-        "byContext": 244
+        "byPrice": 151,
+        "byContext": 243
       }
     },
     {
@@ -9051,7 +9055,7 @@
       },
       "rank": {
         "bySpeed": 258,
-        "byPrice": 66,
+        "byPrice": 64,
         "byContext": 201
       }
     },
@@ -9085,8 +9089,8 @@
       },
       "rank": {
         "bySpeed": 259,
-        "byPrice": 190,
-        "byContext": 245
+        "byPrice": 189,
+        "byContext": 244
       }
     },
     {
@@ -9119,7 +9123,7 @@
       },
       "rank": {
         "bySpeed": 260,
-        "byPrice": 37,
+        "byPrice": 36,
         "byContext": 129
       }
     },
@@ -9129,12 +9133,12 @@
       "description": "Qwen3-235B-A22B-Thinking-2507 is a high-performance, open-weight Mixture-of-Experts (MoE) language model optimized for complex reasoning tasks. It activates 22B of its 235B parameters per forward pass and natively supports up to 262,144...",
       "contextLength": 262144,
       "pricing": {
-        "inputPerMillion": 0.09999999999999999,
-        "outputPerMillion": 0.09999999999999999
+        "inputPerMillion": 0.14950000000000002,
+        "outputPerMillion": 1.495
       },
       "topProvider": {
-        "contextLength": 262144,
-        "maxCompletionTokens": 262144,
+        "contextLength": 131072,
+        "maxCompletionTokens": null,
         "isModerated": false
       },
       "architecture": {
@@ -9153,7 +9157,7 @@
       },
       "rank": {
         "bySpeed": 261,
-        "byPrice": 38,
+        "byPrice": 171,
         "byContext": 130
       }
     },
@@ -9187,8 +9191,8 @@
       },
       "rank": {
         "bySpeed": 262,
-        "byPrice": 102,
-        "byContext": 246
+        "byPrice": 99,
+        "byContext": 245
       }
     },
     {
@@ -9221,8 +9225,8 @@
       },
       "rank": {
         "bySpeed": 263,
-        "byPrice": 56,
-        "byContext": 247
+        "byPrice": 53,
+        "byContext": 246
       }
     },
     {
@@ -9255,8 +9259,8 @@
       },
       "rank": {
         "bySpeed": 264,
-        "byPrice": 94,
-        "byContext": 248
+        "byPrice": 91,
+        "byContext": 247
       }
     },
     {
@@ -9289,8 +9293,8 @@
       },
       "rank": {
         "bySpeed": 265,
-        "byPrice": 69,
-        "byContext": 249
+        "byPrice": 67,
+        "byContext": 248
       }
     },
     {
@@ -9323,8 +9327,8 @@
       },
       "rank": {
         "bySpeed": 266,
-        "byPrice": 95,
-        "byContext": 250
+        "byPrice": 92,
+        "byContext": 249
       }
     },
     {
@@ -9357,8 +9361,8 @@
       },
       "rank": {
         "bySpeed": 267,
-        "byPrice": 187,
-        "byContext": 32
+        "byPrice": 186,
+        "byContext": 31
       }
     },
     {
@@ -9391,7 +9395,7 @@
       },
       "rank": {
         "bySpeed": 268,
-        "byPrice": 68,
+        "byPrice": 66,
         "byContext": 200
       }
     },
@@ -9425,7 +9429,7 @@
       },
       "rank": {
         "bySpeed": 269,
-        "byPrice": 147,
+        "byPrice": 144,
         "byContext": 65
       }
     },
@@ -9459,7 +9463,7 @@
       },
       "rank": {
         "bySpeed": 270,
-        "byPrice": 135,
+        "byPrice": 132,
         "byContext": 131
       }
     },
@@ -9493,7 +9497,7 @@
       },
       "rank": {
         "bySpeed": 271,
-        "byPrice": 235,
+        "byPrice": 234,
         "byContext": 66
       }
     },
@@ -9527,8 +9531,8 @@
       },
       "rank": {
         "bySpeed": 272,
-        "byPrice": 25,
-        "byContext": 33
+        "byPrice": 24,
+        "byContext": 32
       }
     },
     {
@@ -9561,7 +9565,7 @@
       },
       "rank": {
         "bySpeed": 273,
-        "byPrice": 239,
+        "byPrice": 238,
         "byContext": 132
       }
     },
@@ -9595,7 +9599,7 @@
       },
       "rank": {
         "bySpeed": 274,
-        "byPrice": 240,
+        "byPrice": 239,
         "byContext": 133
       }
     },
@@ -9629,7 +9633,7 @@
       },
       "rank": {
         "bySpeed": 275,
-        "byPrice": 158,
+        "byPrice": 155,
         "byContext": 134
       }
     },
@@ -9663,7 +9667,7 @@
       },
       "rank": {
         "bySpeed": 276,
-        "byPrice": 26,
+        "byPrice": 25,
         "byContext": 135
       }
     },
@@ -9697,7 +9701,7 @@
       },
       "rank": {
         "bySpeed": 277,
-        "byPrice": 130,
+        "byPrice": 127,
         "byContext": 136
       }
     },
@@ -9732,7 +9736,7 @@
       },
       "rank": {
         "bySpeed": 278,
-        "byPrice": 142,
+        "byPrice": 139,
         "byContext": 137
       }
     },
@@ -9767,8 +9771,8 @@
       },
       "rank": {
         "bySpeed": 279,
-        "byPrice": 224,
-        "byContext": 251
+        "byPrice": 223,
+        "byContext": 250
       }
     },
     {
@@ -9802,7 +9806,7 @@
       },
       "rank": {
         "bySpeed": 280,
-        "byPrice": 106,
+        "byPrice": 103,
         "byContext": 138
       }
     },
@@ -9837,8 +9841,8 @@
       },
       "rank": {
         "bySpeed": 281,
-        "byPrice": 179,
-        "byContext": 252
+        "byPrice": 178,
+        "byContext": 251
       }
     },
     {
@@ -9872,7 +9876,7 @@
       },
       "rank": {
         "bySpeed": 282,
-        "byPrice": 99,
+        "byPrice": 96,
         "byContext": 139
       }
     },
@@ -9907,7 +9911,7 @@
       },
       "rank": {
         "bySpeed": 283,
-        "byPrice": 103,
+        "byPrice": 100,
         "byContext": 157
       }
     },
@@ -9942,7 +9946,7 @@
       },
       "rank": {
         "bySpeed": 284,
-        "byPrice": 172,
+        "byPrice": 169,
         "byContext": 158
       }
     },
@@ -9978,7 +9982,7 @@
       },
       "rank": {
         "bySpeed": 285,
-        "byPrice": 206,
+        "byPrice": 205,
         "byContext": 140
       }
     },
@@ -10014,7 +10018,7 @@
       },
       "rank": {
         "bySpeed": 286,
-        "byPrice": 180,
+        "byPrice": 179,
         "byContext": 141
       }
     },
@@ -10050,7 +10054,7 @@
       },
       "rank": {
         "bySpeed": 287,
-        "byPrice": 155,
+        "byPrice": 152,
         "byContext": 142
       }
     },
@@ -10086,7 +10090,7 @@
       },
       "rank": {
         "bySpeed": 288,
-        "byPrice": 214,
+        "byPrice": 213,
         "byContext": 159
       }
     },
@@ -10122,7 +10126,7 @@
       },
       "rank": {
         "bySpeed": 289,
-        "byPrice": 52,
+        "byPrice": 50,
         "byContext": 143
       }
     },
@@ -10158,7 +10162,7 @@
       },
       "rank": {
         "bySpeed": 290,
-        "byPrice": 67,
+        "byPrice": 65,
         "byContext": 67
       }
     },
@@ -10194,7 +10198,7 @@
       },
       "rank": {
         "bySpeed": 291,
-        "byPrice": 181,
+        "byPrice": 180,
         "byContext": 68
       }
     },
@@ -10230,7 +10234,7 @@
       },
       "rank": {
         "bySpeed": 292,
-        "byPrice": 188,
+        "byPrice": 187,
         "byContext": 69
       }
     },
@@ -10240,8 +10244,8 @@
       "description": "Qwen3.6 27B is a dense 27-billion-parameter language model from the Qwen Team at Alibaba, released in April 2026. It features hybrid multimodal capabilities — accepting text, image, and video inputs...",
       "contextLength": 262144,
       "pricing": {
-        "inputPerMillion": 0.2596,
-        "outputPerMillion": 2.3850000000000002
+        "inputPerMillion": 0.28500000000000003,
+        "outputPerMillion": 2.4
       },
       "topProvider": {
         "contextLength": 262140,
@@ -10302,7 +10306,7 @@
       },
       "rank": {
         "bySpeed": 294,
-        "byPrice": 156,
+        "byPrice": 153,
         "byContext": 145
       }
     },
@@ -10338,7 +10342,7 @@
       },
       "rank": {
         "bySpeed": 295,
-        "byPrice": 159,
+        "byPrice": 156,
         "byContext": 70
       }
     },
@@ -10372,7 +10376,7 @@
       },
       "rank": {
         "bySpeed": 296,
-        "byPrice": 258,
+        "byPrice": 257,
         "byContext": 146
       }
     },
@@ -10408,7 +10412,7 @@
       },
       "rank": {
         "bySpeed": 297,
-        "byPrice": 193,
+        "byPrice": 192,
         "byContext": 71
       }
     },
@@ -10442,7 +10446,7 @@
       },
       "rank": {
         "bySpeed": 298,
-        "byPrice": 238,
+        "byPrice": 237,
         "byContext": 72
       }
     },
@@ -10477,7 +10481,7 @@
       },
       "rank": {
         "bySpeed": 299,
-        "byPrice": 171,
+        "byPrice": 168,
         "byContext": 73
       }
     },
@@ -10513,7 +10517,7 @@
       },
       "rank": {
         "bySpeed": 300,
-        "byPrice": 39,
+        "byPrice": 37,
         "byContext": 326
       }
     },
@@ -10547,7 +10551,7 @@
       },
       "rank": {
         "bySpeed": 301,
-        "byPrice": 62,
+        "byPrice": 60,
         "byContext": 306
       }
     },
@@ -10581,7 +10585,7 @@
       },
       "rank": {
         "bySpeed": 302,
-        "byPrice": 170,
+        "byPrice": 167,
         "byContext": 160
       }
     },
@@ -10615,7 +10619,7 @@
       },
       "rank": {
         "bySpeed": 303,
-        "byPrice": 229,
+        "byPrice": 228,
         "byContext": 161
       }
     },
@@ -10684,7 +10688,7 @@
       },
       "rank": {
         "bySpeed": 305,
-        "byPrice": 30,
+        "byPrice": 29,
         "byContext": 330
       }
     },
@@ -10718,7 +10722,7 @@
       },
       "rank": {
         "bySpeed": 306,
-        "byPrice": 230,
+        "byPrice": 229,
         "byContext": 327
       }
     },
@@ -10752,8 +10756,8 @@
       },
       "rank": {
         "bySpeed": 307,
-        "byPrice": 138,
-        "byContext": 253
+        "byPrice": 135,
+        "byContext": 252
       }
     },
     {
@@ -10786,8 +10790,8 @@
       },
       "rank": {
         "bySpeed": 308,
-        "byPrice": 125,
-        "byContext": 254
+        "byPrice": 122,
+        "byContext": 253
       }
     },
     {
@@ -10820,7 +10824,7 @@
       },
       "rank": {
         "bySpeed": 309,
-        "byPrice": 75,
+        "byPrice": 73,
         "byContext": 147
       }
     },
@@ -10856,7 +10860,7 @@
       },
       "rank": {
         "bySpeed": 310,
-        "byPrice": 160,
+        "byPrice": 157,
         "byContext": 162
       }
     },
@@ -10890,8 +10894,8 @@
       },
       "rank": {
         "bySpeed": 311,
-        "byPrice": 236,
-        "byContext": 255
+        "byPrice": 235,
+        "byContext": 254
       }
     },
     {
@@ -10924,8 +10928,8 @@
       },
       "rank": {
         "bySpeed": 312,
-        "byPrice": 108,
-        "byContext": 256
+        "byPrice": 105,
+        "byContext": 255
       }
     },
     {
@@ -10958,7 +10962,7 @@
       },
       "rank": {
         "bySpeed": 313,
-        "byPrice": 64,
+        "byPrice": 62,
         "byContext": 148
       }
     },
@@ -10992,8 +10996,8 @@
       },
       "rank": {
         "bySpeed": 314,
-        "byPrice": 104,
-        "byContext": 257
+        "byPrice": 101,
+        "byContext": 256
       }
     },
     {
@@ -11026,7 +11030,7 @@
       },
       "rank": {
         "bySpeed": 315,
-        "byPrice": 105,
+        "byPrice": 102,
         "byContext": 319
       }
     },
@@ -11060,7 +11064,7 @@
       },
       "rank": {
         "bySpeed": 316,
-        "byPrice": 136,
+        "byPrice": 133,
         "byContext": 320
       }
     },
@@ -11094,7 +11098,7 @@
       },
       "rank": {
         "bySpeed": 317,
-        "byPrice": 96,
+        "byPrice": 93,
         "byContext": 321
       }
     },
@@ -11128,7 +11132,7 @@
       },
       "rank": {
         "bySpeed": 318,
-        "byPrice": 121,
+        "byPrice": 118,
         "byContext": 335
       }
     },
@@ -11162,8 +11166,8 @@
       },
       "rank": {
         "bySpeed": 319,
-        "byPrice": 116,
-        "byContext": 297
+        "byPrice": 113,
+        "byContext": 296
       }
     },
     {
@@ -11196,8 +11200,8 @@
       },
       "rank": {
         "bySpeed": 320,
-        "byPrice": 257,
-        "byContext": 40
+        "byPrice": 256,
+        "byContext": 39
       }
     },
     {
@@ -11232,7 +11236,7 @@
       },
       "rank": {
         "bySpeed": 321,
-        "byPrice": 221,
+        "byPrice": 220,
         "byContext": 4
       }
     },
@@ -11268,7 +11272,7 @@
       },
       "rank": {
         "bySpeed": 322,
-        "byPrice": 222,
+        "byPrice": 221,
         "byContext": 5
       }
     },
@@ -11304,7 +11308,7 @@
       },
       "rank": {
         "bySpeed": 323,
-        "byPrice": 223,
+        "byPrice": 222,
         "byContext": 75
       }
     },
@@ -11339,7 +11343,7 @@
       },
       "rank": {
         "bySpeed": 324,
-        "byPrice": 204,
+        "byPrice": 203,
         "byContext": 163
       }
     },
@@ -11376,8 +11380,8 @@
       },
       "rank": {
         "bySpeed": 325,
-        "byPrice": 70,
-        "byContext": 34
+        "byPrice": 68,
+        "byContext": 33
       }
     },
     {
@@ -11410,8 +11414,8 @@
       },
       "rank": {
         "bySpeed": 326,
-        "byPrice": 141,
-        "byContext": 35
+        "byPrice": 138,
+        "byContext": 34
       }
     },
     {
@@ -11444,8 +11448,8 @@
       },
       "rank": {
         "bySpeed": 327,
-        "byPrice": 210,
-        "byContext": 258
+        "byPrice": 209,
+        "byContext": 257
       }
     },
     {
@@ -11478,8 +11482,8 @@
       },
       "rank": {
         "bySpeed": 328,
-        "byPrice": 139,
-        "byContext": 259
+        "byPrice": 136,
+        "byContext": 258
       }
     },
     {
@@ -11513,7 +11517,7 @@
       },
       "rank": {
         "bySpeed": 329,
-        "byPrice": 189,
+        "byPrice": 188,
         "byContext": 307
       }
     },
@@ -11547,7 +11551,7 @@
       },
       "rank": {
         "bySpeed": 330,
-        "byPrice": 185,
+        "byPrice": 184,
         "byContext": 168
       }
     },
@@ -11583,8 +11587,8 @@
       },
       "rank": {
         "bySpeed": 331,
-        "byPrice": 144,
-        "byContext": 260
+        "byPrice": 141,
+        "byContext": 259
       }
     },
     {
@@ -11617,7 +11621,7 @@
       },
       "rank": {
         "bySpeed": 332,
-        "byPrice": 186,
+        "byPrice": 185,
         "byContext": 169
       }
     },
@@ -11651,7 +11655,7 @@
       },
       "rank": {
         "bySpeed": 333,
-        "byPrice": 97,
+        "byPrice": 94,
         "byContext": 170
       }
     },
@@ -11685,7 +11689,7 @@
       },
       "rank": {
         "bySpeed": 334,
-        "byPrice": 192,
+        "byPrice": 191,
         "byContext": 171
       }
     },
@@ -11719,7 +11723,7 @@
       },
       "rank": {
         "bySpeed": 335,
-        "byPrice": 242,
+        "byPrice": 241,
         "byContext": 149
       }
     },
@@ -11753,7 +11757,7 @@
       },
       "rank": {
         "bySpeed": 336,
-        "byPrice": 244,
+        "byPrice": 243,
         "byContext": 172
       }
     },
@@ -11763,12 +11767,12 @@
       "description": "GLM 5.2 is a large-scale reasoning model from Z.ai. It supports text input and output with a 1M-token context window, and is suited for long-horizon agent workflows, project-level software engineering,...",
       "contextLength": 1048576,
       "pricing": {
-        "inputPerMillion": 0.94,
+        "inputPerMillion": 0.9299999999999999,
         "outputPerMillion": 3
       },
       "topProvider": {
         "contextLength": 1048576,
-        "maxCompletionTokens": null,
+        "maxCompletionTokens": 32768,
         "isModerated": false
       },
       "architecture": {
@@ -11787,8 +11791,8 @@
       },
       "rank": {
         "bySpeed": 337,
-        "byPrice": 231,
-        "byContext": 36
+        "byPrice": 230,
+        "byContext": 35
       }
     },
     {
@@ -11823,7 +11827,7 @@
       },
       "rank": {
         "bySpeed": 338,
-        "byPrice": 243,
+        "byPrice": 242,
         "byContext": 173
       }
     }
