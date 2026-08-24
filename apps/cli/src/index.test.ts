@@ -200,6 +200,35 @@ describe('cli smoke tests', () => {
     });
   });
 
+  test('pick emits the stable selection contract for harness adapters', async () => {
+    await withOpenRouterFixtures(async ({ env }) => {
+      const result = await runCli(
+        ['pick', '--task', 'agent', '--limit', '2', '--contract'],
+        { env },
+      );
+      expect(result.exitCode).toBe(0);
+      const payload = JSON.parse(result.stdout);
+      expect(payload).toMatchObject({
+        contract: 'model-picker.selection',
+        version: 1,
+        source: 'snapshot',
+        request: { task: 'agent', agent: null, filter: null, limit: 2 },
+        count: 2,
+      });
+      expect(payload.choices[0]).toEqual(
+        expect.objectContaining({
+          id: expect.any(String),
+          name: expect.any(String),
+          score: expect.any(Number),
+          reasons: expect.any(Array),
+          contextWindow: expect.any(Number),
+          outputPerMillion: expect.any(Number),
+        }),
+      );
+      expect(payload.choices[0]).not.toHaveProperty('description');
+    });
+  });
+
   test('get supports machine-readable json output and timeout fallback', async () => {
     await withOpenRouterFixtures(async ({ env }) => {
       const jsonSummary = await runCli(['get', 'openai/gpt-5.4', '--json'], { env });

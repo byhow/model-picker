@@ -7,6 +7,7 @@ import { isCancel, multiselect, text } from '@clack/prompts';
 import { cac } from 'cac';
 import packageJson from '../package.json';
 import {
+  buildModelSelectionEnvelope,
   compareModels,
   listModels,
   loadSnapshot,
@@ -1450,6 +1451,7 @@ cli
   .option('--weights <weights>', 'speed=0.5,price=0.3,context=0.2')
   .option('--filter <filter>', 'Filter expression before scoring')
   .option('--json', 'Return machine-readable JSON')
+  .option('--contract', 'Return the stable model-picker.selection v1 envelope')
   .option('--limit <limit>', 'Limit recommendations', {
     default: '5',
   })
@@ -1459,13 +1461,26 @@ cli
     try {
       const agent = parseAgent(options.agent);
       const effectiveTask = options.task ?? (agent ? 'agent' : undefined);
+      const limit = parsePositiveInt(options.limit, 5);
       const picks = await pickModels({
         task: effectiveTask,
         agent,
         filter: options.filter,
-        limit: parsePositiveInt(options.limit, 5),
+        limit,
         weights: parseWeights(options.weights),
       });
+
+      if (options.contract) {
+        emitJson(
+          buildModelSelectionEnvelope(picks, {
+            task: effectiveTask ?? null,
+            agent: agent ?? null,
+            filter: options.filter ?? null,
+            limit,
+          }),
+        );
+        return;
+      }
 
       if (picks.length === 0) {
         console.log('No models matched your pick criteria.');

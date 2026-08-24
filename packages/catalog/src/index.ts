@@ -1,3 +1,5 @@
+export * from './selection-contract';
+
 import { access, readFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import {
