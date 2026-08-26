@@ -5,11 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.2.0] - 2026-08-26
 
 ### Added
 
 - Added `pick --contract`, a narrow versioned `model-picker.selection` v1 envelope for harness adapters.
+- Published the canonical JSON Schema and fixture with npm packages and release runtimes.
+- Added checksum-bearing Darwin/Linux runtime archives for arm64 and x64.
+
+### Changed
+
+- Every selection envelope is validated against the canonical schema before output.
+- Release verification now exercises the binary from an isolated runtime layout with its offline snapshots.
 
 ## [0.1.1] - 2026-03-26
 
@@ -48,6 +55,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Web dashboard (Astro + SolidJS)
 - Terminal UI (source checkout only)
 
-[Unreleased]: https://github.com/byhow/model-picker/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/byhow/model-picker/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/byhow/model-picker/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/byhow/model-picker/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/byhow/model-picker/releases/tag/v0.1.0
