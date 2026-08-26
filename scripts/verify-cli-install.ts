@@ -1,6 +1,15 @@
 #!/usr/bin/env bun
 
-import { access, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import {
+  access,
+  chmod,
+  copyFile,
+  mkdir,
+  mkdtemp,
+  readFile,
+  rm,
+  writeFile,
+} from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 
@@ -404,6 +413,43 @@ try {
     parsedContract.version !== 1
   ) {
     throw new Error('compiled model-picker binary emitted an invalid selection contract');
+  }
+
+  const releaseRoot = join(tempDir, 'release');
+  const releaseBinary = join(releaseRoot, 'bin/model-picker');
+  await mkdir(join(releaseRoot, 'bin'), { recursive: true });
+  await mkdir(join(releaseRoot, 'data'), { recursive: true });
+  await mkdir(join(releaseRoot, 'contracts'), { recursive: true });
+  await copyFile(resolve(root, 'apps/cli/dist/model-picker'), releaseBinary);
+  await chmod(releaseBinary, 0o755);
+  await copyFile(
+    resolve(root, 'apps/cli/data/latest.full.json'),
+    join(releaseRoot, 'data/latest.full.json'),
+  );
+  await copyFile(
+    resolve(root, 'apps/cli/data/models.json'),
+    join(releaseRoot, 'data/models.json'),
+  );
+  await copyFile(
+    resolve(root, 'contracts/model-picker.selection.v1.schema.json'),
+    join(releaseRoot, 'contracts/model-picker.selection.v1.schema.json'),
+  );
+  await copyFile(
+    resolve(root, 'contracts/model-picker.selection.v1.fixture.json'),
+    join(releaseRoot, 'contracts/model-picker.selection.v1.fixture.json'),
+  );
+  const releaseContract = await run(
+    [releaseBinary, 'pick', '--contract', '--task', 'agent', '--limit', '1'],
+    tempDir,
+  );
+  const releaseValue: unknown = JSON.parse(releaseContract.stdout);
+  if (
+    typeof releaseValue !== 'object' ||
+    releaseValue === null ||
+    !('contract' in releaseValue) ||
+    releaseValue.contract !== 'model-picker.selection'
+  ) {
+    throw new Error('isolated release layout could not load its packaged snapshot');
   }
 
   console.log('CLI install verification passed');
