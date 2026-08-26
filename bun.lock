@@ -12,7 +12,7 @@
     },
     "apps/cli": {
       "name": "model-picker",
-      "version": "0.1.2",
+      "version": "0.2.0",
       "bin": {
         "model-picker": "./dist/index.js",
         "mp": "./dist/index.js",
