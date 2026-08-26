@@ -37,6 +37,7 @@
   "files": [
     "dist/index.js",
     "data",
+    "contracts",
     "SKILL.md",
     "llms.txt",
     "skills",

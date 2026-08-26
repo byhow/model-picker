@@ -53,6 +53,7 @@ skills-lock.json
 
 # generated CLI packaging artifacts
 apps/cli/data/
+apps/cli/contracts/
 apps/cli/README.md
 apps/cli/LICENSE
 apps/cli/SKILL.md

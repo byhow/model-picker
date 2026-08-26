@@ -284,6 +284,18 @@ try {
   const tarballPath = resolve(cliDir, tarball);
   await run(['npm', 'init', '-y'], tempDir);
   await run(['npm', 'install', tarballPath], tempDir);
+  await access(
+    join(
+      tempDir,
+      'node_modules/model-picker/contracts/model-picker.selection.v1.schema.json',
+    ),
+  );
+  await access(
+    join(
+      tempDir,
+      'node_modules/model-picker/contracts/model-picker.selection.v1.fixture.json',
+    ),
+  );
   const npxDoctor = await run(['npx', 'model-picker', 'doctor'], tempDir);
   if (npxDoctor.stdout.includes('Tracked models: 0')) {
     throw new Error('npx model-picker doctor reported zero tracked models');
@@ -370,6 +382,28 @@ try {
   const binaryDoctor = await run([resolve(root, 'apps/cli/dist/model-picker'), 'doctor'], tempDir);
   if (binaryDoctor.stdout.includes('Tracked models: 0')) {
     throw new Error('compiled model-picker binary reported zero tracked models');
+  }
+  const binaryContract = await run(
+    [
+      resolve(root, 'apps/cli/dist/model-picker'),
+      'pick',
+      '--contract',
+      '--task',
+      'agent',
+      '--limit',
+      '1',
+    ],
+    tempDir,
+  );
+  const parsedContract = JSON.parse(binaryContract.stdout) as {
+    contract?: string;
+    version?: number;
+  };
+  if (
+    parsedContract.contract !== 'model-picker.selection' ||
+    parsedContract.version !== 1
+  ) {
+    throw new Error('compiled model-picker binary emitted an invalid selection contract');
   }
 
   console.log('CLI install verification passed');

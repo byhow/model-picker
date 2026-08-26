@@ -20,6 +20,8 @@
     "test": "turbo run test",
     "build:cli-bin": "turbo run build:bin --filter=model-picker",
     "prepare:cli-package": "turbo run prepare:package --filter=model-picker",
+    "generate:selection-contract": "bun run scripts/generate-selection-contract.ts",
+    "verify:selection-contract": "bun run scripts/generate-selection-contract.ts --check",
     "verify:cli-install": "bun run scripts/verify-cli-install.ts"
   },
   "devDependencies": {

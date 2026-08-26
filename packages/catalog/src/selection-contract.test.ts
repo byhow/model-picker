@@ -1,6 +1,11 @@
 import { describe, expect, test } from 'bun:test';
+import { readFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
 import type { ModelRecord } from '@model-picker/domain';
-import { buildModelSelectionEnvelope } from './selection-contract';
+import {
+  buildModelSelectionEnvelope,
+  isModelSelectionEnvelope,
+} from './selection-contract';
 
 const model: ModelRecord = {
   id: 'provider/model',
@@ -47,5 +52,29 @@ describe('buildModelSelectionEnvelope', () => {
       ],
     });
     expect(JSON.stringify(result)).not.toContain('Private implementation detail');
+  });
+
+  test('accepts the canonical packaged fixture', async () => {
+    const fixture = JSON.parse(
+      await readFile(
+        resolve(import.meta.dir, '../../../contracts/model-picker.selection.v1.fixture.json'),
+        'utf8',
+      ),
+    );
+    expect(isModelSelectionEnvelope(fixture)).toBe(true);
+  });
+
+  test('rejects producer output outside contract bounds', () => {
+    expect(() =>
+      buildModelSelectionEnvelope(
+        [{ model, score: 0.75, reasons: ['balanced'] }],
+        {
+          task: 'x'.repeat(65),
+          agent: null,
+          filter: null,
+          limit: 1,
+        },
+      ),
+    ).toThrow('version-1 contract bounds');
   });
 });
