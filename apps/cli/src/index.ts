@@ -8,6 +8,7 @@ import { cac } from 'cac';
 import packageJson from '../package.json';
 import {
   buildModelSelectionEnvelope,
+  DEFAULT_WEIGHTS,
   compareModels,
   listModels,
   loadSnapshot,
@@ -695,7 +696,7 @@ function parseWeights(input?: string): Partial<ScoreWeights> {
     }
 
     const numericValue = Number.parseFloat(value || '');
-    if (!Number.isFinite(numericValue)) {
+    if (!Number.isFinite(numericValue) || numericValue < 0 || numericValue > 1) {
       throw new CliUsageError(
         'Invalid --weights value. Use speed=0.5,price=0.3,context=0.2.',
       );
@@ -1462,12 +1463,17 @@ cli
       const agent = parseAgent(options.agent);
       const effectiveTask = options.task ?? (agent ? 'agent' : undefined);
       const limit = parsePositiveInt(options.limit, 5);
+      const weightOverrides = parseWeights(options.weights);
+      const weights: ScoreWeights = {
+        ...DEFAULT_WEIGHTS,
+        ...weightOverrides,
+      };
       const picks = await pickModels({
         task: effectiveTask,
         agent,
         filter: options.filter,
         limit,
-        weights: parseWeights(options.weights),
+        weights,
       });
 
       if (options.contract) {
@@ -1477,6 +1483,7 @@ cli
             agent: agent ?? null,
             filter: options.filter ?? null,
             limit,
+            weights,
           }),
         );
         return;

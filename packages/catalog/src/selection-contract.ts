@@ -31,6 +31,14 @@ export const MODEL_SELECTION_SCHEMA = Type.Object(
         ]),
         filter: nullableBoundedString,
         limit: Type.Integer({ minimum: 1, maximum: 100 }),
+        weights: Type.Object(
+          {
+            speed: Type.Number({ minimum: 0, maximum: 1 }),
+            price: Type.Number({ minimum: 0, maximum: 1 }),
+            context: Type.Number({ minimum: 0, maximum: 1 }),
+          },
+          { additionalProperties: false },
+        ),
       },
       { additionalProperties: false },
     ),
@@ -46,7 +54,10 @@ export const MODEL_SELECTION_SCHEMA = Type.Object(
             { maxItems: 32 },
           ),
           contextWindow: Type.Integer({ minimum: 1 }),
-          outputPerMillion: Type.Number({ minimum: 0 }),
+          outputPerMillion: Type.Union([
+            Type.Null(),
+            Type.Number({ minimum: 0 }),
+          ]),
           bestThroughput: Type.Union([Type.Null(), Type.Number({ minimum: 0 })]),
         },
         { additionalProperties: false },
@@ -94,7 +105,10 @@ export function buildModelSelectionEnvelope(
       score,
       reasons: [...reasons],
       contextWindow: model.contextLength,
-      outputPerMillion: model.pricing.outputPerMillion,
+      outputPerMillion:
+        model.pricing.outputPerMillion >= 0
+          ? model.pricing.outputPerMillion
+          : null,
       bestThroughput: model.speed.bestThroughput,
     })),
   };

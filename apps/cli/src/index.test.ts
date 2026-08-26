@@ -212,7 +212,13 @@ describe('cli smoke tests', () => {
         contract: 'model-picker.selection',
         version: 1,
         source: 'snapshot',
-        request: { task: 'agent', agent: null, filter: null, limit: 2 },
+        request: {
+          task: 'agent',
+          agent: null,
+          filter: null,
+          limit: 2,
+          weights: { speed: 0.4, price: 0.35, context: 0.25 },
+        },
         count: 2,
       });
       expect(payload.choices[0]).toEqual(

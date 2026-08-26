@@ -27,17 +27,19 @@ const model: ModelRecord = {
   rank: { bySpeed: 1, byPrice: 1, byContext: 1 },
 };
 
+const weights = { speed: 0.4, price: 0.35, context: 0.25 };
+
 describe('buildModelSelectionEnvelope', () => {
   test('emits a versioned narrow DTO without the source model description', () => {
     const result = buildModelSelectionEnvelope(
       [{ model, score: 0.75, reasons: ['balanced'] }],
-      { task: 'agent', agent: null, filter: null, limit: 1 },
+      { task: 'agent', agent: null, filter: null, limit: 1, weights },
     );
     expect(result).toEqual({
       contract: 'model-picker.selection',
       version: 1,
       source: 'snapshot',
-      request: { task: 'agent', agent: null, filter: null, limit: 1 },
+      request: { task: 'agent', agent: null, filter: null, limit: 1, weights },
       count: 1,
       choices: [
         {
@@ -52,6 +54,23 @@ describe('buildModelSelectionEnvelope', () => {
       ],
     });
     expect(JSON.stringify(result)).not.toContain('Private implementation detail');
+  });
+
+  test('represents unavailable output pricing as null', () => {
+    const result = buildModelSelectionEnvelope(
+      [
+        {
+          model: {
+            ...model,
+            pricing: { ...model.pricing, outputPerMillion: -1_000_000 },
+          },
+          score: 0.25,
+          reasons: ['routing'],
+        },
+      ],
+      { task: 'agent', agent: null, filter: null, limit: 1, weights },
+    );
+    expect(result.choices[0]?.outputPerMillion).toBeNull();
   });
 
   test('accepts the canonical packaged fixture', async () => {
@@ -73,6 +92,7 @@ describe('buildModelSelectionEnvelope', () => {
           agent: null,
           filter: null,
           limit: 1,
+          weights,
         },
       ),
     ).toThrow('version-1 contract bounds');
