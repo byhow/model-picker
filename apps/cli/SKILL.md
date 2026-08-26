@@ -87,10 +87,16 @@ model-picker doctor
 
 ## Machine-readable output
 
-Use `--json` with `pick` and `get` to pipe structured output into scripts:
+Harness adapters should consume the stable `model-picker.selection` v1 envelope:
 
 ```bash
-model-picker pick --agent amp --json | jq '.[0].id'
+model-picker pick --task agent --limit 5 --contract | jq '.choices[0].id'
+```
+
+Use `--json` when scripts need the wider command-specific payload:
+
+```bash
+model-picker pick --agent amp --json
 model-picker get openai/gpt-5.4 --json
 ```
 

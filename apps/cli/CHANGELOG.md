@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Added `pick --contract`, a narrow versioned `model-picker.selection` v1 envelope for harness adapters.
+
 ## [0.1.1] - 2026-03-26
 
 ### Changed

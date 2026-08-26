@@ -115,7 +115,7 @@ model-picker pick --agent amp --json
 
 Supported agents: `amp`, `opencode`, `claude-code`, `codex`, `cursor`.
 
-When `--agent` is set and `--task` is omitted, `pick` defaults to `--task agent`. Use `--json` to pipe picks into scripts and tooling.
+When `--agent` is set and `--task` is omitted, `pick` defaults to `--task agent`. Use `--json` for the complete CLI payload. Harness adapters should use `--contract`, which emits the narrow, versioned `model-picker.selection` v1 envelope.
 
 ## Live OpenRouter CLI filters
 

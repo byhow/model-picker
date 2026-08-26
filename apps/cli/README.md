@@ -17,6 +17,38 @@ bun install -g model-picker
 
 After install, use either `model-picker` or the short alias `mp`.
 
+## Agent Skills
+
+`model-picker` is also available as a reusable **agent skill** for AI coding agents like Cursor, Claude Code, Codex, and more.
+
+### Install as a skill
+
+```bash
+# Using npx (recommended)
+npx skills add byhow/model-picker
+
+# Or with bunx
+bunx skills add byhow/model-picker
+
+# Install globally for all agents
+npx skills add byhow/model-picker -g -y
+```
+
+### Supported agents
+
+The skill works with: Amp, Antigravity, Augment, Claude Code, OpenClaw, CodeBuddy, Codex, Command Code, Continue, Cortex Code, Crush, Cursor, Droid, Gemini CLI, Goose, Junie, and more (43+ agents).
+
+### When the skill activates
+
+The skill automatically loads when you ask:
+- "Which model should I use for...?"
+- "Best model for coding"
+- "Compare X vs Y model"
+- "Cheapest/fastest model"
+- "Pick a model for my agent"
+
+It will not trigger for general coding tasks unrelated to model selection.
+
 ## Demo
 
 > Screenshots and terminal recordings coming soon.
