@@ -27,6 +27,9 @@ jobs:
       - name: Install dependencies
         run: bun install
 
+      - name: Verify canonical selection contract
+        run: bun run verify:selection-contract
+
       - name: Typecheck
         run: bun run typecheck
 

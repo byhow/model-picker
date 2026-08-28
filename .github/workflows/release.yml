@@ -1,0 +1,66 @@
+name: Build release runtimes
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.10
+      - run: bun install --frozen-lockfile
+      - run: bun run verify:selection-contract
+      - run: bun run typecheck
+      - run: bun run test
+      - run: bun run build
+      - run: bun run verify:cli-install
+      - run: npm pack --dry-run --workspace model-picker
+
+  runtime:
+    needs: verify
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - target: bun-darwin-arm64
+            asset: model-picker-darwin-arm64
+          - target: bun-darwin-x64
+            asset: model-picker-darwin-x64
+          - target: bun-linux-arm64
+            asset: model-picker-linux-arm64
+          - target: bun-linux-x64
+            asset: model-picker-linux-x64
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.10
+      - run: bun install --frozen-lockfile
+      - run: bun run prepare:cli-package
+      - name: Build runtime layout
+        run: |
+          mkdir -p stage/bin stage/data stage/contracts
+          bun build --compile --target=${{ matrix.target }} apps/cli/src/index.ts --outfile stage/bin/model-picker
+          cp apps/cli/data/latest.full.json apps/cli/data/models.json stage/data/
+          cp contracts/model-picker.selection.v1.schema.json contracts/model-picker.selection.v1.fixture.json stage/contracts/
+          tar -C stage -czf ${{ matrix.asset }}.tar.gz .
+      - name: Checksum runtime archive
+        run: sha256sum ${{ matrix.asset }}.tar.gz > ${{ matrix.asset }}.tar.gz.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.asset }}
+          path: |
+            ${{ matrix.asset }}.tar.gz
+            ${{ matrix.asset }}.tar.gz.sha256

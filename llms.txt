@@ -50,6 +50,7 @@ model-picker get openai/gpt-5.4
 model-picker compare anthropic/claude-opus-4.6 openai/gpt-5.4
 model-picker pick --task agent --agent opencode --limit 5
 model-picker pick --agent amp --json
+model-picker pick --task agent --limit 5 --contract  # stable model-picker.selection v1 envelope
 ```
 
 ### Export
@@ -90,6 +91,8 @@ model-picker pick --task agent --agent opencode --limit 5
 model-picker pick --task review --agent claude-code --limit 5
 model-picker pick --agent amp --json
 ```
+
+Harness adapters MUST use `pick --contract` rather than the wider, command-specific `--json` payload. The contract envelope contains `contract`, `version`, `request`, and bounded `choices` fields.
 
 Supported agents:
 - amp

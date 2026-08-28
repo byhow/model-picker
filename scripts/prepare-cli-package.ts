@@ -7,6 +7,8 @@ const root = resolve(import.meta.dir, '..');
 const cliDataDir = resolve(root, 'apps/cli/data');
 const fullSnapshot = resolve(root, 'data/snapshots/latest.full.json');
 const fallbackSnapshot = resolve(root, 'apps/web/src/data/models.json');
+const contractsDir = resolve(root, 'contracts');
+const cliContractsDir = resolve(root, 'apps/cli/contracts');
 
 const cliReadme = resolve(root, 'apps/cli/README.md');
 const cliLicense = resolve(root, 'apps/cli/LICENSE');
@@ -21,6 +23,7 @@ const cliSkillsLlmsTxt = resolve(cliSkillsDir, 'llms.txt');
 
 await mkdir(cliDataDir, { recursive: true });
 await mkdir(cliSkillsDir, { recursive: true });
+await mkdir(cliContractsDir, { recursive: true });
 
 const canonicalSnapshot = (await Bun.file(fullSnapshot).exists())
   ? Bun.file(fullSnapshot)
@@ -28,6 +31,14 @@ const canonicalSnapshot = (await Bun.file(fullSnapshot).exists())
 
 await Bun.write(resolve(cliDataDir, 'latest.full.json'), canonicalSnapshot);
 await Bun.write(resolve(cliDataDir, 'models.json'), Bun.file(fallbackSnapshot));
+await Bun.write(
+  resolve(cliContractsDir, 'model-picker.selection.v1.schema.json'),
+  Bun.file(resolve(contractsDir, 'model-picker.selection.v1.schema.json')),
+);
+await Bun.write(
+  resolve(cliContractsDir, 'model-picker.selection.v1.fixture.json'),
+  Bun.file(resolve(contractsDir, 'model-picker.selection.v1.fixture.json')),
+);
 await Bun.write(cliReadme, Bun.file(resolve(root, 'README.md')));
 await Bun.write(cliLicense, Bun.file(resolve(root, 'LICENSE')));
 await Bun.write(cliChangelog, Bun.file(resolve(root, 'CHANGELOG.md')));

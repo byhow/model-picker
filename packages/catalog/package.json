@@ -13,6 +13,7 @@
     "test": "bun test"
   },
   "dependencies": {
-    "@model-picker/domain": "workspace:*"
+    "@model-picker/domain": "workspace:*",
+    "typebox": "1.3.7"
   }
 }
